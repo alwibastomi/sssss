@@ -1,405 +1,1090 @@
-<?php 
-$date = date('Y-m-d');
-?>
+<!DOCTYPE html>
+<html>
+<title>Keyword Scrapper (Coba)</title>
 
-<!-- End Body Navbar -->
-<div class="container">
-  <div class="row">
-    <div class="col-xl-4 order-xl-last">
-      <div class="kotak-iklan" id="lolo">
-        <!-- <a href="" title="Pasang Iklan">
-          <img alt="iklan banner" style="height: 100%;" src=""/>
-        </a> -->
-        <!-- IKLAN 1.1 -->
-        <?php if (!empty($iklan1->place)) {
-          echo $iklan1->script_js;
-        }else{
-          echo "Ini iklan 1.1";
-        }
-        ?>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta property="og:title" content="Keyword Shitter2 - The Bulk Keyword Tool" />
+
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"/>
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.0/css/buttons.dataTables.min.css"/> -->
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/fixedheader/3.1.0/css/fixedHeader.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/keytable/2.1.0/css/keyTable.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/2.0.0/css/responsive.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/scroller/1.4.0/css/scroller.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progressjs.min.css"/>
+
+
+
+  <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
+
+</head>
+
+<body>
+
+  <!-- <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> -->
+
+
+  <div class="container">
+
+
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div id="numofkeywords"></div>
+        <div class="form-group">
+          <label for="input" ><h3>Input:</h3></label>
+          <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control"  placeholder="Ketik sayang :*"></textarea>
       </div>
-    </div>
-    <div class="col-xl-8 order-xl-first mt-4">
-      <div class="main_blog_details">
-        <!-- <img class="img-fluid" src="<?= site_url('images/artikel/artikel.jpg') ?>" alt=""> -->
-        <h4><b><?= $aaaa->header ?></b></h4>
-        <div class="user_details" style="margin-top: 20px;">
-          <div class="float-left">
-            <a class="btn btn-primary" style="border-radius: 40px; padding: 2px 10px;" href="#"><i class="fa fa-thumbs-up"></i></a>
-          </div>
-          <div class="float-right">
-            <div class="media">
-              <div class="media-body">
-                <p>Januari 24, 2021</p>
-              </div>
+
+      <a class="btn btn-success primary btn-lg" id="startjob" type="button" value="Shit Keywords!">Scrape Keywords!</a>
+
+<!-- 
+      <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#advanced" aria-expanded="false" aria-controls="advanced">
+        Advanced
+    </button> -->
+
+
+
+    <a class="btn btn-default" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
+</div>
+<div class="col-sm-5">
+
+    <div class="form-group">
+      <label for="service">Service:</label>
+      <select class="form-control" name="service" id="service" >
+                        <!-- <option>google</option>
+                        <option>twitter</option>
+                        <option>yahoo</option>
+                        <option>bing</option>
+                        <option>ebay</option>
+                        <option>amazon</option>
+                        <option>google images</option>
+                        <option>youtube</option>
+                        <option>google videos</option>
+                        <option>google books</option>
+                        <option>google news</option>
+                        <option>google shopping</option>
+                        <option>yandex</option>
+                        <option>baidu</option>
+                        <option>linkedin</option> -->
+                        <!-- <option>yelp</option> -->
+                    </select>
+                </div>
+                <div class="checkbox">
+                  <label for="keep-running">
+                    <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever"></input>Continuous running:
+                </label>
             </div>
-          </div>
+
+            <div class="form-group">
+              <label for="country">Country code (google):</label>
+              <!-- ISO-3366-1: Alpha-2 Codes -->
+              <select value="us"  class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled>
+                <option value=""></option>
+                <option value="us">United States (us)</option>
+                <option value="af">Afghanistan (af)</option>
+                <option value="ax">Åland Islands (ax)</option>
+                <option value="al">Albania (al)</option>
+                <option value="dz">Algeria (dz)</option>
+                <option value="as">American Samoa (as)</option>
+                <option value="ad">Andorra (ad)</option>
+                <option value="ao">Angola (ao)</option>
+                <option value="ai">Anguilla (ai)</option>
+                <option value="aq">Antarctica (aq)</option>
+                <option value="ag">Antigua and Barbuda (ag)</option>
+                <option value="ar">Argentina (ar)</option>
+                <option value="am">Armenia (am)</option>
+                <option value="aw">Aruba (aw)</option>
+                <option value="au">Australia (au)</option>
+                <option value="at">Austria (at)</option>
+                <option value="az">Azerbaijan (az)</option>
+                <option value="bs">Bahamas (bs)</option>
+                <option value="bh">Bahrain (bh)</option>
+                <option value="bd">Bangladesh (bd)</option>
+                <option value="bb">Barbados (bb)</option>
+                <option value="by">Belarus (by)</option>
+                <option value="be">Belgium (be)</option>
+                <option value="bz">Belize (bz)</option>
+                <option value="bj">Benin (bj)</option>
+                <option value="bm">Bermuda (bm)</option>
+                <option value="bt">Bhutan (bt)</option>
+                <option value="bo">Bolivia, Plurinational State of (bo)</option>
+                <option value="bq">Bonaire, Sint Eustatius and Saba (bq)</option>
+                <option value="ba">Bosnia and Herzegovina (ba)</option>
+                <option value="bw">Botswana (bw)</option>
+                <option value="bv">Bouvet Island (bv)</option>
+                <option value="br">Brazil (br)</option>
+                <option value="io">British Indian Ocean Territory (io)</option>
+                <option value="bn">Brunei Darussalam (bn)</option>
+                <option value="bg">Bulgaria (bg)</option>
+                <option value="bf">Burkina Faso (bf)</option>
+                <option value="bi">Burundi (bi)</option>
+                <option value="kh">Cambodia (kh)</option>
+                <option value="cm">Cameroon (cm)</option>
+                <option value="ca">Canada (ca)</option>
+                <option value="cv">Cape Verde (cv)</option>
+                <option value="ky">Cayman Islands (ky)</option>
+                <option value="cf">Central African Republic (cf)</option>
+                <option value="td">Chad (td)</option>
+                <option value="cl">Chile (cl)</option>
+                <option value="cn">China (cn)</option>
+                <option value="cx">Christmas Island (cx)</option>
+                <option value="cc">Cocos (Keeling) Islands (cc)</option>
+                <option value="co">Colombia (co)</option>
+                <option value="km">Comoros (km)</option>
+                <option value="cg">Congo (cg)</option>
+                <option value="cd">Congo, the Democratic Republic of the (cd)</option>
+                <option value="ck">Cook Islands (ck)</option>
+                <option value="cr">Costa Rica (cr)</option>
+                <option value="ci">Côte d'Ivoire (ci)</option>
+                <option value="hr">Croatia (hr)</option>
+                <option value="cu">Cuba (cu)</option>
+                <option value="cw">Curaçao (cw)</option>
+                <option value="cy">Cyprus (cy)</option>
+                <option value="cz">Czech Republic (cz)</option>
+                <option value="dk">Denmark (dk)</option>
+                <option value="dj">Djibouti (dj)</option>
+                <option value="dm">Dominica (dm)</option>
+                <option value="do">Dominican Republic (do)</option>
+                <option value="ec">Ecuador (ec)</option>
+                <option value="eg">Egypt (eg)</option>
+                <option value="sv">El Salvador (sv)</option>
+                <option value="gq">Equatorial Guinea (gq)</option>
+                <option value="er">Eritrea (er)</option>
+                <option value="ee">Estonia (ee)</option>
+                <option value="et">Ethiopia (et)</option>
+                <option value="fk">Falkland Islands (Malvinas) (fk)</option>
+                <option value="fo">Faroe Islands (fo)</option>
+                <option value="fj">Fiji (fj)</option>
+                <option value="fi">Finland (fi)</option>
+                <option value="fr">France (fr)</option>
+                <option value="gf">French Guiana (gf)</option>
+                <option value="pf">French Polynesia (pf)</option>
+                <option value="tf">French Southern Territories (tf)</option>
+                <option value="ga">Gabon (ga)</option>
+                <option value="gm">Gambia (gm)</option>
+                <option value="ge">Georgia (ge)</option>
+                <option value="de">Germany (de)</option>
+                <option value="gh">Ghana (gh)</option>
+                <option value="gi">Gibraltar (gi)</option>
+                <option value="gr">Greece (gr)</option>
+                <option value="gl">Greenland (gl)</option>
+                <option value="gd">Grenada (gd)</option>
+                <option value="gp">Guadeloupe (gp)</option>
+                <option value="gu">Guam (gu)</option>
+                <option value="gt">Guatemala (gt)</option>
+                <option value="gg">Guernsey (gg)</option>
+                <option value="gn">Guinea (gn)</option>
+                <option value="gw">Guinea-Bissau (gw)</option>
+                <option value="gy">Guyana (gy)</option>
+                <option value="ht">Haiti (ht)</option>
+                <option value="hm">Heard Island and McDonald Islands (hm)</option>
+                <option value="va">Holy See (Vatican City State) (va)</option>
+                <option value="hn">Honduras (hn)</option>
+                <option value="hk">Hong Kong (hk)</option>
+                <option value="hu">Hungary (hu)</option>
+                <option value="is">Iceland (is)</option>
+                <option value="in">India (in)</option>
+                <option value="id">Indonesia (id)</option>
+                <option value="ir">Iran, Islamic Republic of (ir)</option>
+                <option value="iq">Iraq (iq)</option>
+                <option value="ie">Ireland (ie)</option>
+                <option value="im">Isle of Man (im)</option>
+                <option value="il">Israel (il)</option>
+                <option value="it">Italy (it)</option>
+                <option value="jm">Jamaica (jm)</option>
+                <option value="jp">Japan (jp)</option>
+                <option value="je">Jersey (je)</option>
+                <option value="jo">Jordan (jo)</option>
+                <option value="kz">Kazakhstan (kz)</option>
+                <option value="ke">Kenya (ke)</option>
+                <option value="ki">Kiribati (ki)</option>
+                <option value="kp">Korea, Democratic People's Republic of (kp)</option>
+                <option value="kr">Korea, Republic of (kr)</option>
+                <option value="kw">Kuwait (kw)</option>
+                <option value="kg">Kyrgyzstan (kg)</option>
+                <option value="la">Lao People's Democratic Republic (la)</option>
+                <option value="lv">Latvia (lv)</option>
+                <option value="lb">Lebanon (lb)</option>
+                <option value="ls">Lesotho (ls)</option>
+                <option value="lr">Liberia (lr)</option>
+                <option value="ly">Libya (ly)</option>
+                <option value="li">Liechtenstein (li)</option>
+                <option value="lt">Lithuania (lt)</option>
+                <option value="lu">Luxembourg (lu)</option>
+                <option value="mo">Macao (mo)</option>
+                <option value="mk">Macedonia, the former Yugoslav Republic of (mk)</option>
+                <option value="mg">Madagascar (mg)</option>
+                <option value="mw">Malawi (mw)</option>
+                <option value="my">Malaysia (my)</option>
+                <option value="mv">Maldives (mv)</option>
+                <option value="ml">Mali (ml)</option>
+                <option value="mt">Malta (mt)</option>
+                <option value="mh">Marshall Islands (mh)</option>
+                <option value="mq">Martinique (mq)</option>
+                <option value="mr">Mauritania (mr)</option>
+                <option value="mu">Mauritius (mu)</option>
+                <option value="yt">Mayotte (yt)</option>
+                <option value="mx">Mexico (mx)</option>
+                <option value="fm">Micronesia, Federated States of (fm)</option>
+                <option value="md">Moldova, Republic of (md)</option>
+                <option value="mc">Monaco (mc)</option>
+                <option value="mn">Mongolia (mn)</option>
+                <option value="me">Montenegro (me)</option>
+                <option value="ms">Montserrat (ms)</option>
+                <option value="ma">Morocco (ma)</option>
+                <option value="mz">Mozambique (mz)</option>
+                <option value="mm">Myanmar (mm)</option>
+                <option value="na">Namibia (na)</option>
+                <option value="nr">Nauru (nr)</option>
+                <option value="np">Nepal (np)</option>
+                <option value="nl">Netherlands (nl)</option>
+                <option value="nc">New Caledonia (nc)</option>
+                <option value="nz">New Zealand (nz)</option>
+                <option value="ni">Nicaragua (ni)</option>
+                <option value="ne">Niger (ne)</option>
+                <option value="ng">Nigeria (ng)</option>
+                <option value="nu">Niue (nu)</option>
+                <option value="nf">Norfolk Island (nf)</option>
+                <option value="mp">Northern Mariana Islands (mp)</option>
+                <option value="no">Norway (no)</option>
+                <option value="om">Oman (om)</option>
+                <option value="pk">Pakistan (pk)</option>
+                <option value="pw">Palau (pw)</option>
+                <option value="ps">Palestinian Territory, Occupied (ps)</option>
+                <option value="pa">Panama (pa)</option>
+                <option value="pg">Papua New Guinea (pg)</option>
+                <option value="py">Paraguay (py)</option>
+                <option value="pe">Peru (pe)</option>
+                <option value="ph">Philippines (ph)</option>
+                <option value="pn">Pitcairn (pn)</option>
+                <option value="pl">Poland (pl)</option>
+                <option value="pt">Portugal (pt)</option>
+                <option value="pr">Puerto Rico (pr)</option>
+                <option value="qa">Qatar (qa)</option>
+                <option value="re">Réunion (re)</option>
+                <option value="ro">Romania (ro)</option>
+                <option value="ru">Russian Federation (ru)</option>
+                <option value="rw">Rwanda (rw)</option>
+                <option value="bl">Saint Barthélemy (bl)</option>
+                <option value="sh">Saint Helena, Ascension and Tristan da Cunha (sh)</option>
+                <option value="kn">Saint Kitts and Nevis (kn)</option>
+                <option value="lc">Saint Lucia (lc)</option>
+                <option value="mf">Saint Martin (French part) (mf)</option>
+                <option value="pm">Saint Pierre and Miquelon (pm)</option>
+                <option value="vc">Saint Vincent and the Grenadines (vc)</option>
+                <option value="ws">Samoa (ws)</option>
+                <option value="sm">San Marino (sm)</option>
+                <option value="st">Sao Tome and Principe (st)</option>
+                <option value="sa">Saudi Arabia (sa)</option>
+                <option value="sn">Senegal (sn)</option>
+                <option value="rs">Serbia (rs)</option>
+                <option value="sc">Seychelles (sc)</option>
+                <option value="sl">Sierra Leone (sl)</option>
+                <option value="sg">Singapore (sg)</option>
+                <option value="sx">Sint Maarten (Dutch part) (sx)</option>
+                <option value="sk">Slovakia (sk)</option>
+                <option value="si">Slovenia (si)</option>
+                <option value="sb">Solomon Islands (sb)</option>
+                <option value="so">Somalia (so)</option>
+                <option value="za">South Africa (za)</option>
+                <option value="gs">South Georgia and the South Sandwich Islands (gs)</option>
+                <option value="ss">South Sudan (ss)</option>
+                <option value="es">Spain (es)</option>
+                <option value="lk">Sri Lanka (lk)</option>
+                <option value="sd">Sudan (sd)</option>
+                <option value="sr">Suriname (sr)</option>
+                <option value="sj">Svalbard and Jan Mayen (sj)</option>
+                <option value="sz">Swaziland (sz)</option>
+                <option value="se">Sweden (se)</option>
+                <option value="ch">Switzerland (ch)</option>
+                <option value="sy">Syrian Arab Republic (sy)</option>
+                <option value="tw">Taiwan, Province of China (tw)</option>
+                <option value="tj">Tajikistan (tj)</option>
+                <option value="tz">Tanzania, United Republic of (tz)</option>
+                <option value="th">Thailand (th)</option>
+                <option value="tl">Timor-Leste (tl)</option>
+                <option value="tg">Togo (tg)</option>
+                <option value="tk">Tokelau (tk)</option>
+                <option value="to">Tonga (to)</option>
+                <option value="tt">Trinidad and Tobago (tt)</option>
+                <option value="tn">Tunisia (tn)</option>
+                <option value="tr">Turkey (tr)</option>
+                <option value="tm">Turkmenistan (tm)</option>
+                <option value="tc">Turks and Caicos Islands (tc)</option>
+                <option value="tv">Tuvalu (tv)</option>
+                <option value="ug">Uganda (ug)</option>
+                <option value="ua">Ukraine (ua)</option>
+                <option value="ae">United Arab Emirates (ae)</option>
+                <option value="gb">United Kingdom (gb)</option>
+                <option value="um">United States Minor Outlying Islands (um)</option>
+                <option value="uy">Uruguay (uy)</option>
+                <option value="uz">Uzbekistan (uz)</option>
+                <option value="vu">Vanuatu (vu)</option>
+                <option value="ve">Venezuela, Bolivarian Republic of (ve)</option>
+                <option value="vn">Viet Nam (vn)</option>
+                <option value="vg">Virgin Islands, British (vg)</option>
+                <option value="vi">Virgin Islands, U.S. (vi)</option>
+                <option value="wf">Wallis and Futuna (wf)</option>
+                <option value="eh">Western Sahara (eh)</option>
+                <option value="ye">Yemen (ye)</option>
+                <option value="zm">Zambia (zm)</option>
+                <option value="zw">Zimbabwe (zw)</option>
+            </select>
         </div>
-        <p></p>
-        <?= $aaaa->isi ?>
-        <p></p>
-      </div>
-    </div>
+        <form id="advanced" class="collapse">
+            <br>
+
+
+            <div class="form-group">
+              <label for="prefixes">Prefixes</label>
+              <textarea type="text" title="These values are added before words to prompt the search suggestions" class="form-control" name="prefixes" id="prefixes"  ></textarea>
+          </div>
+          <div class="form-group">
+              <label for="suffixes">Suffixes:</label>
+              <textarea type="text" rows="2" title="These values are added after words to prompt the search suggestions" class="form-control" id="suffixes"></textarea>
+          </div>
+
+          <div class="form-group" style="display: none">
+              <label for="rate-limit">Rate limit (for experts):</label>
+              <input type="text"  class="form-control" id="rate-limit" value="750" name="rate-limit" title="Value between searches in milliseconds only change if you know what you are doing. This could get your ip banned, or place an unfair burden on the suggest servers." disabled>
+          </div>
+
+
+
+          <div class="form-group">
+              <label for="lang">Lang code (google & yandex):</label>
+              <select class="form-control" title="Lang code. Two letters. Only works for google for now" class="form-control" id="lang" value="en" >
+                <option value=""></option>
+                <option value="en" >English (default) (en)</option>
+                <option value="ar" >Arabic (ar)</option>
+                <option value="bg" >Bulgarian (bg)</option>
+                <option value="ca" >Catalan (ca)</option>
+                <option value="hr" >Croatian (hr)</option>
+                <option value="zh-hans" >Chinese (Simplified) (zh-hans)</option>
+                <option value="zh-hant" >Chinese (Traditional) (zh-hant)</option>
+                <option value="cs" >Czech (cs)</option>
+                <option value="da" >Danish (da)</option>
+                <option value="nl" >Dutch (nl)</option>
+                <option value="fi" >Filipino (fi)</option>l
+                <option value="fi" >Finnish (fi)</option>
+                <option value="fr" >French (fr)</option>
+                <option value="de" >German (de)</option>
+                <option value="el" >Greek (el)</option>
+                <option value="he" >Hebrew (he)</option>
+                <option value="hi" >Hindi (hi)</option>
+                <option value="hu" >Hungarian (hu)</option>
+                <option value="id" >Indonesian (id)</option>
+                <option value="it" >Italian (it)</option>
+                <option value="ja" >Japanese (ja)</option>
+                <option value="ko" >Korean (ko)</option>
+                <option value="lv" >Latvian (lv)</option>
+                <option value="lt" >Lithuanian (lt)</option>
+                <option value="no" >Norwegian (no)</option>
+                <option value="pl" >Polish (pl)</option>
+                <option value="pt" >Portuguese (pt)</option>
+                <option value="ro" >Romanian (ro)</option>
+                <option value="ru" >Russian (ru)</option>
+                <option value="sr" >Serbian (sr)</option>
+                <option value="sk" >Slovak (sk)</option>
+                <option value="sl" >Slovenian (sl)</option>
+                <option value="es" >Spanish (es)</option>
+                <option value="sv" >Swedish (sv)</option>
+                <option value="th" >Thai (th)</option>
+                <option value="tr" >Turkish (tr)</option>
+                <option value="uk" >Ukrainian (uk)</option>
+                <option value="vi" >Vietnamese (vi)</option>
+            </select>
+        </div>
+
+
+    </form>
+
+
+</div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12">
+      <hr id="progress1">
+      <br id="progress2">
   </div>
 </div>
-<!-- header  -->
-<!-- <div class="page-header" id="bgne" style="background-image: url('assets/lpage/img/botro.png');"> -->
-  <div class="content-wrapper" id="bgne" style="background-color: #d5fefd; background-image: linear-gradient(350deg, #d5fefd 0%, #fffcff 74%);">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-4 order-xl-last">
-          <!-- iklan -->
-          <!-- <div class="kotak-iklan" style="height: 90%; margin-top: 20px;">
-            <a href="" title="Pasang Iklan">
-              <img alt="iklan banner" style="height: 100%;" src=""/>
-            </a>
-          </div> -->
-          <!-- iklan -->
+
+<div class="row">
+    <div id="results" class="col-sm-12">
+      <h2>Results</h2>
+      <!-- <div class="table-responsive"> -->
+        <table id="outtable" class=" table table-condensed compact dt-responsive" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+                            <!-- <th>id</th>
+                            <th title="A suggested search">Keyword</th>
+                            <th title="Keyword length">Length</th>
+                            <th title="Searches per month">Volume</th>
+                            <th title="Cost per click ($US)">CPC</th>
+                            <th title="Search that prompted the keyword suggestion">Search</th>
+                            <th title="Source">Source</th>
+                            <th title="Number of words">Words</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <!-- </div> -->
+            </div>
         </div>
-        <div class="col-xl-8 order-xl-first">
-          <div class="kotak-iklan" style="margin-top: 20px;">
-            <!-- <a href="" title="Pasang Iklan">
-              <img alt="iklan banner" src=""/>
-            </a> -->
-            <!-- IKLAN 1.2 -->
-            <?php if (!empty($iklan2->place)) {
-              echo $iklan2->script_js;
-            }else{
-              echo "Ini iklan 1.2";
-            }
-            ?>
-          </div>
-          <h3 class="title text-left" style="color: black;"><b>Isi Detail RPP</b></h3>     
-          <form action="<?= site_url('RPP/download/') ?>" role="form" id="myform" method="post" enctype="multipart/form-data" style="color: black">   
-            <!-- nama  -->
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group mt-2">
-                  <label style="color: black;">Masukkan Nama</label>
-                </div>
-              </div>
 
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
-                </div>
-              </div>
-            </div>
-            <!-- end nama  -->
 
-            <!-- sekolah  -->
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group mt-2">
-                  <label style="color: black;">Masukkan Sekolah</label>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" name="sekolah" class="form-control" placeholder="Nama Sekolah" required>
-                </div>
-              </div>
-            </div>
-            <!-- end sekolah  -->
-
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group mt-2">
-                  <label style="color: black;">Masukkan Kepala Sekolah</label>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" name="kep_sekolah" class="form-control" placeholder="Nama Kepala Sekolah" required>
-                </div>
-              </div>
-            </div>
-            <!-- Tanggal RPP -->
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group mt-2">
-                  <label style="color: black;">Masukkan Tanggal RPP</label>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <!-- Tanggal RPP -->
-                <div class="form-group">
-                  <div class="input-group date">
-                    <input type="text" name="tanggal_rpp" style="background-color: white" class="form-control basicDate" value="<?= $date ?>" placeholder="Tanggal RPP" required>
-                    <div class="input-group-append">
-                      <span class="input-group-text">
-                        <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar"
-                          aria-hidden="true"></i></span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Tanggal RPP -->
-
-              <!-- ajaran  -->
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group mt-2">
-                    <label style="color: black;">Pilih Tahun Ajaran</label>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select name="tahun_ajaran" id="tahun_ajaran" class="form-control" required>
-                      <option value="">- PILIH -</option>
-                      <?php
-                      for ($tgl = date('Y'); $tgl >= 1999; $tgl--) {
-                        echo "<option value=".$tgl.">".$tgl."</option>";
-                      }
-                      ?>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- end ajaran  -->
-
-              <!-- kelas  -->
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group mt-2">
-                    <label style="color: black;">Pilih Kelas</label>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select name="kelas" id="kelas" class="form-control" required>
-                      <option value="">- PILIH -</option>
-                      <?php 
-                      foreach ($kelas as $key) { ?>
-
-                        <option value="<?= $key->id ?>"><?= $key->kelas ?></option>
-                      <?php }?>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- end kelas  -->
-
-              <!-- pelajaran  -->
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group mt-2">
-                    <label style="color: black;">Pilih Pelajaran</label>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select name="pelajaran" id="pelajaran" class="form-control" required>
-                      <option value="">- PILIH -</option>                      
-                      <?php 
-                      foreach ($matpel as $key) { ?>
-
-                        <option value="<?= $key->id ?>"><?= $key->nama_matpel ?></option>
-                      <?php }?>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- end pelajaran  -->
-
-              <!-- semester  -->
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group mt-2">
-                    <label style="color: black;">Pilih Semester</label>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select name="semester" id="semester" class="form-control" required>
-                      <option value="">- PILIH -</option>                      
-                      <?php 
-                      foreach ($semester as $key) { ?>
-
-                        <option value="<?= $key->id ?>"><?= $key->semester ?></option>
-                      <?php }?>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- end pelajaran  -->
-
-              <!-- iklan -->
-              <div class="kotak-iklan mb-2">
-                <!-- <a href="" title="Pasang Iklan">
-                  <img alt="iklan banner" src=""/>
-                </a> -->
-                <!-- IKLAN 1.3 -->
-                <?php if (!empty($iklan3->place)) {
-                  echo $iklan3->script_js;
-                }else{
-                  echo "Ini iklan 1.3";
-                }
-                ?>
-              </div>
-              <!-- iklan -->
-              <!-- end -->
-              <div id='hasil'>
-
-              </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <button class="btn btn-ijo btn-round" id="uy">Generate</button>
-
-                </div>
-              </div>
-              <div class="kotak-iklan mb-2">
-                <!-- <a href="" title="Pasang Iklan">
-                  <img alt="iklan banner" src=""/>
-                </a> -->
-                <!-- IKLAN 1.4 -->
-                <?php if (!empty($iklan4->place)) {
-                  echo $iklan4->script_js;
-                }else{
-                  echo "Ini iklan 1.4";
-                }
-                ?>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <center><h3>List Download RPP</h3></center>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12" id="list">
-
-                </div>
-
-              </div>
-              <!-- end  -->
-            </form>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- end header  -->
 
-    <!-- alur  -->
-    <div class="container" id="alur">
-      <div class="row">
-        <div class="col-md-12 mt-5 text-center">
-          <h2 class="title text-center">Panduan Penggunaan</h2>
-        </div>
-      </div>
-      <div class="jumbotron" style="background-color: transparent !important; margin-top: -5%; background-position-x: 100px;">
-        <div class="row" id="alur2">
-          <div class="col-md-4">
-            <div class="info">
-              <div class="icon icon-danger text-center">
-                <i class="nc-icon nc-single-copy-04" style="color: #53bedb;"></i>
-              </div>
-              <div class="description text-center" id="deskripsi">
-                <h4 class="info-title" style="color: #53bedb; font-weight: bolder">Bla Bla Bla</h4>
-                <br>
-                <p style="font-weight: bolder" id="deskripsi2">Bla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla Bla Bla Bla Bla Bla Bla Bla.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" id="alur-txt1">
-            <div class="info">
-              <div class="icon icon-danger text-center">
-                <i class="nc-icon nc-single-copy-04" style="color: #53bedb;"></i>
-              </div>
-              <div class="description text-center" id="deskripsi">
-                <h4 class="info-title" style="color: #53bedb; font-weight: bolder">Bla Bla Bla</h4>
-                <br>
-                <p style="font-weight: bolder" id="deskripsi2">Bla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla Bla Bla Bla Bla Bla Bla Bla.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" id="alur-txt2">
-            <div class="info">
-              <div class="icon icon-danger text-center">
-                <i class="nc-icon nc-single-copy-04" style="color: #53bedb;"></i>
-              </div>
-              <div class="description text-center" id="deskripsi">
-                <h4 class="info-title" style="color: #53bedb; font-weight: bolder">Bla Bla Bla</h4>
-                <br>
-                <p style="font-weight: bolder" id="deskripsi2">Bla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla Bla Bla Bla Bla Bla Bla Bla.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
-    <!-- end alur  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/s/bs/jszip-2.5.0,dt-1.10.10,b-1.1.0,b-colvis-1.1.0,b-html5-1.1.0,b-print-1.1.0,cr-1.3.0,fh-3.1.0,kt-2.1.0,r-2.0.0,se-1.1.0/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.2.0/lodash.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/localforage/1.3.3/localforage.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progress.min.js"></script>
+
+
+
+    <script type="text/javascript" src="<?= base_url();?>assets/suggestions.js"></script>
     <script type="text/javascript">
-      $('#uy').click(function(l) {
+        var KWS = function(){
 
-        l.preventDefault();
-        var nama = $("input[name='nama']").val();
-        var sekolah = $("input[name='sekolah']").val();
-        var kep_sekolah = $("input[name='kep_sekolah']").val();
-        var matpel = $( "#pelajaran option:selected" ).text();
-        var sem = $( "#semester option:selected" ).text();
+            return {
+                table: undefined,
+                myIp: undefined,
+                options: {},
+        // flags
+        queryLock: false,
+        doWork: false,
+        // keeping track of queue
+        hashMapInputs: {},
+        keywordsToQuery: [],
+        keywordsToQueryIndex: 0,
+        numOfInitialKeywords: 0,
 
-        var tgl = $("input[name='tanggal_rpp']").val();
-        var tahun_ajaran = $( "#tahun_ajaran option:selected" ).text();
-        var th = $( "#tahun_ajaran option:selected" ).val();
-        var kls = $( "#kelas option:selected" ).text();
-        var kelas = $( "#kelas option:selected" ).val();
+        services:suggestions.services,
+        getUrl :suggestions.getUrl,
+        parseServiceResponse: suggestions.parseServiceResponse,
 
-        var pelajaran = $( "#pelajaran option:selected" ).val();
+        toggleWork: function(){
+            if (this.doWork === false)
+                this.StartWork();
+            else
+                this.StopWork();
+        },
 
-        var semester = $( "#semester option:selected" ).val();
+        StartWork: function() {
+            if (this.doWork === false) {
+                // reset these
+                this.saveSettings();
+                $('#startjob').val('Stop Job').text('Berhenti Scrapping').addClass('btn-danger');
+                this.hashMapInputs = {};
+                this.keywordsToQuery = [];
+                this.keywordsToQueryIndex = 0;
 
-        if (nama == "" || sekolah == "" || kep_sekolah == "" || $("#kelas")[0].selectedIndex <= 0 || $("#pelajaran")[0].selectedIndex <= 0 || $("#tahun_ajaran")[0].selectedIndex <= 0 || $("#semester")[0].selectedIndex <= 0) {
-       alert("Data masih ada yang kosong")
+                this.hashMapInputs[""] = true;
+                this.hashMapInputs[" "] = true;
+                this.hashMapInputs["  "] = true;
 
-        }else {
-           $.ajax({
-          type:'POST',
-          data:'kelas='+kelas+'&pelajaran='+pelajaran+'&semester='+semester,
-          url:'<?= site_url('RPP/cek') ?>',
-          dataType:'JSON',
-          success: function(hasil){
-            var z = 4;
-            var list = '';
-            for (var i = 0; i < hasil.length; i++) {
-              var x = i+1;
-              if (z%4 == 0) {
+                // update config
+                this.options = this.getOptions();
 
-                list += '<br><div class="row">';
-              }
-              list += '<div class="col-md-3"><a type="submit" href="<?= site_url("RPP/download/'+hasil[i].id_detail+'/'+nama+'/'+sekolah+'/'+kep_sekolah+'/'+tgl+'/'+tahun_ajaran+'") ?>" class="btn btn-primary" target="_blank"> Pertemuan '+x+' </a></div>';
+                // get queries from the input
+                var ks = $('#input').val().split("\n");
+                this.keywordsToQuery=_.map(ks,this.CleanVal);
 
-              if (i == hasil.length - 1 || z%4 == 3) {
-                list += '</div>'
-              }
 
-              z = z+1;
+                // add variations of the initial terms
+                // (before we start adding variations of the results)
+                if (!this.keywordsToQuery.length)
+                    this.permuteResultsToQueue([' ']);
+                else {
+                    var untickedInputs = this.keywordsToQuery.filter(function(k){
+                        return k.slice(-1)!=='✓' && k.slice(-1)!=='❌';
+                    });
+                    this.permuteResultsToQueue(untickedInputs);
+                }
+
+                this.numOfInitialKeywords = this.keywordsToQuery.length;
+                // show the extended queue
+                this.FilterAndDisplay();
+
+                this.doWork = true;
+                this.progress1.start();
+
+                // $('#input').hide();
+                // $('#advanced').collapse("hide");
+
+            } else {
+
             }
-            document.getElementById('list').innerHTML = list;
-          }
-        });    
-          
+        },
+
+        StopWork: function(){
+            if (this.doWork){
+                $('#startjob').val('Start Job').text('Mulai Scrapping').removeClass('btn-danger');
+                this.doWork = false;
+                // $('#input').show();
+                this.table.draw();
+                this.table.columns.adjust();
+                this.saveSettings();
+                this.FilterAndDisplay();
+                this.progress1.end();
+            }
+        },
+
+        DoJob: function() {
+            if (this.doWork === true && this.queryLock === false) {
+                if (this.keywordsToQueryIndex < this.numOfInitialKeywords) {
+                    var currentKw = this.keywordsToQuery[this.keywordsToQueryIndex];
+                    if (currentKw.slice(-1)!=='✓' && currentKw.slice(-1)!=='❌') {
+                        this.QueryKeyword(currentKw);
+                        this.keywordsToQueryIndex++;
+                    } else {
+                        // we didn't do a query immediatly go to next query
+                        this.keywordsToQueryIndex++;
+                        this.DoJob();
+                    }
+
+                    var prog = parseInt(this.keywordsToQueryIndex/this.numOfInitialKeywords*100);
+                    this.progress1.set(prog);
+                    this.FilterAndDisplay();
+
+                } else {
+                    if (this.options.keepRunning) {
+                        console.log('finish initial queue');
+                        this.StopWork();
+                        this.StartWork();
+                    } else {
+                        console.log('finish initial queue');
+                        this.StopWork();
+                    }
+                }
+            }
+        },
+
+        addResultsToQueue: function(retList, search){
+            retList=_.map(retList,this.CleanVal);
+
+            // add each result to list first before permutations
+            for (var j = 0; j < retList.length; j++) {
+                cleanKw = retList[j];
+                // add base suggestion to queue if it's not already done and isn't empty
+                if (cleanKw && cleanKw.length && !this.hashMapInputs[cleanKw] && this.keywordsToQuery.indexOf(cleanKw)===-1)
+                    this.keywordsToQuery.push(cleanKw);
+                this.hashMapInputs[cleanKw] = true;
+            }
+
+        },
+
+        /** Make permutations of results and add to queue **/
+        permuteResultsToQueue: function(retList, search){
+            var chr, currentx, currentKw;
+            var self = this;
+            var options = this.getOptions()
+
+            this.hashMapInputs[search] = true;
+
+            // sort so the shortest is first in the queue TODO add option?
+            // retList.sort(function (a, b) {
+            //   return a.length - b.length;
+            // });
+
+            function addPrefix(s,prefix){
+                return prefix+' '+s;
+            }
+            function addSuffix(s,suffix){
+                return s+' '+suffix;
+            }
+            // clean
+            retList=_.map(retList,this.CleanVal);
+
+            // get permutations
+            var newInputs = retList.reduce(function(result, keyword){
+                return _.concat(
+                    result,
+                    _.map(options.prefixes,addPrefix.bind(self,keyword)),
+                    _.map(options.suffixes,addSuffix.bind(self,keyword))
+                    );
+            }, []);
+
+            // add to queue
+            this.keywordsToQuery=_.concat(this.keywordsToQuery,newInputs);
+
+            return newInputs;
+        },
+
+
+        /** Display results **/
+        displayResults: function(retList, search, dontDisplay, url,data){
+
+            var rows=[];
+            retList=_.map(retList,this.CleanVal);
+            for (var i = 0; i < retList.length; i++) {
+                var  cleanKw = retList[i];
+
+                // url might be in retlist
+                if (url===undefined) url=data[i].url;
+
+                var da = {
+                    id: this.table.rows()[0].length+i,
+                    keyword: cleanKw,
+                    length: cleanKw.length,
+                    words: cleanKw.trim().split(/ +/).length,
+                    search: search,
+                    domain: this.extractDomain(url)
+                };
+
+                // remove undefined values to avoid datatable alerts
+                da = _.mapValues(da, function(v){return v===undefined ? null: v;});
+
+                // TODO Check if suggestion is already displayed before adding
+                // var matches = table.data().filter(function(v){return v[1]===cleanKw && v[5]==search;}).count();
+                // if (!matches)
+                rows.push(da);
+            }
+            this.table.rows.add(rows);
+            // if table is large lets defer rending to end to speed it up
+            if (!dontDisplay && this.table.data().length<this.options.deferTableUpdatesAtRows) this.table.draw(false);
+        },
+
+        /** Takes url string and returns domain e.g. www.google.com or google.com
+          * and some extra params to identify is
+          **/
+          extractDomain: function(url) {
+            if (url===undefined) return null;
+            var domain;
+            //find & remove protocol (http, ftp, etc.) and get domain
+            if (url.indexOf("://") > -1) {
+                domain = url.split('/')[2];
+            }
+            else {
+                domain = url.split('/')[0];
+            }
+
+            //find & remove port number
+            domain = domain.split(':')[0];
+
+            // custom, add ds= param to distinguish googles etc diff searchs
+            var mr = url.match('ds=(..?)&');
+            if (mr && mr[1] && mr[1].length) domain+='&ds='+mr[1];
+
+            var mr = url.match('gl=(..?)&');
+            if (mr && mr[1] && mr[1].length) domain+='&gl='+mr[1];
+
+            var mr = url.match('hl=(..?)&');
+            if (mr && mr[1] && mr[1].length) domain+='&hl='+mr[1];
+
+            // lang code for yandex
+            var mr = url.match('uil=(..?)&');
+            if (mr && mr[1] && mr[1].length) domain+='&uil='+mr[1];
+
+            return domain;
+        },
+
+        /** mark a search as done in the queue **/
+        markAsDone: function(search){
+            // mark as done in queue
+            if (this.keywordsToQuery[this.keywordsToQueryIndex]===search)
+                this.keywordsToQuery[this.keywordsToQueryIndex]+=' ✓';
+            else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
+                this.keywordsToQuery[this.keywordsToQueryIndex-1]+=' ✓';
+            else
+                console.warn('Cant find ',search,'in keywordsToQuery');
+        },
+
+        /** mark a search as done in the queue **/
+        markAsNone: function(search){
+            // mark as done in queue
+            if (this.keywordsToQuery[this.keywordsToQueryIndex]===search)
+                this.keywordsToQuery[this.keywordsToQueryIndex]+=' ❌';
+            else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
+                this.keywordsToQuery[this.keywordsToQueryIndex-1]+=' ❌';
+            else
+                console.warn('Cant find ',search,'in keywordsToQuery');
+        },
+
+        /** Get search suggestions for a keyword **/
+        QueryKeyword: function(search) {
+            var self = this;
+            this.queryLock = true;
+
+            // search not done, lets do the query
+            url = self.getUrl()+search;
+            var promise = $.ajax({
+                url: url,
+                // jsonp: "jsonp",
+                dataType: "jsonp",
+                success: function (res, statusText, jqXHR) {
+                    var retList = self.parseServiceResponse(res);
+                    if (retList && retList.length){
+                        // self.storeResults(retList, search, this.url);
+                        self.displayResults(retList, search, undefined, this.url);
+                        self.addResultsToQueue(retList);
+                        if (self.options.keepRunning) self.permuteResultsToQueue(retList);
+                        self.markAsDone(search);
+                    } else {
+                        // console.debug('No suggestions for query: "',search,'"');
+                        self.markAsNone(search);
+                    }
+                    self.queryLock = false;
+                    return;
+
+                },
+                error: function(jqXHR,errorText,error){
+                    console.error(errorText,this.url,this,jqXHR,error);
+                    self.queryLock = false;
+                    return;
+                },
+                callback: function(){
+                    console.log(this,arguments);
+                }
+            });
+            return promise;
+        },
+
+        /** Clean input, may not all be needed **/
+        CleanVal: function(input) {
+            // We want to clean search terms but it's not possible to do this perfectly
+            // as differen't search engines strip differen't amounts from the term
+            // so we will keep as much details as possible
+
+            // Search engines are sensitive to whitespace so we do not want to trim
+            // Some return html or escaped html, so we do want to convert to text
+
+            // removed escaped html and html tags
+            // e.g. '<b>A&amp;M</b>' => 'A&M'
+            input=$('<div />').html(input).text();
+
+            // I don't know of any search engines sentitive or case so make all lowercase
+            input = input.toLowerCase();
+
+            // this removes navigation suggestions, perhaps we need to move this to result parser
+            if (input.length > 4 && input.substring(0, 4) == "http") input = "";
+
+            return input;
+        },
+
+        /** TODO get this working **/
+        Filter: function(listToFilter) {
+            var retList = listToFilter;
+
+            if ($("#filter-positive").val().length > 0) {
+                var filteredList = [];
+                var filterContains = $("#filter-positive").val().split("\n");
+                for (var i = 0; i < retList.length; i++) {
+                    var currentKeyword = retList[i];
+                    var boolContainsKeyword = false;
+                    for (var j = 0; j < filterContains.length; j++) {
+                        if (filterContains[j].length > 0) {
+                            if (currentKeyword.indexOf(filterContains[j]) != -1) {
+                                boolContainsKeyword = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (boolContainsKeyword) {
+                        filteredList[filteredList.length] = currentKeyword;
+                    }
+                }
+
+                retList = filteredList;
+            }
+
+            if ($("#filter-negative").val().length > 0) {
+                var filteredList = [];
+                var filterContains = $("#filter-negative").val().split("\n");
+                for (var l = 0; l < retList.length; l++) {
+                    var currentKeyword = retList[l];
+                    var boolCleanKeyword = true;
+                    for (var k = 0; k < filterContains.length; k++) {
+                        if (filterContains[k].length > 0) {
+                            if (currentKeyword.indexOf(filterContains[k]) >= 0) {
+                                boolCleanKeyword = false;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (boolCleanKeyword) {
+                        filteredList[filteredList.length] = currentKeyword;
+                    }
+                }
+
+                retList = filteredList;
+            }
+
+            return retList;
+        },
+
+        /** display the queue, and update description of it **/
+        FilterAndDisplay: function() {
+            var i = 0;
+            var sb = '';
+
+            var outputKeywords = this.keywordsToQuery;
+            for (i = 0; i < Math.min(outputKeywords.length,this.options.maxQueueDisplay); i++) {
+                sb += outputKeywords[i];
+                sb += '\n';
+            }
+            if (outputKeywords.length>this.options.maxQueueDisplay) sb+='...\n';
+            $("#input").val(sb);
+            $("#numofkeywords").html('Queue:' + outputKeywords.length);
+        },
+
+
+        /** overrides default with dom options with arguments options **/
+        getOptions: function(argOptions){
+            var defaultOptions={
+                deferTableUpdatesAtRows: 5000,
+                keepRunning: false,
+                maxQueueDisplay: 5000,
+                country: "",
+                filterNegative: "",
+                filterPositive: "",
+                lang: "",
+                prefixes: [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "x", "y", "z", "how", "which", "why", "where", "who", "when", "are", "what"],
+                rateLimit: 750,
+                service: "google",
+                suffixes: [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "x", "y", "z", "like", "for", "without", "with", "versus", "vs", "to", "near", "except", "has"]
+            }; // for now defaults are set in html
+            if (argOptions===undefined) argOptions={};
+            return _.defaults(argOptions,this.getDomOptions(),defaultOptions);
+        },
+
+        /** read settings from webpage **/
+        getDomOptions: function(){
+
+            var service= $('#service').val(),
+            filterNegative = $('#filter-negative').val(),
+            filterPositive = $('#filter-positive').val(),
+            rateLimit = parseInt($('#rate-limit').val()),
+                // input: $('#input').val(),
+                prefixes = $('#prefixes').val(),
+                suffixes = $('#suffixes').val(),
+                country = $('#country').val(),
+                lang = $('#lang').val(),
+                keepRunning = $('#keep-running').prop('checked');
+                if (prefixes && prefixes.length)
+                    prefixes=prefixes.split(',');
+                else
+                    prefixes=undefined;
+                if (suffixes && suffixes.length)
+                    suffixes=suffixes.split(',');
+                else
+                    suffixes=undefined;
+
+                var options={};
+                if (service) options.service=service;
+                if (filterNegative) options.filterNegative=filterNegative;
+                if (filterPositive) ooptions.filterPositive=filterPositive;
+                if (rateLimit) options.rateLimit=rateLimit;
+                if (prefixes) options.prefixes=prefixes;
+                if (suffixes) options.suffixes=suffixes;
+                if (country) options.country=country;
+                if (lang) options.lang=lang;
+                if (keepRunning) options.keepRunning=keepRunning;
+                return options;
+            },
+
+            /** load settings from localStorage **/
+            loadSettings: function(){
+            // Tabe settings are auto handles by datatables
+            if (localStorage.service) $("#service").val( localStorage.service );
+            if (localStorage.country) $('#country').val(localStorage.country);
+            if (localStorage.lang) $('#lang').val(localStorage.lang);
+            if (localStorage.filterNegative) $("#filter-negative").val( localStorage.filterNegative );
+            if (localStorage.filterPositive) $("#filter-positive").val( localStorage.filterPositive );
+            if (localStorage.rateLimit) $("#rate-limit").val( localStorage.rateLimit );
+            if (localStorage.input) $("#input").val( localStorage.input );
+            if (localStorage.prefixes) $("#prefixes").val( localStorage.prefixes );
+            if (localStorage.suffixes) $("#suffixes").val( localStorage.suffixes );
+            if (localStorage.keepRunning) $('#keep-running').prop('checked',localStorage.keepRunning=="true");
+
+        },
+        /** save settings to localStorage. **/
+        saveSettings: function(){
+            localStorage.service = $('#service').val();
+            localStorage.country = $('#country').val();
+            localStorage.lang = $('#lang').val();
+            localStorage.filterNegative = $('#filter-negative').val();
+            localStorage.filterPositive = $('#filter-positive').val();
+            localStorage.rateLimit = $('#rate-limit').val();
+            localStorage.input = $('#input').val();
+            localStorage.prefixes = $('#prefixes').val();
+            localStorage.suffixes = $('#suffixes').val();
+            localStorage.keepRunning = $('#keep-running').prop('checked');
+        },
+
+        /** reset inputs and results, but not settings **/
+        reset: function(){
+            this.table.clear();
+            this.table.draw();
+            $('#input').val('');
+            this.saveSettings();
+        },
+
+        init: function(){
+            // this.setUpDb();
+
+            // add this.servicess to search engine settings
+            for (var service in this.services) {
+                if (this.services.hasOwnProperty(service)) {
+                    $('#service').append('<option>'+service+'</option>')
+                }
+            }
+
+
+            this.loadSettings();
+            this.options = this.getOptions();
+
+            window.setInterval(this.DoJob.bind(this), this.options.rateLimit);
+
+            $('#progress1').addClass('progressjs-progress');
+            this.progress1 = progressJs("#progress1");
+
+            // bind buttons
+            $('#startjob').on('click',this.toggleWork.bind(this));
+            $('#reset').on('click',this.reset.bind(this));
+
+            // setup table
+            this.table = $('#outtable').DataTable({
+                pageLength: 10,
+                "lengthMenu": [ 10, 25, 50, 75, 100,800],
+                dom:
+                "<'row'<'col-sm-5'B><'col-sm-7'<'pull-right'p>>>" +
+                "<'row'<'col-sm-8'i><'col-sm-4'<'pull-right'f>>>" +
+                "<'row'<'col-sm-12'tr>>",
+                buttons: [
+                'colvis',
+                'pageLength',
+                {
+                   extend: 'collection',
+                   text: 'Export',
+                   buttons: [
+                   'csvHtml5',
+                   {
+                       extend: 'csvHtml5',
+                       fieldBoundary: "",
+                       text: 'Copy keywords',
+                                //  'customize': function(data,options){
+                                //      console.log(data,options);return data.split('\n').join(',');
+                                //  },
+                                header: false,
+                                exportOptions: {
+                                   stripNewlines: true,
+                                   stripHtml: true,
+                                   decodeEntities: true,
+                                   columns: 1,
+                                    //  format:{
+                                    //      body: function(html,i){
+                                    //          console.log(html);return html
+                                    //      }
+                                    //  }
+                                }
+                            },
+                            {
+                               extend: 'csvHtml5',
+                               fieldBoundary: "",
+                               text: 'Copy visible columns',
+                               header: false,
+                               exportOptions: {
+                                   columns: ':visible',
+                                   stripNewlines: true,
+                                   stripHtml: true,
+                                   decodeEntities: true,
+                               }
+                           },
+                           ]
+                       },
+
+                       ],
+                       "columnDefs": [
+                       {
+                        "title": "id",
+                        "data": "id",
+                        "targets": 0,
+                        "visible": false,
+                    }, {
+                        "name": "keyword",
+                        "title": "Keyword",
+                        "data": "keyword",
+                        "responsivePriority": 1,
+                        "targets": 1,
+                    }, {
+                        "title": "Length",
+                        "data": "length",
+                        "targets": 2,
+                        "visible": false,
+                        "type": "num"
+                    }, {
+                        "title": "Search",
+                        "data": "search",
+                        "responsivePriority": 3,
+                        "targets": 3,
+                        "visible": false,
+                    },  {
+                        "title": "Words",
+                        "data": "words",
+                        "targets": 4,
+                        "visible": false,
+                        "type": "num"
+                    },
+                    ],
+                    order: [[ 0, 'desc' ]],
+                // colReorder: {},
+                stateSave: true,
+                "bDeferRender": true,
+                // fixedHeader: true,
+                //  responsive: {
+                //     details: {
+                //         type: 'column',
+                //         target: 'tr'
+                //     },
+                // },
+                // scrollY:        500,
+                // deferRender:    true,
+                // scroller:       true
+            });
+
+            // get user ip
+            $.getJSON('https://api.ipify.org?format=json', function (data) {
+                this.myIp = data.ip;
+            });
+
         }
+    };
+}();
+
+</script>
 
 
-        
+<!-- Lets see if anyone ever uses this  -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+ga('create', 'UA-51809277-6', 'auto');
+ga('send', 'pageview');
 
-        /* Act on the event */
-      });
-    </script>
+</script>
+<script>
+  $(document).ready(function () {
+    KWS.init();
+});
+</script>
+
+</body>
+
+</html>
