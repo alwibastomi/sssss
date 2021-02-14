@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-<title>Keyword Scrapper (Coba)</title>
+<title>Related Keyword Generator</title>
 
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-  <meta property="og:title" content="Keyword Shitter2 - The Bulk Keyword Tool" />
-
+  <meta property="og:site_name" content="semanticarticle.com"/>
+  <meta property="og:title" content="semanticarticle.com"/>
+  <meta property="og:url" content="https://www.semanticarticle.com"/>
+  <meta property="og:type" content="website"/>
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"/>
   <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.0/css/buttons.dataTables.min.css"/> -->
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/fixedheader/3.1.0/css/fixedHeader.dataTables.min.css"/>
@@ -14,19 +16,21 @@
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/scroller/1.4.0/css/scroller.dataTables.min.css"/>
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progressjs.min.css"/>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 
 
   <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
 
 </head>
 
-<body>
+<body style="padding: 50px;">
 
   <!-- <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> -->
-
-
-  <div class="container">
-
+  <center><b style="font-size: 50px;"><u>semanticarticle.com</u></b></center>
+  <center><h1><b>Related Keyword Generator</b></h1></center>
+  <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
+  <div class="container" style="margin-top: 5%;">
 
 
     <div class="row">
@@ -35,10 +39,10 @@
         <div id="numofkeywords"></div>
         <div class="form-group">
           <label for="input" ><h3>Input:</h3></label>
-          <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control"  placeholder="Ketik sayang :*"></textarea>
+          <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control"  placeholder="Isi Keyword"></textarea>
       </div>
 
-      <a class="btn btn-success primary btn-lg" id="startjob" type="button" value="Shit Keywords!">Scrape Keywords!</a>
+      <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
 
 <!-- 
       <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#advanced" aria-expanded="false" aria-controls="advanced">
@@ -81,7 +85,7 @@
             <div class="form-group">
               <label for="country">Country code (google):</label>
               <!-- ISO-3366-1: Alpha-2 Codes -->
-              <select value="us"  class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled>
+              <select value="id"  class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled="">
                 <option value=""></option>
                 <option value="us">United States (us)</option>
                 <option value="af">Afghanistan (af)</option>
@@ -334,73 +338,87 @@
                 <option value="zw">Zimbabwe (zw)</option>
             </select>
         </div>
-        <form id="advanced" class="collapse">
-            <br>
-
-
-            <div class="form-group">
-              <label for="prefixes">Prefixes</label>
-              <textarea type="text" title="These values are added before words to prompt the search suggestions" class="form-control" name="prefixes" id="prefixes"  ></textarea>
-          </div>
-          <div class="form-group">
-              <label for="suffixes">Suffixes:</label>
-              <textarea type="text" rows="2" title="These values are added after words to prompt the search suggestions" class="form-control" id="suffixes"></textarea>
-          </div>
-
-          <div class="form-group" style="display: none">
-              <label for="rate-limit">Rate limit (for experts):</label>
-              <input type="text"  class="form-control" id="rate-limit" value="750" name="rate-limit" title="Value between searches in milliseconds only change if you know what you are doing. This could get your ip banned, or place an unfair burden on the suggest servers." disabled>
-          </div>
-
-
-
-          <div class="form-group">
-              <label for="lang">Lang code (google & yandex):</label>
-              <select class="form-control" title="Lang code. Two letters. Only works for google for now" class="form-control" id="lang" value="en" >
-                <option value=""></option>
-                <option value="en" >English (default) (en)</option>
-                <option value="ar" >Arabic (ar)</option>
-                <option value="bg" >Bulgarian (bg)</option>
-                <option value="ca" >Catalan (ca)</option>
-                <option value="hr" >Croatian (hr)</option>
-                <option value="zh-hans" >Chinese (Simplified) (zh-hans)</option>
-                <option value="zh-hant" >Chinese (Traditional) (zh-hant)</option>
-                <option value="cs" >Czech (cs)</option>
-                <option value="da" >Danish (da)</option>
-                <option value="nl" >Dutch (nl)</option>
-                <option value="fi" >Filipino (fi)</option>l
-                <option value="fi" >Finnish (fi)</option>
-                <option value="fr" >French (fr)</option>
-                <option value="de" >German (de)</option>
-                <option value="el" >Greek (el)</option>
-                <option value="he" >Hebrew (he)</option>
-                <option value="hi" >Hindi (hi)</option>
-                <option value="hu" >Hungarian (hu)</option>
-                <option value="id" >Indonesian (id)</option>
-                <option value="it" >Italian (it)</option>
-                <option value="ja" >Japanese (ja)</option>
-                <option value="ko" >Korean (ko)</option>
-                <option value="lv" >Latvian (lv)</option>
-                <option value="lt" >Lithuanian (lt)</option>
-                <option value="no" >Norwegian (no)</option>
-                <option value="pl" >Polish (pl)</option>
-                <option value="pt" >Portuguese (pt)</option>
-                <option value="ro" >Romanian (ro)</option>
-                <option value="ru" >Russian (ru)</option>
-                <option value="sr" >Serbian (sr)</option>
-                <option value="sk" >Slovak (sk)</option>
-                <option value="sl" >Slovenian (sl)</option>
-                <option value="es" >Spanish (es)</option>
-                <option value="sv" >Swedish (sv)</option>
-                <option value="th" >Thai (th)</option>
-                <option value="tr" >Turkish (tr)</option>
-                <option value="uk" >Ukrainian (uk)</option>
-                <option value="vi" >Vietnamese (vi)</option>
-            </select>
+        <br>
+        <div class="card">
+          <div class="card-header" style="background-color: yellow">
+            <b>Pengumuman</b>
         </div>
+        <div class="card-body">
+            <div class="form-group">
+               <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
+               </p>
+           </div>
+       </div>
+   </div>
 
 
-    </form>
+   <form id="advanced" class="collapse">
+    <br>
+
+
+    <div class="form-group">
+      <label for="prefixes">Prefixes</label>
+      <textarea type="text" title="These values are added before words to prompt the search suggestions" class="form-control" name="prefixes" id="prefixes"  ></textarea>
+  </div>
+  <div class="form-group">
+      <label for="suffixes">Suffixes:</label>
+      <textarea type="text" rows="2" title="These values are added after words to prompt the search suggestions" class="form-control" id="suffixes"></textarea>
+  </div>
+
+  <div class="form-group" style="display: none">
+      <label for="rate-limit">Rate limit (for experts):</label>
+      <input type="text"  class="form-control" id="rate-limit" value="750" name="rate-limit" title="Value between searches in milliseconds only change if you know what you are doing. This could get your ip banned, or place an unfair burden on the suggest servers." disabled>
+  </div>
+
+
+
+  <div class="form-group">
+      <label for="lang">Lang code (google & yandex):</label>
+      <select class="form-control" title="Lang code. Two letters. Only works for google for now" class="form-control" id="lang" value="en" >
+        <option value=""></option>
+        <option value="en" >English (default) (en)</option>
+        <option value="ar" >Arabic (ar)</option>
+        <option value="bg" >Bulgarian (bg)</option>
+        <option value="ca" >Catalan (ca)</option>
+        <option value="hr" >Croatian (hr)</option>
+        <option value="zh-hans" >Chinese (Simplified) (zh-hans)</option>
+        <option value="zh-hant" >Chinese (Traditional) (zh-hant)</option>
+        <option value="cs" >Czech (cs)</option>
+        <option value="da" >Danish (da)</option>
+        <option value="nl" >Dutch (nl)</option>
+        <option value="fi" >Filipino (fi)</option>l
+        <option value="fi" >Finnish (fi)</option>
+        <option value="fr" >French (fr)</option>
+        <option value="de" >German (de)</option>
+        <option value="el" >Greek (el)</option>
+        <option value="he" >Hebrew (he)</option>
+        <option value="hi" >Hindi (hi)</option>
+        <option value="hu" >Hungarian (hu)</option>
+        <option value="id" >Indonesian (id)</option>
+        <option value="it" >Italian (it)</option>
+        <option value="ja" >Japanese (ja)</option>
+        <option value="ko" >Korean (ko)</option>
+        <option value="lv" >Latvian (lv)</option>
+        <option value="lt" >Lithuanian (lt)</option>
+        <option value="no" >Norwegian (no)</option>
+        <option value="pl" >Polish (pl)</option>
+        <option value="pt" >Portuguese (pt)</option>
+        <option value="ro" >Romanian (ro)</option>
+        <option value="ru" >Russian (ru)</option>
+        <option value="sr" >Serbian (sr)</option>
+        <option value="sk" >Slovak (sk)</option>
+        <option value="sl" >Slovenian (sl)</option>
+        <option value="es" >Spanish (es)</option>
+        <option value="sv" >Swedish (sv)</option>
+        <option value="th" >Thai (th)</option>
+        <option value="tr" >Turkish (tr)</option>
+        <option value="uk" >Ukrainian (uk)</option>
+        <option value="vi" >Vietnamese (vi)</option>
+    </select>
+</div>
+
+
+</form>
 
 
 </div>
@@ -439,7 +457,8 @@
                 <!-- </div> -->
             </div>
         </div>
-
+        <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
+        </p>
 
     </div>
 
@@ -453,14 +472,116 @@
 
 
 
-    <script type="text/javascript" src="<?= base_url();?>assets/suggestions.js"></script>
+    <!-- <script type="text/javascript" src="<?= base_url();?>assets/suggestions.js"></script> -->
     <script type="text/javascript">
-        var KWS = function(){
-
+        var suggestions = function(){
             return {
-                table: undefined,
-                myIp: undefined,
-                options: {},
+                defaultOptions:{
+                    deferTableUpdatesAtRows: 5000,
+                    keepRunning: false,
+                    maxQueueDisplay: 5000,
+                    country: "",
+                    filterNegative: "",
+                    filterPositive: "",
+                    lang: "",
+                    prefixes: [],
+                    rateLimit: 750,
+                    service: "google",
+                    suffixes: []
+                },
+
+                services:{
+                    "google":
+                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&gl=${country}&callback=?&q=",
+                    "google news":
+                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=n&gl=${country}&callback=?&q=",
+                    "google shopping":
+                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=sh&gl=${country}&callback=?&q=",
+                    "google books":
+                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=bo&gl=${country}&callback=?&q=",
+                    "youtube":
+                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=yt&gl=${country}&callback=?&q=",
+                    "google videos":
+                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=v&gl=${country}&callback=?&q=",
+                    "google images":
+                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=i&gl=${country}&callback=?&q=",
+                    "yahoo":
+                    "//search.yahoo.com/sugg/ff?output=jsonp&appid=ffd&callback=?&command=",
+                    "bing": "//api.bing.com/osjson.aspx?JsonType=callback&JsonCallback=?&query=",
+                    "ebay":
+                    "//autosug.ebay.com/autosug?_jgr=1&sId=0&_ch=0&callback=?&kwd=",
+                    "amazon":
+                    "//completion.amazon.co.uk/search/complete?method=completion&search-alias=aps&mkt=3&callback=?&q=",
+                    "twitter":
+                    "//twitter.com/i/search/typeahead.json?count=30&result_type=topics&src=SEARCH_BOX&callback=?&q=",
+                    "baidu": "//suggestion.baidu.com/su?cb=?&wd=",
+                    "yandex": "//yandex.com/suggest/suggest-ya.cgi?callback=?&q=?&n=30&v=4&uil={lang}&part=",
+            "google play": "//market.android.com/suggest/SuggRequest?json=1&c=0&hl=${lang}&gl=${country}&callback=?&query=", //
+            "google play apps": "//market.android.com/suggest/SuggRequest?json=1&c=3&hl=${lang}&gl=${country}&callback=?&query=",
+            "google play movies": "//market.android.com/suggest/SuggRequest?json=1&c=4&hl=${lang}&gl=${country}&callback=?&query=",
+            "google play books": "//market.android.com/suggest/SuggRequest?json=1&c=1&hl=${lang}&gl=${country}&callback=?&query=",
+            // "kickasstorrents": "//kat.cr/get_queries.php?query=", // not jsonp
+        },
+        /**
+         * Get the service url based on options set in the dom.
+         * @return {String} A jsonp url for search suggestions with query missing from the end.
+         */
+         getUrl :function(service, options){
+            // Ref: https://github.com/estivo/Instantfox/blob/master/firefox/c1hrome/content/defaultPluginList.js
+            // Ref: https://github.com/bnoordhuis/mozilla-central/tree/master/browser/locales/en-US/searchplugins
+            // Ref: https://developers.google.com/custom-search/json-api/v1/reference/cse/list
+            // https://developers.google.com/custom-search/docs/ref_languages
+            options = _.defaults({},this.defaultOptions, this.getOptions(), options)
+            return _.template(this.services[(service||this.options.service)])(options);
+        },
+
+
+        /** Parse response per service **/
+        parseServiceResponse: function(res, service){
+            // Each take a json response tand return a keyword array
+            RESPONSE_TEMPLATES = {
+                // opensearch default
+                "default": function (res) {
+                    return res[1];
+                },
+                "yahoo": function (res) {
+                    return _.map(res.gossip.results, 'key');
+                },
+                "ebay": function (res) {
+                    return res.res ? res.res.sug : [];
+                },
+                "twitter": function (res) {
+                    return _.concat(res.users, _.map(res.topics, 'topic'), res.hashtags, res.oneclick);
+                },
+                "baidu": function (res) {
+                    return res.s;
+                },
+                "yandex": function(res){
+                    return _.map(res[1], function(r){
+                        return typeof r === 'string' ? r : r[1];
+                    });
+                },
+                "linkedin": function(res){
+                    return _.map(res.resultList,'displayName');
+                },
+                "google play": function(res){return _.map(res,'s')},
+                "google play apps": function(res){return _.map(res,'s')},
+                "google play movies": function(res){return _.map(res,'s')},
+                "google play books": function(res){return _.map(res,'s')},
+            };
+            var parser = RESPONSE_TEMPLATES[(service||this.options.service)] || RESPONSE_TEMPLATES["default"];
+            return parser(res);
+        }
+    }
+}()
+
+
+var KWS = function(){
+
+    return {
+        table: undefined,
+        myIp: undefined,
+        options: {},
         // flags
         queryLock: false,
         doWork: false,
@@ -485,7 +606,7 @@
             if (this.doWork === false) {
                 // reset these
                 this.saveSettings();
-                $('#startjob').val('Stop Job').text('Berhenti Scrapping').addClass('btn-danger');
+                $('#startjob').val('Stop Job').text('Stop Generate').addClass('btn-danger');
                 this.hashMapInputs = {};
                 this.keywordsToQuery = [];
                 this.keywordsToQueryIndex = 0;
@@ -530,7 +651,7 @@
 
         StopWork: function(){
             if (this.doWork){
-                $('#startjob').val('Start Job').text('Mulai Scrapping').removeClass('btn-danger');
+                $('#startjob').val('Start Job').text('Generate Keyword').removeClass('btn-danger');
                 this.doWork = false;
                 // $('#input').show();
                 this.table.draw();
@@ -852,10 +973,10 @@
                 filterNegative: "",
                 filterPositive: "",
                 lang: "",
-                prefixes: [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "x", "y", "z", "how", "which", "why", "where", "who", "when", "are", "what"],
+                prefixes: [],
                 rateLimit: 750,
                 service: "google",
-                suffixes: [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "x", "y", "z", "like", "for", "without", "with", "versus", "vs", "to", "near", "except", "has"]
+                suffixes: []
             }; // for now defaults are set in html
             if (argOptions===undefined) argOptions={};
             return _.defaults(argOptions,this.getDomOptions(),defaultOptions);
@@ -877,11 +998,11 @@
                 if (prefixes && prefixes.length)
                     prefixes=prefixes.split(',');
                 else
-                    prefixes=undefined;
+                    prefixes="";
                 if (suffixes && suffixes.length)
                     suffixes=suffixes.split(',');
                 else
-                    suffixes=undefined;
+                    suffixes="";
 
                 var options={};
                 if (service) options.service=service;
@@ -968,23 +1089,23 @@
                 'colvis',
                 'pageLength',
                 {
-                   extend: 'collection',
-                   text: 'Export',
-                   buttons: [
-                   'csvHtml5',
-                   {
-                       extend: 'csvHtml5',
-                       fieldBoundary: "",
-                       text: 'Copy keywords',
+                 extend: 'collection',
+                 text: 'Export',
+                 buttons: [
+                 'csvHtml5',
+                 {
+                     extend: 'csvHtml5',
+                     fieldBoundary: "",
+                     text: 'Copy keywords',
                                 //  'customize': function(data,options){
                                 //      console.log(data,options);return data.split('\n').join(',');
                                 //  },
                                 header: false,
                                 exportOptions: {
-                                   stripNewlines: true,
-                                   stripHtml: true,
-                                   decodeEntities: true,
-                                   columns: 1,
+                                 stripNewlines: true,
+                                 stripHtml: true,
+                                 decodeEntities: true,
+                                 columns: 1,
                                     //  format:{
                                     //      body: function(html,i){
                                     //          console.log(html);return html
@@ -993,30 +1114,30 @@
                                 }
                             },
                             {
-                               extend: 'csvHtml5',
-                               fieldBoundary: "",
-                               text: 'Copy visible columns',
-                               header: false,
-                               exportOptions: {
-                                   columns: ':visible',
-                                   stripNewlines: true,
-                                   stripHtml: true,
-                                   decodeEntities: true,
-                               }
-                           },
-                           ]
-                       },
+                             extend: 'csvHtml5',
+                             fieldBoundary: "",
+                             text: 'Copy visible columns',
+                             header: false,
+                             exportOptions: {
+                                 columns: ':visible',
+                                 stripNewlines: true,
+                                 stripHtml: true,
+                                 decodeEntities: true,
+                             }
+                         },
+                         ]
+                     },
 
-                       ],
-                       "columnDefs": [
-                       {
+                     ],
+                     "columnDefs": [
+                     {
                         "title": "id",
                         "data": "id",
                         "targets": 0,
                         "visible": false,
                     }, {
                         "name": "keyword",
-                        "title": "Keyword",
+                        "title": "Related Keyword",
                         "data": "keyword",
                         "responsivePriority": 1,
                         "targets": 1,
@@ -1027,11 +1148,11 @@
                         "visible": false,
                         "type": "num"
                     }, {
-                        "title": "Search",
+                        "title": "Root Keyword",
                         "data": "search",
                         "responsivePriority": 3,
                         "targets": 3,
-                        "visible": false,
+                        "visible": true,
                     },  {
                         "title": "Words",
                         "data": "words",
