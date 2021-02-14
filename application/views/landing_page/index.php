@@ -16,18 +16,30 @@
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/scroller/1.4.0/css/scroller.dataTables.min.css"/>
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progressjs.min.css"/>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 
 
 
   <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
 
+<style type="text/css">
+    .card{
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+</style>
 </head>
 
-<body style="padding: 50px;">
+<body style="padding: ;">
 
   <!-- <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> -->
-  <center><b style="font-size: 50px;"><u>semanticarticle.com</u></b></center>
+  <nav class="navbar navbar-light " style="background-color: #556B2F;">
+  
+    <a class="navbar-brand" href="#" style="color: white;margin:  10px;font-size: 30px;font-family: 'Roboto', sans-serif;">semanticarticle.com</a>
+
+</nav>
+  
   <center><h1><b>Related Keyword Generator</b></h1></center>
   <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
   <div class="container" style="margin-top: 5%;">
@@ -51,12 +63,12 @@
 
 
 
-    <a class="btn btn-default" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
+    <a class="btn btn-danger" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
 </div>
 <div class="col-sm-5">
 
-    <div class="form-group">
-      <label for="service">Service:</label>
+    <div class="form-group lala">
+      <label for="service" style="margin-top: 20px;">Service:</label>
       <select class="form-control" name="service" id="service" >
                         <!-- <option>google</option>
                         <option>twitter</option>
@@ -340,11 +352,11 @@
         </div>
         <br>
         <div class="card">
-          <div class="card-header" style="background-color: yellow">
+          <div class="card-header" style="background-color: darkgreen; color: white;">
             <b>Pengumuman</b>
         </div>
         <div class="card-body">
-            <div class="form-group">
+            <div class="form-group" >
              <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
              </p>
          </div>
