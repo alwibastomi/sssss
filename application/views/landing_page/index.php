@@ -345,14 +345,14 @@
         </div>
         <div class="card-body">
             <div class="form-group">
-               <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
-               </p>
-           </div>
-       </div>
-   </div>
+             <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
+             </p>
+         </div>
+     </div>
+ </div>
 
 
-   <form id="advanced" class="collapse">
+ <form id="advanced" class="collapse">
     <br>
 
 
@@ -1089,23 +1089,23 @@ var KWS = function(){
                 'colvis',
                 'pageLength',
                 {
-                 extend: 'collection',
-                 text: 'Export',
-                 buttons: [
-                 'csvHtml5',
-                 {
-                     extend: 'csvHtml5',
-                     fieldBoundary: "",
-                     text: 'Copy keywords',
+                   extend: 'collection',
+                   text: 'Export',
+                   buttons: [
+                   'csvHtml5',
+                   {
+                       extend: 'csvHtml5',
+                       fieldBoundary: "",
+                       text: 'Copy keywords',
                                 //  'customize': function(data,options){
                                 //      console.log(data,options);return data.split('\n').join(',');
                                 //  },
                                 header: false,
                                 exportOptions: {
-                                 stripNewlines: true,
-                                 stripHtml: true,
-                                 decodeEntities: true,
-                                 columns: 1,
+                                   stripNewlines: true,
+                                   stripHtml: true,
+                                   decodeEntities: true,
+                                   columns: 1,
                                     //  format:{
                                     //      body: function(html,i){
                                     //          console.log(html);return html
@@ -1114,23 +1114,23 @@ var KWS = function(){
                                 }
                             },
                             {
-                             extend: 'csvHtml5',
-                             fieldBoundary: "",
-                             text: 'Copy visible columns',
-                             header: false,
-                             exportOptions: {
-                                 columns: ':visible',
-                                 stripNewlines: true,
-                                 stripHtml: true,
-                                 decodeEntities: true,
-                             }
-                         },
-                         ]
-                     },
+                               extend: 'csvHtml5',
+                               fieldBoundary: "",
+                               text: 'Copy visible columns',
+                               header: false,
+                               exportOptions: {
+                                   columns: ':visible',
+                                   stripNewlines: true,
+                                   stripHtml: true,
+                                   decodeEntities: true,
+                               }
+                           },
+                           ]
+                       },
 
-                     ],
-                     "columnDefs": [
-                     {
+                       ],
+                       "columnDefs": [
+                       {
                         "title": "id",
                         "data": "id",
                         "targets": 0,
