@@ -471,6 +471,7 @@
         </div>
         <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
         </p>
+        <div id="txt"></div>
 
     </div>
 
@@ -761,11 +762,16 @@ var KWS = function(){
 
             var rows=[];
             retList=_.map(retList,this.CleanVal);
+            var haha="";
+
             for (var i = 0; i < retList.length; i++) {
                 var  cleanKw = retList[i];
 
                 // url might be in retlist
                 if (url===undefined) url=data[i].url;
+                // haha.push(cleanKw);
+                haha +=cleanKw;
+
 
                 var da = {
                     id: this.table.rows()[0].length+i,
@@ -784,9 +790,35 @@ var KWS = function(){
                 // if (!matches)
                 rows.push(da);
             }
+             
+            
+           // haha.join(' ');
+                var arr = haha.split(" ");
+                
+                console.log(arr);
+                
+                var unique = [];
+                $.each(arr, function (index,word) {
+                    if ($.inArray(word, unique) === -1) 
+                        unique.push(word);
+
+                });
+
+                document.getElementById("txt").innerHTML = unique;
+            
+
+            
+           
             this.table.rows.add(rows);
-            // if table is large lets defer rending to end to speed it up
+
+
             if (!dontDisplay && this.table.data().length<this.options.deferTableUpdatesAtRows) this.table.draw(false);
+
+            
+ 
+            
+
+            
         },
 
         /** Takes url string and returns domain e.g. www.google.com or google.com
