@@ -16,15 +16,15 @@
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/scroller/1.4.0/css/scroller.dataTables.min.css"/>
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progressjs.min.css"/>
 
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
- <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 
 
 
   <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
 
-<style type="text/css">
+  <style type="text/css">
     .card{
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
@@ -35,14 +35,14 @@
 
   <!-- <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> -->
   <nav class="navbar navbar-light " style="background-color: #556B2F;">
-  
+
     <a class="navbar-brand" href="#" style="color: white;margin:  10px;font-size: 30px;font-family: 'Roboto', sans-serif;">semanticarticle.com</a>
 
 </nav>
-  
-  <center><h1><b>Related Keyword Generator</b></h1></center>
-  <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
-  <div class="container" style="margin-top: 5%;">
+
+<center><h1><b>Related Keyword Generator</b></h1></center>
+<center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
+<div class="container" style="margin-top: 5%;">
 
 
     <div class="row">
@@ -357,14 +357,14 @@
         </div>
         <div class="card-body">
             <div class="form-group" >
-             <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
-             </p>
-         </div>
-     </div>
- </div>
+               <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
+               </p>
+           </div>
+       </div>
+   </div>
 
 
- <form id="advanced" class="collapse">
+   <form id="advanced" class="collapse">
     <br>
 
 
@@ -444,6 +444,12 @@
       <br id="progress2">
   </div>
 </div>
+<div class="row">
+    <div class="col-sm-12">
+     <div id="txt"></div>
+ </div>
+</div>
+
 
 <div class="row">
     <div id="results" class="col-sm-12">
@@ -471,7 +477,6 @@
         </div>
         <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
         </p>
-        <div id="txt"></div>
 
     </div>
 
@@ -588,9 +593,47 @@
     }
 }()
 
+function sum( obj ) {
+  var sum = 0;
+  for( var el in obj ) {
+    if( obj.hasOwnProperty( el ) ) {
+      sum += parseFloat( obj[el] );
+  }
+}
+return sum;
+}
+function reverseObject(object) {
+    var newObject = {};
+    var keys = [];
 
+    for (var key in object) {
+        keys.push(key);
+    }
+
+    for (var i = keys.length - 1; i >= 0; i--) {
+      var value = object[keys[i]];
+      newObject[keys[i]]= value;
+  }       
+
+  return newObject;
+}
+function roundNumber(num, scale) {
+  if(!("" + num).includes("e")) {
+    return +(Math.round(num + "e+" + scale)  + "e-" + scale);
+  } else {
+    var arr = ("" + num).split("e");
+    var sig = ""
+    if(+arr[1] + scale > 0) {
+      sig = "+";
+    }
+    return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+  }
+}
 var KWS = function(){
+    var haha=[];
+    var arr=[];
 
+    var lol=[];
     return {
         table: undefined,
         myIp: undefined,
@@ -672,6 +715,24 @@ var KWS = function(){
                 this.saveSettings();
                 this.FilterAndDisplay();
                 this.progress1.end();
+
+                document.getElementById("txt").innerHTML = "<textarea style='height:200px; width:100%;'>"+lol+"</textarea>";
+                var map = haha.reduce(function(prev, cur) {
+                  prev[cur] = (prev[cur] || 0) + 1;
+                  return prev;
+              }, {});
+                a = sum(map);
+                const sortable = Object.fromEntries(
+                    Object.entries(map).sort(([,a],[,b]) => a-b)
+                    );
+                ob = reverseObject(sortable);
+                Object.keys(ob).forEach(function(key) {
+                b = ob[key]/a * 100;
+                b = roundNumber(b, 2)
+                  console.log(key, b+"%");
+
+              });
+                console.log (a)
             }
         },
 
@@ -762,7 +823,6 @@ var KWS = function(){
 
             var rows=[];
             retList=_.map(retList,this.CleanVal);
-            var haha="";
 
             for (var i = 0; i < retList.length; i++) {
                 var  cleanKw = retList[i];
@@ -770,7 +830,14 @@ var KWS = function(){
                 // url might be in retlist
                 if (url===undefined) url=data[i].url;
                 // haha.push(cleanKw);
-                haha +=cleanKw;
+
+                arr = cleanKw.split(" ");
+                for (var y = 0; y < arr.length; y++) {
+                    if (lol.indexOf(arr[y]) < 0) {
+                        lol.push(arr[y]);
+                    }
+                    haha.push(arr[y]);
+                }
 
 
                 var da = {
@@ -790,36 +857,23 @@ var KWS = function(){
                 // if (!matches)
                 rows.push(da);
             }
-             
+
             
            // haha.join(' ');
-                var arr = haha.split(" ");
-                
-                console.log(arr);
-                
-                var unique = [];
-                $.each(arr, function (index,word) {
-                    if ($.inArray(word, unique) === -1) 
-                        unique.push(word);
 
-                });
 
-                document.getElementById("txt").innerHTML = unique;
-            
-
-            
            
-            this.table.rows.add(rows);
+           this.table.rows.add(rows);
 
 
-            if (!dontDisplay && this.table.data().length<this.options.deferTableUpdatesAtRows) this.table.draw(false);
+           if (!dontDisplay && this.table.data().length<this.options.deferTableUpdatesAtRows) this.table.draw(false);
 
-            
- 
-            
 
-            
-        },
+
+
+
+
+       },
 
         /** Takes url string and returns domain e.g. www.google.com or google.com
           * and some extra params to identify is
@@ -1133,23 +1187,23 @@ var KWS = function(){
                 'colvis',
                 'pageLength',
                 {
-                   extend: 'collection',
-                   text: 'Export',
-                   buttons: [
-                   'csvHtml5',
-                   {
-                       extend: 'csvHtml5',
-                       fieldBoundary: "",
-                       text: 'Copy keywords',
+                 extend: 'collection',
+                 text: 'Export',
+                 buttons: [
+                 'csvHtml5',
+                 {
+                     extend: 'csvHtml5',
+                     fieldBoundary: "",
+                     text: 'Copy keywords',
                                 //  'customize': function(data,options){
                                 //      console.log(data,options);return data.split('\n').join(',');
                                 //  },
                                 header: false,
                                 exportOptions: {
-                                   stripNewlines: true,
-                                   stripHtml: true,
-                                   decodeEntities: true,
-                                   columns: 1,
+                                 stripNewlines: true,
+                                 stripHtml: true,
+                                 decodeEntities: true,
+                                 columns: 1,
                                     //  format:{
                                     //      body: function(html,i){
                                     //          console.log(html);return html
@@ -1158,23 +1212,23 @@ var KWS = function(){
                                 }
                             },
                             {
-                               extend: 'csvHtml5',
-                               fieldBoundary: "",
-                               text: 'Copy visible columns',
-                               header: false,
-                               exportOptions: {
-                                   columns: ':visible',
-                                   stripNewlines: true,
-                                   stripHtml: true,
-                                   decodeEntities: true,
-                               }
-                           },
-                           ]
-                       },
+                             extend: 'csvHtml5',
+                             fieldBoundary: "",
+                             text: 'Copy visible columns',
+                             header: false,
+                             exportOptions: {
+                                 columns: ':visible',
+                                 stripNewlines: true,
+                                 stripHtml: true,
+                                 decodeEntities: true,
+                             }
+                         },
+                         ]
+                     },
 
-                       ],
-                       "columnDefs": [
-                       {
+                     ],
+                     "columnDefs": [
+                     {
                         "title": "id",
                         "data": "id",
                         "targets": 0,
