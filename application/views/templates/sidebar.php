@@ -36,6 +36,10 @@
                     <a href="<?= site_url('User') ?>" class="waves-effect <?php if($this->uri->segment(1)=="User"){echo "active";}?>"><i class="zmdi zmdi-format-underlined"></i> <span> User </span> </a>
                 </li>
 
+                <li>
+                    <a href="<?= site_url('Tool1'); ?>" class="waves-effect <?php if($this->uri->segment(1)=="Tool1"){echo "active";}?>"><i class="zmdi zmdi-settings"></i> <span> Tool </span> </a>
+                </li>
+
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-chart"></i><span> Charts </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">

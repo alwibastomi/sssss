@@ -1,60 +1,27 @@
-<!DOCTYPE html>
-<html>
-<title>Related Keyword Generator</title>
+<div class="content-page">
+  <!-- Start content -->
+  <div class="content">
+    <div class="container">
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-  <meta property="og:site_name" content="semanticarticle.com"/>
-  <meta property="og:title" content="semanticarticle.com"/>
-  <meta property="og:url" content="https://www.semanticarticle.com"/>
-  <meta property="og:type" content="website"/>
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"/>
-  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.0/css/buttons.dataTables.min.css"/> -->
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/fixedheader/3.1.0/css/fixedHeader.dataTables.min.css"/>
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/keytable/2.1.0/css/keyTable.dataTables.min.css"/>
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/2.0.0/css/responsive.dataTables.min.css"/>
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/scroller/1.4.0/css/scroller.dataTables.min.css"/>
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progressjs.min.css"/>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card-box table-responsive">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+            <center><h1><b>Related Keyword Generator</b></h1></center>
+            <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
+            <div class="container" style="margin-top: 5%;">
 
 
+                <div class="row">
 
-  <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
+                  <div class="col-sm-6">
+                    <div id="numofkeywords"></div>
+                    <div class="form-group">
+                      <label for="input" ><h3>Input:</h3></label>
+                      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control"  placeholder="Isi Keyword"></textarea>
+                  </div>
 
-  <style type="text/css">
-    .card{
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    }
-</style>
-</head>
-
-<body style="padding: ;">
-
-  <!-- <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> -->
-  <nav class="navbar navbar-light " style="background-color: #556B2F;">
-
-    <a class="navbar-brand" href="#" style="color: white;margin:  10px;font-size: 30px;font-family: 'Roboto', sans-serif;">semanticarticle.com</a>
-
-</nav>
-
-<center><h1><b>Related Keyword Generator</b></h1></center>
-<center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
-<div class="container" style="margin-top: 5%;">
-
-
-    <div class="row">
-
-      <div class="col-sm-6">
-        <div id="numofkeywords"></div>
-        <div class="form-group">
-          <label for="input" ><h3>Input:</h3></label>
-          <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control"  placeholder="Isi Keyword"></textarea>
-      </div>
-
-      <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
+                  <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
 
 <!-- 
       <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#advanced" aria-expanded="false" aria-controls="advanced">
@@ -357,21 +324,21 @@
         </div>
         <div class="card-body">
             <div class="form-group" >
-               <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
-               </p>
-           </div>
-       </div>
-   </div>
-   <br>
-   <div class="card">
-      <div class="card-header" style="background-color: darkgreen; color: white;">
-        <b>Persen</b>
-    </div>
-    <div class="card-body">
-        <div class="form-group" >
-           <p id="persen"></p>
-       </div>
-   </div>
+             <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
+             </p>
+         </div>
+     </div>
+ </div>
+ <br>
+ <div class="card">
+  <div class="card-header" style="background-color: darkgreen; color: white;">
+    <b>Persen</b>
+</div>
+<div class="card-body">
+    <div class="form-group" >
+     <p id="persen"></p>
+ </div>
+</div>
 </div>
 
 
@@ -457,8 +424,8 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-     <div id="txt"></div>
- </div>
+       <div id="txt"></div>
+   </div>
 </div>
 
 
@@ -490,6 +457,9 @@
         </p>
 
     </div>
+</div>
+</div>
+</div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -1198,23 +1168,23 @@ var KWS = function(){
                 'colvis',
                 'pageLength',
                 {
-                 extend: 'collection',
-                 text: 'Export',
-                 buttons: [
-                 'csvHtml5',
-                 {
-                     extend: 'csvHtml5',
-                     fieldBoundary: "",
-                     text: 'Copy keywords',
+                   extend: 'collection',
+                   text: 'Export',
+                   buttons: [
+                   'csvHtml5',
+                   {
+                       extend: 'csvHtml5',
+                       fieldBoundary: "",
+                       text: 'Copy keywords',
                                 //  'customize': function(data,options){
                                 //      console.log(data,options);return data.split('\n').join(',');
                                 //  },
                                 header: false,
                                 exportOptions: {
-                                 stripNewlines: true,
-                                 stripHtml: true,
-                                 decodeEntities: true,
-                                 columns: 1,
+                                   stripNewlines: true,
+                                   stripHtml: true,
+                                   decodeEntities: true,
+                                   columns: 1,
                                     //  format:{
                                     //      body: function(html,i){
                                     //          console.log(html);return html
@@ -1223,23 +1193,23 @@ var KWS = function(){
                                 }
                             },
                             {
-                             extend: 'csvHtml5',
-                             fieldBoundary: "",
-                             text: 'Copy visible columns',
-                             header: false,
-                             exportOptions: {
-                                 columns: ':visible',
-                                 stripNewlines: true,
-                                 stripHtml: true,
-                                 decodeEntities: true,
-                             }
-                         },
-                         ]
-                     },
+                               extend: 'csvHtml5',
+                               fieldBoundary: "",
+                               text: 'Copy visible columns',
+                               header: false,
+                               exportOptions: {
+                                   columns: ':visible',
+                                   stripNewlines: true,
+                                   stripHtml: true,
+                                   decodeEntities: true,
+                               }
+                           },
+                           ]
+                       },
 
-                     ],
-                     "columnDefs": [
-                     {
+                       ],
+                       "columnDefs": [
+                       {
                         "title": "id",
                         "data": "id",
                         "targets": 0,
