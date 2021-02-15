@@ -17,7 +17,7 @@ class User extends Core {
 			die();
 		}
 		$data['alert'] = '';
-		$data['title'] = 'Penulis';
+		$data['title'] = 'User';
 		$data['allPenulis'] = $this->m_penulis->getAllPenulis();
 		$this->renderadm('admin/penulis', $data);
 	}
@@ -36,10 +36,26 @@ class User extends Core {
 		if($this->form_validation->run() == false){
 			$data['alert'] = '';
 		}else{
+			$th = $this->input->post('tahun');
+			$bl = $this->input->post('bulan');
+			$tgl = date('d');
+
+			$th11 = strtotime($th.'/'.$bl.'/'.$tgl);
+			$leeee = date('Y-m-d', $th11);
+
+			$sakiki = date('Y-m-d');
+			if ($leeee >= $sakiki ) {
+				$st = 1;
+			}else{
+				$st = 0;
+			}
+
 			$data = array(
 				'email' => $this->input->post('email'),
 				'nama' => $this->input->post('nama'),
 				'password' => md5("Maaf:(".$this->input->post('password')),
+				'date_status' => $leeee,
+				'status' => $st,
 				'level' => $this->input->post('level')
 			);
 

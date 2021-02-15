@@ -23,7 +23,6 @@ if ($alert == 'sukses') { ?>
   <div class="content">
     <div class="container">
 
-
       <div class="row">
         <div class="col-sm-12">
           <div class="card-box table-responsive">
@@ -33,7 +32,7 @@ if ($alert == 'sukses') { ?>
                 <i class="zmdi zmdi-more-vert"></i>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="<?= site_url('Penulis/tambah'); ?>">Tambah User</a></li>
+                <li><a href="<?= site_url('User/tambah'); ?>">Tambah User</a></li>
               </ul>
             </div>
 
@@ -44,6 +43,8 @@ if ($alert == 'sukses') { ?>
                 <tr>
                   <th>Email</th>
                   <th>Nama Lengkap</th>
+                  <th>Date Status</th>
+                  <th>Status</th>
                   <th>Level</th>
                   <th>Action</th>
                 </tr>

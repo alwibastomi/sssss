@@ -12,7 +12,7 @@ class Core extends CI_Controller {
 		$this->load->library(array('form_validation'));
 		$this->load->model(array('user_model','m_activity','m_penulis', 'm_menu', 'admin_model', 
 			'm_iklan', 'm_rpp', 'm_artikel'));
-
+		$this->restatus();
 		$this->isLogin = $this->session->userdata('isLogin');
 	}
 
@@ -46,6 +46,20 @@ class Core extends CI_Controller {
 		$this->load->view('templates/topbar',$data);
 		$this->load->view($view,$data);
 		$this->load->view('templates/footer');
+	}
+
+	public function restatus()
+	{
+		$la = $this->m_penulis->getAllPenulis();
+
+		foreach ($la as $key) {
+			$datee = date('Y-m-d');
+			if ($key->date_status >= $datee) {
+				$this->m_penulis->editstatus('1', $key->date_status);
+			}else{
+				$this->m_penulis->editstatus('0', $key->date_status);
+			}
+		}
 	}
 	
 }

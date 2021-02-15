@@ -19,6 +19,13 @@ class M_penulis extends CI_Model
     return $this->db->get()->result();
   }
 
+  public function editstatus($kon, $where)
+  {
+    $data = array('status' => $kon);
+    $this->db->where('date_status', $where);
+    return $this->db->update('user', $data);
+  }
+
   public function getRecentPenulis()
   {
     $this->db->select("*");
@@ -78,12 +85,26 @@ class M_penulis extends CI_Model
     );
 
     foreach ($q as $val) {
+      if ($val->level == 1) {
+        $le = 'Admin';
+      }else{
+        $le = 'User';
+      }
+
+      if ($val->status == 1) {
+        $aktif = 'Aktif';
+      }else{
+        $aktif = 'Non Aktif';
+      }
+
       $btn = '<a class="btn btn-sm btn-danger" href="'.site_url('User/hapus/'.$val->email).'" title="Hapus"><i class="glyphicon glyphicon-pencil"></i> Hapus</a>';
 
       $output['data'][] = array(
         $val->email,
         $val->nama,
-        $val->level,
+        $val->date_status,
+        $aktif,
+        $le,
         $btn
       );
     }

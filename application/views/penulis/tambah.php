@@ -1,7 +1,7 @@
 <?php 
 if ($alert == 'sukses') { ?>
   <script type="text/javascript">
-    window.location = "<?= site_url('Penulis') ?>";
+    window.location = "<?= site_url('User') ?>";
   </script>
 <?php }?>
 <!-- Top Bar Start -->
@@ -57,12 +57,39 @@ if ($alert == 'sukses') { ?>
               </div>
 
               <div class="form-group has-feedback">
+                <label class="col-sm-2 control-label">Aktif</label>
+                <div class="col-sm-3">
+                  <select class="form-control" name="tahun" style="border-radius: 0;">
+                    <?php
+                    $tahun = date('Y')+10;
+                    $i = date('Y');
+                    for ($i; $i <= $tahun; $i++) { ?>
+                      <option value="<?= $i; ?>"><?= $i; ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+
+                <?php $lala = array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"); ?>
+                <div class="col-sm-3">
+                  <select class="form-control" name="bulan" style="border-radius: 0;">
+                    <?php
+                    $i = 0;
+                    foreach ($lala as $key): 
+                      $i+1;
+                      $i++;
+                      ?>
+                      <option value="<?= $i; ?>"><?= $key; ?></option>
+                    <?php endforeach ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group has-feedback">
                 <label class="col-sm-2 control-label">Level</label>
                 <div class="col-sm-6">
                   <select class="form-control" name="level" style="border-radius: 0;">
                     <option value="1">Admin</option>
-                    <option value="2">Karyawan</option>
-                    <option value="3">User</option>
+                    <option value="2">User</option>
                   </select>
                 </div>
               </div>
@@ -74,7 +101,7 @@ if ($alert == 'sukses') { ?>
                   </div>
                   <div class="col-sm-10">
                     <button type="submit" class="btn btn-info waves-effect waves-light m-b-5" name="save"> <i class="fa fa-save m-r-5"></i> <span>Save</span> </button>
-                    <a href="<?= site_url('Penulis') ?>" class="btn btn-primary m-b-5"><i class="fa fa-mail-reply"></i> Back</a>
+                    <a href="<?= site_url('User') ?>" class="btn btn-primary m-b-5"><i class="fa fa-mail-reply"></i> Back</a>
                   </div>
                 </div>
               </div>
