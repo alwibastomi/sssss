@@ -431,7 +431,7 @@
             <div class="card">
                 <a  class="nav-link"  data-toggle="collapse" data-target="#collapseUtilities" style="background-color: #e3ffeb; text-decoration: none;cursor: pointer;padding: 16px;border-left: 4px solid darkgreen;">
                     <i class="fas fa-caret-down" style="color: darkgreen;font-size: 20px;"></i>
-                    <span  style="padding-left: 20px!important;color: darkgreen;font-weight: 800;margin-top: -6px;">KEYWORD YOU ALREADY USE</span>
+                    <span  style="padding-left: 20px!important;color: darkgreen;font-weight: 800;margin-top: -6px;">Keyword Penting</span>
                 </a>
                 <div id="collapseUtilities" class="collapse scrollable-menu" >
 
@@ -800,7 +800,7 @@ var KWS = function(){
                     this.permuteResultsToQueue([' ']);
                 else {
                     var untickedInputs = this.keywordsToQuery.filter(function(k){
-                        return k.slice(-1)!=='✓' && k.slice(-1)!=='❌';
+                        return k.slice(-1)!=='  ' && k.slice(-1)!=='  ';
                     });
                     this.permuteResultsToQueue(untickedInputs);
                 }
@@ -860,7 +860,7 @@ var KWS = function(){
             if (this.doWork === true && this.queryLock === false) {
                 if (this.keywordsToQueryIndex < this.numOfInitialKeywords) {
                     var currentKw = this.keywordsToQuery[this.keywordsToQueryIndex];
-                    if (currentKw.slice(-1)!=='✓' && currentKw.slice(-1)!=='❌') {
+                    if (currentKw.slice(-2)!=='  ' && currentKw.slice(-2)!=='  ') {
                         this.QueryKeyword(currentKw);
                         this.keywordsToQueryIndex++;
                     } else {
@@ -1033,9 +1033,9 @@ var KWS = function(){
         markAsDone: function(search){
             // mark as done in queue
             if (this.keywordsToQuery[this.keywordsToQueryIndex]===search)
-                this.keywordsToQuery[this.keywordsToQueryIndex]+=' ✓';
+                this.keywordsToQuery[this.keywordsToQueryIndex]+='   ';
             else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
-                this.keywordsToQuery[this.keywordsToQueryIndex-1]+=' ✓';
+                this.keywordsToQuery[this.keywordsToQueryIndex-1]+='   ';
             else
                 console.warn('Cant find ',search,'in keywordsToQuery');
         },
@@ -1044,9 +1044,9 @@ var KWS = function(){
         markAsNone: function(search){
             // mark as done in queue
             if (this.keywordsToQuery[this.keywordsToQueryIndex]===search)
-                this.keywordsToQuery[this.keywordsToQueryIndex]+=' ❌';
+                this.keywordsToQuery[this.keywordsToQueryIndex]+='   ';
             else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
-                this.keywordsToQuery[this.keywordsToQueryIndex-1]+=' ❌';
+                this.keywordsToQuery[this.keywordsToQueryIndex-1]+='   ';
             else
                 console.warn('Cant find ',search,'in keywordsToQuery');
         },
