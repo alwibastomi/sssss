@@ -94,8 +94,89 @@
     <script src="<?= site_url('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'); ?>"></script>
     <script src="<?= site_url('assets/plugins/bootstrap-daterangepicker/daterangepicker.js'); ?>"></script>
     <script src="<?= site_url('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js'); ?>" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- CSS only -->
 
     <script src="<?= site_url('assets/cus.js'); ?>"></script>
+    <style type="text/css">
+
+
+
+.dropdown-container {
+    width: 88%;
+  display: none;
+  background-color: white;
+  padding-left: 8px;
+  margin-left: 20px;
+}
+
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+   
+    .scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+
+}
+
+.scrollku::-webkit-scrollbar {
+    
+  width: 8px;
+}
+
+
+.scrollku::-webkit-scrollbar-track {
+   
+  
+}
+ 
+
+.scrollku::-webkit-scrollbar-thumb {
+  background: #888; 
+ /* border-radius: 10px;*/
+}
+
+
+.scrollku::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+        .area::-webkit-scrollbar {
+    
+  width: 8px;
+}
+
+
+.area::-webkit-scrollbar-track {
+   
+  
+}
+ 
+
+.area::-webkit-scrollbar-thumb {
+  background: #888; 
+ /* border-radius: 10px;*/
+ 
+}
+
+
+.area::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+  
+}
+textarea {
+    cursor: auto;
+}
+.cardku{
+    border: 2px solid #00415a;
+    border-radius: 2px;
+    
+}
+    </style>
+
 </head>
 
 

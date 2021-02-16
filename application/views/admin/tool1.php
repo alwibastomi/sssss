@@ -1,13 +1,13 @@
-<div class="content-page">
+<div class="content-page" style="background-color: #edeff0;">
   <!-- Start content -->
   <div class="content">
     <div class="container">
 
       <div class="row">
         <div class="col-sm-12">
-          <div class="card-box table-responsive">
+          <div class="card-box table-responsive" style="background-color: white;">
 
-            <center><h1><b>Related Keyword Generator</b></h1></center>
+            <center><h1 ><b style="color: #00415a">Related Keyword Generator</b></h1></center>
             <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
             <div class="container" style="margin-top: 5%;">
 
@@ -18,7 +18,7 @@
                     <div id="numofkeywords"></div>
                     <div class="form-group">
                       <label for="input" ><h3>Input:</h3></label>
-                      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control"  placeholder="Isi Keyword"></textarea>
+                      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;background-color: white;color:#00415a; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control area"  placeholder="Isi Keyword"></textarea>
                   </div>
 
                   <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
@@ -35,8 +35,8 @@
 <div class="col-sm-5">
 
     <div class="form-group lala">
-      <label for="service" style="margin-top: 20px;">Service:</label>
-      <select class="form-control" name="service" id="service" >
+      <label for="service" style="margin-top: 30px;" >Service:</label>
+      <select class="form-control" name="service" id="service" style="background-color: white;color:#00415a;border-color: #00719c">
                         <!-- <option>google</option>
                         <option>twitter</option>
                         <option>yahoo</option>
@@ -318,25 +318,54 @@
             </select>
         </div>
         <br>
-        <div class="card">
-          <div class="card-header" style="background-color: darkgreen; color: white;">
+        <div class="card cardku">
+          <div class="card-header" style="background-color: #00415a; color: white;padding-top: 4px;padding-left: 6px;padding-bottom: 4px;">
             <b>Pengumuman</b>
         </div>
         <div class="card-body">
-            <div class="form-group" >
+            <div class="form-group" style="padding-top: 4px;padding-left: 6px;">
              <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
              </p>
          </div>
      </div>
  </div>
  <br>
- <div class="card">
-  <div class="card-header" style="background-color: darkgreen; color: white;">
+ <div class="card cardku" >
+  <div class="card-header" style="background-color: #00415a; color: white;padding-top: 4px;padding-left: 6px;padding-bottom: 4px;">
     <b>Persen</b>
 </div>
 <div class="card-body">
     <div class="form-group" >
-     <p id="persen"></p>
+         
+                
+      
+</div> -->
+<div class="card">
+
+                <button class="dropdown-btn" style="width: 88%;margin-left: 20px;margin-top: 20px;border: none;background-color: #def6ff;padding: 10px;color: #00719c;border-left: 4px solid #00719c;font-weight: 600;">KEYWORD YOU ALREADY USE 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container scrollable-menu scrollku" id="persen" style="border-left: 4px solid #00719c;padding-top: 20px;">
+   
+  </div>
+  </div>
+  <script type="text/javascript">
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+  </script>
+
  </div>
 </div>
 </div>
@@ -455,7 +484,30 @@
         </div>
         <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
         </p>
+<style type="text/css">
+     #persen b{
 
+                margin-left: 10px;
+               /* margin-right: 50%;*/
+               
+            }
+            #persen span{
+                
+                float:right;
+            }
+            #persen hr{
+                height: 4px;
+                background-color: #e8e6e6;
+            }
+            #persen i{
+                padding-left: 20px;
+                color:#00719c;
+            }
+            .form-control{
+                background-color: #ffff;
+
+            }
+</style>
     </div>
 </div>
 </div>
@@ -711,7 +763,7 @@ var KWS = function(){
                     b = ob[key]/a * 100;
                     b = roundNumber(b, 2)
                     // console.log(key, b+"%");
-                    $('#persen').append("<b>"+key+"</b> "+b+"% , ")
+                    $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>")
                 });
                 console.log (a)
             }

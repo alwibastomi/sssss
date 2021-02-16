@@ -6,7 +6,7 @@
     </div>
 
     <!-- Button mobile view to collapse sidebar menu -->
-    <div class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-default" role="navigation" style="background-color: #00719c;">
         <div class="container">
 
             <!-- Page title -->

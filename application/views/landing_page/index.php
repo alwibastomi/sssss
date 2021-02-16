@@ -19,15 +19,59 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 
   <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
 
   <style type="text/css">
-    .card{
+    .cardku{
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
+    .progress-done {
+        background: #7cf564;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 0;
+        opacity: 0;
+        transition: 1s ease 0.3s;
+      }
+      .progress {
+        background-color: #d8d8d8;
+        position: relative;
+        margin: 15px 0;
+        height: 30px;
+        width: 420px;
+      }
+      .scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+#collapseUtilities::-webkit-scrollbar {
+    
+  width: 8px;
+}
+
+
+#collapseUtilities::-webkit-scrollbar-track {
+   
+  
+}
+ 
+
+#collapseUtilities::-webkit-scrollbar-thumb {
+  background: #888; 
+ /* border-radius: 10px;*/
+}
+
+
+#collapseUtilities::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 </style>
 </head>
 
@@ -351,7 +395,7 @@
             </select>
         </div>
         <br>
-        <div class="card">
+        <div class="card cardku">
           <div class="card-header" style="background-color: darkgreen; color: white;">
             <b>Pengumuman</b>
         </div>
@@ -363,13 +407,51 @@
        </div>
    </div>
    <br>
-   <div class="card">
+   <div class="card cardku">
       <div class="card-header" style="background-color: darkgreen; color: white;">
         <b>Persen</b>
     </div>
+
     <div class="card-body">
         <div class="form-group" >
+            <!-- 
+            <div class="progress">
+                    <div class="progress-done" data-done="60">
+                      60%
+                    </div>
+                  </div> -->
+                  <script type="text/javascript">
+                      const progress = document.querySelector('.progress-done');
+
+                      progress.style.width = progress.getAttribute('data-done') + '%';
+                      progress.style.opacity = 1;
+                  </script>
+                  
+           
+            <div class="card">
+                <a  class="nav-link"  data-toggle="collapse" data-target="#collapseUtilities" style="background-color: #e3ffeb; text-decoration: none;cursor: pointer;padding: 16px;border-left: 4px solid darkgreen;">
+                    <i class="fas fa-caret-down" style="color: darkgreen;font-size: 20px;"></i>
+                    <span  style="padding-left: 20px!important;color: darkgreen;font-weight: 800;margin-top: -6px;">KEYWORD YOU ALREADY USE</span>
+                </a>
+                <div id="collapseUtilities" class="collapse scrollable-menu" >
+
+                    <div  id="persen" style="border-left: 4px solid darkgreen;padding-top: 16px;margin-bottom: -20px;" >
+
+                        
+                    </div>
+                </div>
+           </div>
+           <!-- <div class="col-lg-12">
+            <h2 class="bold">Scrollable Menu</h2>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Scrollable Menu <span class="caret"></span></button>
+                <ul class="dropdown-menu scrollable-menu" role="menu" id="persen">
+                    
+                </ul>
+            </div> -->
+              
            <p id="persen"></p>
+           
        </div>
    </div>
 </div>
@@ -488,6 +570,28 @@
         </div>
         <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
         </p>
+        <style type="text/css">
+
+            #persen b{
+
+                margin-left: 10px;
+               /* margin-right: 50%;*/
+               
+            }
+            #persen span{
+                
+                float:right;
+            }
+            #persen hr{
+                height: 4px;
+                color: #f3f5f0
+            }
+            #persen i{
+                padding-left: 20px;
+                color:darkgreen;
+            }
+            
+        </style>
 
     </div>
 
@@ -741,7 +845,12 @@ var KWS = function(){
                     b = ob[key]/a * 100;
                     b = roundNumber(b, 2)
                     // console.log(key, b+"%");
-                    $('#persen').append("<b>"+key+"</b> "+b+"% , ")
+                    // var a="<div>"
+                    // var a+="<br><b>" +key+"</b>"
+                    // var a+="<p>"+b+"%, </p>"
+                    // var a+="</div>"
+
+                    $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>");
                 });
                 console.log (a)
             }
