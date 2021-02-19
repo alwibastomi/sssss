@@ -9,19 +9,85 @@
 
             <center><h1 ><b style="color: #00415a">Related Keyword Generator</b></h1></center>
             <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
+            <ul class="navbar-nav" id="divku" >
+                  <li class="nav-item btn btn-primary activeku" style="border-radius: 0;"><a class="nav-link nav-menu" style="color: white;" id="" href="<?= base_url('Tool1') ?>" >Scrapping</a></li>
+                  <li class="nav-item btn btn-primary" style="background-color:;border-radius: 0;"><a class="nav-link nav-menu" style="color: white;" id="application/views/admin/optimasi">Optimasi</a></li>
+                </ul>
+                
+                    
+ 
+                <script>
+                
+                var header = document.getElementById("divku");
+                var btns = header.getElementsByClassName("btn");
+                for (var i = 0; i < btns.length; i++) {
+                  btns[i].addEventListener("click", function() {
+                  var current = document.getElementsByClassName("activeku");
+                  current[0].className = current[0].className.replace(" activeku", "");
+                  this.className += " activeku";
+                  });
+                }
+                </script>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        var halaman=getCookie("halaman");
+                        if (halaman == "") {
+                            setCookie("halaman", "application/controller/Tool1.php", 30);
+                            $('.halaman-menu').load(getCookie("halaman"));
+                            console.log('ini di halaman menu');
+                        } else {
+                            $('.halaman-menu').load(getCookie("halaman"));
+                        }
+                 
+                        $('.nav-link').click(function(){
+                            var menu = $(this).attr('id');
+                            setCookie("halaman", menu + ".php", 30);
+                            $('.halaman-menu').load(getCookie("halaman"));
+                        });
+                    });
+                 
+                    function setCookie(cname,cvalue,exdays) {
+                      var d = new Date();
+                      d.setTime(d.getTime() + (30*24*60*60*1000));
+                      var expires = "expires=" + d.toGMTString();
+                      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                    }
+                 
+                    function getCookie(cname) {
+                      var name = cname + "=";
+                      var decodedCookie = decodeURIComponent(document.cookie);
+                      var ca = decodedCookie.split(';');
+                      for(var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                          c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                          return c.substring(name.length, c.length);
+                        }
+                      }
+                      return "";
+                    }
+                </script>
+                <hr style="width: 92.2%;height: 4px;background-color: #00415a;">
+                
+                
+<div class="halaman-menu">
+                
             <div class="container" style="margin-top: 5%;">
 
-
+                
                 <div class="row">
 
                   <div class="col-sm-6">
                     <div id="numofkeywords"></div>
                     <div class="form-group">
                       <label for="input" ><h3>Input:</h3></label>
-                      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;background-color: white;color:#00415a; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control area"  placeholder="Isi Keyword"></textarea>
+                      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;background-color: white;color:#00415a; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border:1px solid #00415a;margin-left: 6%;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control area"  placeholder="Isi Keyword"></textarea>
                   </div>
 
-                  <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
+                  <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;margin-left: 6%;">Generate Keyword</a>
+                  
 
 <!-- 
       <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#advanced" aria-expanded="false" aria-controls="advanced">
@@ -34,8 +100,8 @@
 </div>
 <div class="col-sm-5">
 
-    <div class="form-group lala">
-      <label for="service" style="margin-top: 30px;" >Service:</label>
+    <div class="form-group lala" style="margin-top: 40px!important;">
+      <label for="service"  >Select Jenis:</label>
       <select class="form-control" name="service" id="service" style="background-color: white;color:#00415a;border-color: #00719c">
                         <!-- <option>google</option>
                         <option>twitter</option>
@@ -339,7 +405,7 @@
          
                 
       
-</div> -->
+
 <div class="card">
 
                 <button class="dropdown-btn" style="width: 88%;margin-left: 20px;margin-top: 20px;border: none;background-color: #def6ff;padding: 10px;color: #00719c;border-left: 4px solid #00719c;font-weight: 600;">KEYWORD YOU ALREADY USE 
@@ -508,6 +574,7 @@ for (i = 0; i < dropdown.length; i++) {
 
             }
 </style>
+</div>
     </div>
 </div>
 </div>
@@ -763,7 +830,7 @@ var KWS = function(){
                     b = ob[key]/a * 100;
                     b = roundNumber(b, 2)
                     // console.log(key, b+"%");
-                    $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>")
+                    $('#persen').append("<i class='fas fa-asterisk'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>")
                 });
                 console.log (a)
             }

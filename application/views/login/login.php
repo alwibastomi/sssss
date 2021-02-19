@@ -1,3 +1,8 @@
+<style type="text/css">
+    ::-webkit-input-placeholder{
+    color: gray!important;
+}
+</style>
 <div class="account-pages"></div>
 <div class="clearfix"></div>
 <div class="wrapper-page">
@@ -13,13 +18,13 @@
 
                 <div class="form-group ">
                     <div class="col-xs-12">
-                        <input class="form-control" name="email" type="email" required="" placeholder="Email">
+                        <input class="form-control" style="color: black;" name="email" type="email" required="" placeholder="Email">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" name="password" type="password" required="" placeholder="Password">
+                        <input class="form-control" style="color: black;" name="password" type="password" required="" placeholder="Password">
                     </div>
                 </div>
 
@@ -40,7 +45,7 @@
 
                         <label for="captcha"><?php echo $captcha['image']; ?></label>
                         <br>
-                        <input class="form-control form-control-user" type="text" autocomplete="off" name="userCaptcha" placeholder="Captcha" value="<?php if(!empty($userCaptcha)){ echo $userCaptcha;} ?>" />
+                        <input class="form-control form-control-user" style="color: black;" type="text" autocomplete="off" name="userCaptcha" placeholder="Captcha" value="<?php if(!empty($userCaptcha)){ echo $userCaptcha;} ?>" />
                         <span class="required-server"><?php echo form_error('userCaptcha','<p style="color:#F83A18">','</p>'); ?></span> </div>
                         <div class="col-xs-12">
                             <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" name="login" type="submit">Log In</button>

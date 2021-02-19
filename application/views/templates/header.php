@@ -41,6 +41,7 @@
 
 
     <!-- jQuery  -->
+    <script src="<?= base_url('vendor/ckeditor/ckeditor.js') ?>"></script>
     <script src="<?= site_url('assets/js/jquery.min.js'); ?>"></script>
     <script src="<?= site_url('assets/js/bootstrap.min.js'); ?>"></script>
     <script src="<?= site_url('assets/js/detect.js'); ?>"></script>
@@ -50,8 +51,10 @@
     <script src="<?= site_url('assets/js/waves.js'); ?>"></script>
     <script src="<?= site_url('assets/js/jquery.nicescroll.js'); ?>"></script>
     <script src="<?= site_url('assets/js/jquery.scrollTo.min.js'); ?>"></script>
-
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- SweetAlert -->
     <script src="<?= site_url('assets/vendors/sweetalert/dist/sweetalert.min.js'); ?>"></script>
 
@@ -94,8 +97,10 @@
     <script src="<?= site_url('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'); ?>"></script>
     <script src="<?= site_url('assets/plugins/bootstrap-daterangepicker/daterangepicker.js'); ?>"></script>
     <script src="<?= site_url('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js'); ?>" type="text/javascript"></script>
+    
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- CSS only -->
+
 
     <script src="<?= site_url('assets/cus.js'); ?>"></script>
     <style type="text/css">
@@ -170,11 +175,19 @@
 textarea {
     cursor: auto;
 }
+.activeku{
+    background-color: #00415a!important;
+    border-color: #00415a!important;
+}
 .cardku{
     border: 2px solid #00415a;
     border-radius: 2px;
     
 }
+.dataTables_filter input{
+    border: 2px solid #00415a;
+}
+
     </style>
 
 </head>
