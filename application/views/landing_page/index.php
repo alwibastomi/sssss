@@ -26,7 +26,9 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 
-  <!-- <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/datatables.min.css'); ?>"/> -->
+  <!-- <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/datatables.min.css'); ?>"/> 
+  -->
+  <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
   
   <!--   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
   <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -37,6 +39,14 @@
   <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
 
   <style type="text/css">
+  .paginate_button {
+    background-color: #e3ffeb;
+    color: darkgreen;
+  }
+  
+  .paginate_button::hover{
+    background-color: darkgreen;
+  }
     .cardku{
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
@@ -105,6 +115,8 @@
 </head>
 
 <body>
+ 
+
 
   <!-- <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> -->
   <nav class="navbar navbar-light " style="background-color: #556B2F;">
@@ -165,7 +177,7 @@
     <!-- <div id="numofkeywords"></div> -->
     <div class="form-group mt-4">
       <label for="input" ><h3>Input:</h3></label>
-      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword"></textarea>
+      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword" class="input"></textarea>
   </div>
 
   <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
@@ -247,13 +259,15 @@
     <!-- AWAL TAB2 -->
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="row">
-            <div class="col-md-10 mt-4">
+            <div class="col-md-10 mt-4" id="idku">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="" value="" placeholder="Judul Artikel">
+                    <input class="form-control inputku " type="text" name="" value="" placeholder="Judul Artikel"  />
                 </div>
                 <label>Artikel</label>
-                <textarea class="form-control" id="haha" value="" required></textarea>
+                <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
             </div>
+             
+            
             <div class="col-md-2">
                 <div class="wrap" style="margin-top: -170px;">
                     <div class="tank waterTankHere2"></div>
@@ -271,7 +285,6 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group" >
-
                         <?php 
 
                         $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
@@ -280,16 +293,18 @@
                             $lol = $lol + strlen($a);
                             if ($lol > 10 ) {?>
                                 <br>
-                                <span style="list-style: none; background-color:#00415a;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete" style="margin-left: 1%;"></i></span>
+                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                                 <?php 
                                 $lol = 0;
                             }else{ ?>
-                                <span style="list-style: none; background-color:#00415a;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete" style="margin-left: 1%;"></i></span>
+                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                             <?php } } ?>
                         </div>
                     </div>
                 </div>
             </div>
+            
+
             <div class="col-md-2">
                 <div class="card cardku">
                   <div class="card-header" style="background-color: yellow; color: white;">
@@ -297,8 +312,20 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group" >
-                     <p>Ini adalah fitur free
-                     </p>
+                      <?php 
+
+                        $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
+                        $lol = 0;
+                        foreach ($ar as $a) {
+                            $lol = $lol + strlen($a);
+                            if ($lol > 10 ) {?>
+                                <br>
+                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <?php 
+                                $lol = 0;
+                            }else{ ?>
+                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                            <?php } } ?>
                  </div>
              </div>
          </div>
@@ -310,28 +337,71 @@
         </div>
         <div class="card-body">
             <div class="form-group" >
-             <p>Ini adalah fitur free
-             </p>
+             <?php 
+
+                        $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
+                        $lol = 0;
+                        foreach ($ar as $a) {
+                            $lol = $lol + strlen($a);
+                            if ($lol > 10 ) {?>
+                                <br>
+                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <?php 
+                                $lol = 0;
+                            }else{ ?>
+                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                            <?php } } ?>
          </div>
      </div>
  </div>
 </div>
-<div class="col-md-4">
+<div class="col-md-4" id="idku">
     <div class="card cardku">
       <div class="card-header" style="background-color: darkgreen; color: white;">
         <b>Rekomendasi Keyword</b>
     </div>
     <div class="card-body">
         <div class="form-group" >
-         <p>Ini adalah fitur free
-         </p>
-     </div>
- </div>
-</div>
-</div>
-</div>
+         <?php 
 
+                        $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
+                        $lol = 0;
+                        $id = 0;
+                        foreach ($ar as $a) {
+                          $id++;
+                            $lol = $lol + strlen($a);
+                            if ($lol > 30 ) {?>
+                                <br>
+                                
+                                <span class="output" id="<?= $id ?>" style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" ></span>
+                                <?php 
+                                $lol = 0;
+                            }else{ ?>
+                                <span class="output" style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"></span>
+                            <?php } } ?>
+     </div>
+    </div>
 </div>
+</div>
+</div>
+<script type="text/javascript">
+       $('#idku .inputku').keyup(function () {
+    var text = $(this).val()
+    var id = 0;
+    $('#idku .output').html(text +'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>')
+      var close = document.getElementsByClassName("delete");
+            var i;
+
+            for (i = 0; i < close.length; i++) {
+              close[i].addEventListener("click", function() {
+                this.parentElement.style.display = 'none';
+              });
+            }
+            
+    
+});
+
+     </script>
 <!-- AKHIR TAB2 -->
 </div>
 <footer>
