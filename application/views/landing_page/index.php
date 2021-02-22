@@ -259,7 +259,7 @@
     <!-- AWAL TAB2 -->
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="row">
-            <div class="col-md-10 mt-4" id="idku">
+            <div class="col-md-8 mt-4" id="idku">
                 <div class="form-group">
                     <input class="form-control inputku " type="text" name="" value="" placeholder="Judul Artikel"  />
                 </div>
@@ -268,23 +268,18 @@
             </div>
              
             
-            <div class="col-md-2">
-                <div class="wrap" style="margin-top: -170px;">
-                    <div class="tank waterTankHere2"></div>
+            <div class="col-md-4" style="margin-top: 22px;">
+                <div class="progressk">
+                  <div style="font-weight: 800">Score :<span>80%</span></div>
+                  
                 </div>
-            </div>
-        </div>
-        <!-- akhir row -->
-
-        <div class="row" style="margin-top: -120px;">
-            <label style="margin-top: -35px; margin-left: 1%; position: absolute;">Strenght Keyword</label>
-            <div class="col-md-2">
-                <div class="card cardku">
-                  <div class="card-header" style="background-color: blue; color: white;">
+              <p class="mt-3">Rekomendasi Keyword</p>
+                  <div class="card cardku mt-4" >
+                  <div class="card-header bg-primary" style="color: white;">
                     <b>High</b>
                 </div>
                 <div class="card-body">
-                    <div class="form-group" >
+                    <div class="form-group">
                         <?php 
 
                         $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
@@ -293,26 +288,22 @@
                             $lol = $lol + strlen($a);
                             if ($lol > 10 ) {?>
                                 <br>
-                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <span style="background-color:#bcc2f7;padding:2px 4px;color: blue;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                                 <?php 
                                 $lol = 0;
                             }else{ ?>
-                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <span style="background-color:#bcc2f7;padding:2px 4px;color: blue;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                             <?php } } ?>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-
-            <div class="col-md-2">
-                <div class="card cardku">
-                  <div class="card-header" style="background-color: yellow; color: white;">
+                  </div>
+                <div class="card cardku mt-2">
+                  <div class="card-header bg-warning" style="color: white;">
                     <b>Middle</b>
                 </div>
-                <div class="card-body">
-                    <div class="form-group" >
-                      <?php 
+                <div class="card-body ">
+                    <div class="form-group">
+                        <?php 
 
                         $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
                         $lol = 0;
@@ -320,76 +311,45 @@
                             $lol = $lol + strlen($a);
                             if ($lol > 10 ) {?>
                                 <br>
-                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <span style="background-color:#fcfbe6;padding:2px 4px;color: #ffee00;border-radius: 12px; font-size: 15px;font-weight: 600"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                                 <?php 
                                 $lol = 0;
                             }else{ ?>
-                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <span style="background-color:#fcfbe6;padding:2px 4px;color: #ffee00;border-radius: 12px; font-size: 15px;font-weight: 600"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                             <?php } } ?>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <div class="col-md-2">
-        <div class="card cardku">
-          <div class="card-header" style="background-color: red; color: white;">
-            <b>Low</b>
+                        </div>
+                    </div>
+                  </div>
+                    <div class="card cardku mt-2">
+                  <div class="card-header bg-danger" style=" color: white;">
+                    <b>Low</b>
+                </div>
+                <div class="card-body ">
+                    <div class="form-group"  >
+                        <?php 
+
+                        $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
+                        $lol = 0;
+                        foreach ($ar as $a) {
+                            $lol = $lol + strlen($a);
+                            if ($lol > 10 ) {?>
+                                <br>
+                                <span style="background-color:#edbbbb;padding:2px 4px;color: red;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <?php 
+                                $lol = 0;
+                            }else{ ?>
+                                <span style="background-color:#edbbbb;padding:2px 4px;color: red;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                            <?php } } ?>
+                        </div>
+                    </div>
+               </div>
+            </div>
         </div>
-        <div class="card-body">
-            <div class="form-group" >
-             <?php 
+        <!-- akhir row -->
 
-                        $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
-                        $lol = 0;
-                        foreach ($ar as $a) {
-                            $lol = $lol + strlen($a);
-                            if ($lol > 10 ) {?>
-                                <br>
-                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
-                                <?php 
-                                $lol = 0;
-                            }else{ ?>
-                                <span style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
-                            <?php } } ?>
-         </div>
-     </div>
- </div>
-</div>
-<div class="col-md-4" id="idku">
-    <div class="card cardku">
-      <div class="card-header" style="background-color: darkgreen; color: white;">
-        <b>Rekomendasi Keyword</b>
-    </div>
-    <div class="card-body">
-        <div class="form-group" >
-         <?php 
-
-                        $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
-                        $lol = 0;
-                        $id = 0;
-                        foreach ($ar as $a) {
-                          $id++;
-                            $lol = $lol + strlen($a);
-                            if ($lol > 30 ) {?>
-                                <br>
-                                
-                                <span class="output" id="<?= $id ?>" style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" ></span>
-                                <?php 
-                                $lol = 0;
-                            }else{ ?>
-                                <span class="output" style="background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;"></span>
-                            <?php } } ?>
-     </div>
-    </div>
-</div>
-</div>
-</div>
+        
 <script type="text/javascript">
-       $('#idku .inputku').keyup(function () {
-    var text = $(this).val()
-    var id = 0;
-    $('#idku .output').html(text +'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>')
-      var close = document.getElementsByClassName("delete");
+  var close = document.getElementsByClassName("delete");
             var i;
 
             for (i = 0; i < close.length; i++) {
@@ -397,6 +357,12 @@
                 this.parentElement.style.display = 'none';
               });
             }
+   
+       $('#idku .inputku').keyup(function () {
+    var text = $(this).val()
+    var id = 0;
+    $('#idku .output').html(text +'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>')
+      
             
     
 });
@@ -465,7 +431,7 @@
       var editor = CKEDITOR.replace( 'haha', {
         language: 'en',
         extraPlugins: 'notification',
-        height:300
+        height:540
     });
 
       editor.on( 'required', function( evt ) {
@@ -603,7 +569,7 @@ function roundNumber(num, scale) {
 var KWS = function(){
     var haha=[];
     var arr=[];
-
+    var sayangku = "";
     var lol=[];
     return {
         table: undefined,
@@ -705,9 +671,16 @@ var KWS = function(){
                     // var a+="<br><b>" +key+"</b>"
                     // var a+="<p>"+b+"%, </p>"
                     // var a+="</div>"
+                    
 
                     $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>");
+                    // $('#idkuu').append("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
+
+                    // document.getElementById("idkuu").innerHTML = "<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>";
+
+
                 });
+
                 console.log (a)
             }
         },
