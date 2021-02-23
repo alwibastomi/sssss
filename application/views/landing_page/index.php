@@ -38,7 +38,9 @@
 
   <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
 
+
   <style type="text/css">
+
   .paginate_button {
     background-color: #e3ffeb;
     color: darkgreen;
@@ -263,7 +265,7 @@
                 <div class="form-group">
                     <input class="form-control inputku " type="text" name="" value="" placeholder="Judul Artikel"  />
                 </div>
-                <label>Artikel</label>
+                <label style="font-weight: 600;">Artikel</label>
                 <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
             </div>
              
@@ -271,14 +273,17 @@
             <div class="col-md-4" style="margin-top: 22px;">
                 <div class="progressk">
                   <div style="font-weight: 800">Score :<span>80%</span></div>
-                  
+                 
+                <div class="progress">
+                    <div class="progress-bar bg-success" style="width:80%"></div>
+                  </div>
                 </div>
-              <p class="mt-3">Rekomendasi Keyword</p>
-                  <div class="card cardku mt-4" >
-                  <div class="card-header bg-primary" style="color: white;">
+              <p class="mt-1" style="font-weight: 600;">Rekomendasi Keyword</p>
+                  <div class="card" style="margin-top: 20px;" >
+                  <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
                     <b>High</b>
                 </div>
-                <div class="card-body">
+                <div class="card-body cb" id="idku">
                     <div class="form-group">
                         <?php 
 
@@ -297,11 +302,16 @@
                         </div>
                     </div>
                   </div>
-                <div class="card cardku mt-2">
-                  <div class="card-header bg-warning" style="color: white;">
+                <style type="text/css">
+                  .cb{
+                    padding-top: -0px!important;
+                  }
+                </style>
+                 <div class="card mt-2" >
+                  <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
                     <b>Middle</b>
                 </div>
-                <div class="card-body ">
+                <div class="card-body cb">
                     <div class="form-group">
                         <?php 
 
@@ -311,35 +321,45 @@
                             $lol = $lol + strlen($a);
                             if ($lol > 10 ) {?>
                                 <br>
-                                <span style="background-color:#fcfbe6;padding:2px 4px;color: #ffee00;border-radius: 12px; font-size: 15px;font-weight: 600"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <span style="background-color:#faf9d7;padding:2px 4px;color: yellow;border-radius: 12px; font-size: 15px;font-weight: 600;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                                 <?php 
                                 $lol = 0;
                             }else{ ?>
-                                <span style="background-color:#fcfbe6;padding:2px 4px;color: #ffee00;border-radius: 12px; font-size: 15px;font-weight: 600"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <span style="background-color:#faf9d7;padding:2px 4px;color: yellow;border-radius: 12px; font-size: 15px;font-weight: 600;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                             <?php } } ?>
                         </div>
                     </div>
                   </div>
-                    <div class="card cardku mt-2">
-                  <div class="card-header bg-danger" style=" color: white;">
-                    <b>Low</b>
+              <div class="card  mt-2" >
+                  <div class="card-header bg-danger" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+                    <b >Low</b>
                 </div>
-                <div class="card-body ">
+                <div class="card-body cb" id="idku">
                     <div class="form-group"  >
                         <?php 
 
-                        $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
+                        $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj","lalsdla");
                         $lol = 0;
                         foreach ($ar as $a) {
                             $lol = $lol + strlen($a);
-                            if ($lol > 10 ) {?>
+                            if ($lol > 26 ) {?>
                                 <br>
-                                <span style="background-color:#edbbbb;padding:2px 4px;color: red;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <span class="output" style="background-color:#edbbbb;padding:2px 4px!important;color: red;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                                 <?php 
                                 $lol = 0;
                             }else{ ?>
-                                <span style="background-color:#edbbbb;padding:2px 4px;color: red;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
+                                <span class="output" style="padding-top:auto!important;background-color:#edbbbb;padding:2px 4px;color: red;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
                             <?php } } ?>
+                        </div>
+                    </div>
+               </div>
+               <div class="card  mt-2" >
+                  <div class="card-header" style="background-color: darkgreen; color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+                    <b >Inputan</b>
+                </div>
+                <div class="card-body cb">
+                    <div class="form-group">
+                          <input type="text" name="" style="margin-top: 10px!important;border: 1px solid darkgreen;">
                         </div>
                     </div>
                </div>
@@ -357,10 +377,13 @@
                 this.parentElement.style.display = 'none';
               });
             }
-   
+      // var input = $("#idku .inputku");
+      // var output = $("#idku .output");
+
        $('#idku .inputku').keyup(function () {
     var text = $(this).val()
-    var id = 0;
+
+  
     $('#idku .output').html(text +'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>')
       
             
