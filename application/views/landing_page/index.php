@@ -41,79 +41,79 @@
 
   <style type="text/css">
 
-  .paginate_button {
-    background-color: #e3ffeb;
-    color: darkgreen;
-  }
-  
-  .paginate_button::hover{
-    background-color: darkgreen;
-  }
-  .cardku{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  .scrollable-menu {
-    height: auto;
-    max-height: 200px;
-    overflow-x: hidden;
-  }
-  #collapseUtilities::-webkit-scrollbar {
+      .paginate_button {
+        background-color: #e3ffeb;
+        color: darkgreen;
+    }
 
-    width: 8px;
-  }
+    .paginate_button::hover{
+        background-color: darkgreen;
+    }
+    .cardku{
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    .scrollable-menu {
+        height: auto;
+        max-height: 200px;
+        overflow-x: hidden;
+    }
+    #collapseUtilities::-webkit-scrollbar {
 
-
-  #collapseUtilities::-webkit-scrollbar-track {
+        width: 8px;
+    }
 
 
-  }
+    #collapseUtilities::-webkit-scrollbar-track {
 
 
-  #collapseUtilities::-webkit-scrollbar-thumb {
-    background: #888; 
-    /* border-radius: 10px;*/
-  }
+    }
 
 
-  #collapseUtilities::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-  .tex::-webkit-scrollbar {
-
-    width: 8px;
-  }
+    #collapseUtilities::-webkit-scrollbar-thumb {
+        background: #888; 
+        /* border-radius: 10px;*/
+    }
 
 
-  .tex::-webkit-scrollbar-track {
+    #collapseUtilities::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+    .tex::-webkit-scrollbar {
+
+        width: 8px;
+    }
 
 
-  }
+    .tex::-webkit-scrollbar-track {
 
 
-  .tex::-webkit-scrollbar-thumb {
-    background: #888; 
-    /* border-radius: 10px;*/
-  }
+    }
 
 
-  .tex::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-  .tab{
-    font-weight: 400;
-    color: #00415a;
-  }
+    .tex::-webkit-scrollbar-thumb {
+        background: #888; 
+        /* border-radius: 10px;*/
+    }
+
+
+    .tex::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+    .tab{
+        font-weight: 400;
+        color: #00415a;
+    }
   /*nav-tabs{
     border:2px solid #00415a!important;
     }*/
     .nav-item a:hover{
       color: darkgreen;
-    }
-    li .active{
+  }
+  li .active{
       color:darkgreen;
       font-weight: 700;
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
@@ -125,114 +125,114 @@
 
     <a class="navbar-brand" href="#" style="color: white;margin:  10px;font-size: 30px;font-family: 'Roboto', sans-serif;">semanticarticle.com</a>
 
-  </nav>
+</nav>
 
-  <center><h1><b>Related Keyword Generator</b></h1></center>
-  <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
+<center><h1><b>Related Keyword Generator</b></h1></center>
+<center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
 
-  <div class="container" style="margin-top: 5%;">
+<div class="container" style="margin-top: 5%;">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active tab" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Scrapping</a>
-      </li>
-      <li class="nav-item">
+    </li>
+    <li class="nav-item">
         <a class="nav-link tab" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Optimasi</a>
-      </li>
-    </ul>
+    </li>
+</ul>
 
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="row">
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="row">
 
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label for="service" style="margin-top: 20px;">Service:</label>
-            <select class="form-control" name="service" id="service" >
-            </select>
-          </div>
-          <div class="checkbox">
-            <label for="keep-running">
-              <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever"></input>Continuous running:
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label for="country">Country code (google):</label>
-            <!-- ISO-3366-1: Alpha-2 Codes -->
-            <select value="id"  class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled="">
-            </select>
-          </div>
-          <br>
-          <div class="card cardku">
-            <div class="card-header" style="background-color: darkgreen; color: white;">
-              <b>Pengumuman</b>
-            </div>
-            <div class="card-body">
-              <div class="form-group" >
-               <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
-               </p>
-             </div>
-           </div>
-         </div>
-       </div>
-
-       <div class="col-lg-4">
-        <!-- <div id="numofkeywords"></div> -->
-        <div class="form-group mt-4">
-          <label for="input" ><h3>Input:</h3></label>
-          <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword" class="input"></textarea>
-        </div>
-
-        <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
-        <a class="btn btn-danger" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
-      </div>
-      <div class="col-lg-4 mt-4">
-
-        <div class="card cardku">
-          <div class="card-header" style="background-color: darkgreen; color: white;">
-            <b>Persen</b>
-          </div>
-
-          <div class="card-body">
-            <div class="form-group" >
-              <script type="text/javascript">
-                const progress = document.querySelector('.progress-done');
-                progress.style.width = progress.getAttribute('data-done') + '%';
-                progress.style.opacity = 1;
-              </script>
-
-
-              <div class="card">
-                <a  class="nav-link"  data-toggle="collapse" data-target="#collapseUtilities" style="background-color: #e3ffeb; text-decoration: none;cursor: pointer;padding: 16px;border-left: 4px solid darkgreen;">
-                  <i class="fas fa-caret-down" style="color: darkgreen;font-size: 20px;"></i>
-                  <span  style="padding-left: 20px!important;color: darkgreen;font-weight: 800;margin-top: -6px;">Keyword Penting</span>
-                </a>
-                <div id="collapseUtilities" class="collapse scrollable-menu" >
-                  <div  id="persen" style="border-left: 4px solid darkgreen;padding-top: 16px;margin-bottom: -20px;" >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div> <!-- tutup row -->
-
-
-    <div class="row">
-      <div class="col-sm-12">
-        <hr id="progress1">
-        <br id="progress2">
-      </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+        <label for="service" style="margin-top: 20px;">Service:</label>
+        <select class="form-control" name="service" id="service" >
+        </select>
     </div>
-    <div class="row" style="display:none;">
-      <div class="col-sm-12">
-       <div id="txt"></div>
-     </div>
+    <div class="checkbox">
+        <label for="keep-running">
+          <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever"></input>Continuous running:
+      </label>
+  </div>
+
+  <div class="form-group">
+    <label for="country">Country code (google):</label>
+    <!-- ISO-3366-1: Alpha-2 Codes -->
+    <select value="id"  class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled="">
+    </select>
+</div>
+<br>
+<div class="card cardku">
+    <div class="card-header" style="background-color: darkgreen; color: white;">
+      <b>Pengumuman</b>
+  </div>
+  <div class="card-body">
+      <div class="form-group" >
+       <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
+       </p>
    </div>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4">
+    <!-- <div id="numofkeywords"></div> -->
+    <div class="form-group mt-4">
+      <label for="input" ><h3>Input:</h3></label>
+      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword" class="input"></textarea>
+  </div>
+
+  <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
+  <a class="btn btn-danger" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
+</div>
+<div class="col-lg-4 mt-4">
+
+    <div class="card cardku">
+      <div class="card-header" style="background-color: darkgreen; color: white;">
+        <b>Persen</b>
+    </div>
+
+    <div class="card-body">
+        <div class="form-group" >
+          <script type="text/javascript">
+            const progress = document.querySelector('.progress-done');
+            progress.style.width = progress.getAttribute('data-done') + '%';
+            progress.style.opacity = 1;
+        </script>
 
 
-   <div class="row">
+        <div class="card">
+            <a  class="nav-link"  data-toggle="collapse" data-target="#collapseUtilities" style="background-color: #e3ffeb; text-decoration: none;cursor: pointer;padding: 16px;border-left: 4px solid darkgreen;">
+              <i class="fas fa-caret-down" style="color: darkgreen;font-size: 20px;"></i>
+              <span  style="padding-left: 20px!important;color: darkgreen;font-weight: 800;margin-top: -6px;">Keyword Penting</span>
+          </a>
+          <div id="collapseUtilities" class="collapse scrollable-menu" >
+              <div  id="persen" style="border-left: 4px solid darkgreen;padding-top: 16px;margin-bottom: -20px;" >
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div> <!-- tutup row -->
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <hr id="progress1">
+    <br id="progress2">
+</div>
+</div>
+<div class="row" style="display:none;">
+  <div class="col-sm-12">
+   <div id="txt"></div>
+</div>
+</div>
+
+
+<div class="row">
     <div id="results" class="col-sm-12">
       <h2>Results</h2>
       <!-- <div class="table-responsive"> -->
@@ -247,219 +247,143 @@
                             <th title="Search that prompted the keyword suggestion">Search</th>
                             <th title="Source">Source</th>
                             <th title="Number of words">Words</th> -->
-                          </tr>
-                        </thead>
-                        <tbody>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                        </tbody>
-                      </table>
-                      <!-- </div> -->
-                    </div>
-                  </div>
-                </div>
+                    </tbody>
+                </table>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
 
-                <!-- AWAL TAB2 -->
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  <div class="row">
-                    <div class="col-md-8 mt-4" id="idku">
-                      <div class="form-group">
-                        <input class="form-control inputku " type="text" name="" value="" placeholder="Judul Artikel"  />
-                      </div>
-                      <label style="font-weight: 600;">Artikel</label>
-                      <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
-                    </div>
-
-
-                    <div class="col-md-4" style="margin-top: 22px;">
-                      <div class="progressk">
-                        <div style="font-weight: 800">Score :<span>80%</span></div>
-
-                        <div class="progress">
-                          <div class="progress-bar bg-success" style="width:80%"></div>
-                        </div>
-                      </div>
-                      <p class="mt-1" style="font-weight: 600;">Rekomendasi Keyword</p>
-                      <div class="card" style="margin-top: 20px;" >
-                        <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
-                          <b>High</b>
-                        </div>
-                        <div class="card-body cb" id="idku">
-                          <div class="form-group">
-                            <?php 
-
-                            $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
-                            $lol = 0;
-                            foreach ($ar as $a) {
-                              $lol = $lol + strlen($a);
-                              if ($lol > 10 ) {?>
-                                <br>
-                                <span style="background-color:#bcc2f7;padding:2px 4px;color: blue;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
-                                <?php 
-                                $lol = 0;
-                              }else{ ?>
-                                <span style="background-color:#bcc2f7;padding:2px 4px;color: blue;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
-                              <?php } } ?>
-                            </div>
-                          </div>
-                        </div>
-                        <style type="text/css">
-                        .cb{
-                          padding-top: -0px!important;
-                        }
-                      </style>
-                      <div class="card mt-2" >
-                        <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
-                          <b>Middle</b>
-                        </div>
-                        <div class="card-body cb">
-                          <div class="form-group">
-                            <?php 
-
-                            $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj");
-                            $lol = 0;
-                            foreach ($ar as $a) {
-                              $lol = $lol + strlen($a);
-                              if ($lol > 10 ) {?>
-                                <br>
-                                <span style="background-color:#faf9d7;padding:2px 4px;color: yellow;border-radius: 12px; font-size: 15px;font-weight: 600;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
-                                <?php 
-                                $lol = 0;
-                              }else{ ?>
-                                <span style="background-color:#faf9d7;padding:2px 4px;color: yellow;border-radius: 12px; font-size: 15px;font-weight: 600;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
-                              <?php } } ?>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card  mt-2" >
-                          <div class="card-header bg-danger" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
-                            <b >Low</b>
-                          </div>
-                          <div class="card-body cb" id="idku">
-                            <div class="form-group"  >
-                              <?php 
-
-                              $ar = array('bayaran', 'pajak', 'aspok', "motor","uujujujujuj","lalsdla");
-                              $id = 0;
-                              $lol = 0;
-                              foreach ($ar as $a) {
-                                $lol = $lol + strlen($a);
-                                if ($lol > 26 ) { 
-                                  $id++;
-                                  ?>
-                                  <br>
-                                  <span class="output<?= $id; ?>" style="background-color:#edbbbb;padding:2px 4px!important;color: red;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
-                                  <?php 
-                                  $lol = 0;
-                                }else{
-
-                                  $id++;
-                                  ?>
-                                  <span class="output<?= $id; ?>" style="padding-top:auto!important;background-color:#edbbbb;padding:2px 4px;color: red;border-radius: 12px; font-size: 15px;"><?= $a; ?><i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>
-                                <?php } } ?>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card  mt-2" >
-                            <div class="card-header" style="background-color: darkgreen; color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
-                              <b >Inputan</b>
-                            </div>
-                            <div class="card-body cb">
-                              <div class="form-group">
-                                <input type="text" name="" style="margin-top: 10px!important;border: 1px solid darkgreen;">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- akhir row -->
+    <!-- AWAL TAB2 -->
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="row">
+        <div class="col-md-8 mt-4" id="idku">
+          <div class="form-group">
+            <input class="form-control inputku " type="text" name="" value="" placeholder="Judul Artikel"  />
+        </div>
+        <label style="font-weight: 600;">Artikel</label>
+        <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
+    </div>
 
 
-                      <script type="text/javascript">
-                        var close = document.getElementsByClassName("delete");
-                        var i;
+    <div class="col-md-4" style="margin-top: 22px;">
+      <div class="progressk">
+        <div style="font-weight: 800">Score :<span>80%</span></div>
 
-                        for (i = 0; i < close.length; i++) {
-                          close[i].addEventListener("click", function() {
-                            this.parentElement.style.display = 'none';
-                          });
-                        }
+        <div class="progress">
+          <div class="progress-bar bg-success" style="width:80%"></div>
+      </div>
+  </div>
+  <p class="mt-1" style="font-weight: 600;">Rekomendasi Keyword</p>
+  <div class="card" style="margin-top: 20px;" >
+    <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+      <b>High</b>
+  </div>
+  <div class="card-body cb" id="idku">
+      <div class="form-group" id="hi">
+      </div>
+  </div>
+</div>
+<style type="text/css">
+    .cb{
+      padding-top: -0px!important;
+  }
+</style>
+<div class="card mt-2" >
+    <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+      <b>Middle</b>
+  </div>
+  <div class="card-body cb">
+      <div class="form-group" id="mi">
+      </div>
+  </div>
+</div>
+<div class="card  mt-2" >
+  <div class="card-header bg-danger" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+    <b >Low</b>
+</div>
+<div class="card-body cb" id="idku">
+    <div class="form-group" id="lo" >
+    </div>
+</div>
+</div>
 
-                        $('#idku .inputku').keyup(function () {
-                          var text = $(this).val().toLowerCase();
-                          // var i;
+<div class="card  mt-2" >
+    <div class="card-header" style="background-color: darkgreen; color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+      <b >Inputan</b>
+  </div>
+  <div class="card-body cb">
+      <div class="form-group">
+        <input type="text" id="" style="margin-top: 10px!important;border: 1px solid darkgreen;">
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!-- akhir row -->
 
-                          // if(e == text){
-                          //   this.css("background-color", "yellow");
-                          // }
 
-                          // this.html(text +'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>')
+<script type="text/javascript">
+    var close = document.getElementsByClassName("delete");
+    var i;
 
-                          // $("#idku .output").filter(function() {
-                          //   $(this).toggle($(this).text().toLowerCase().indexOf(text) > -1)
-                          //   this.css("background-color", "yellow");
-                          // });
+    for (i = 0; i < close.length; i++) {
+      close[i].addEventListener("click", function() {
+        this.parentElement.style.display = 'none';
+    });
+  }
+</script>
+<!-- AKHIR TAB2 -->
+</div>
+<footer>
 
-                          // for (i = 0; i < text.length; i++) {
-                            $('#idku .output'+text[i]).css("background-color", "yellow");
-                          // }
+    <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
+    </footer>
+</p>
+<style type="text/css">
 
-                          // $('#idku .output').html(text +'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>')
-                        //   var opo = 0;
-                        //   for (i = 0; i < text.length; i++) {
-                        //   $('#idku .output'+opo[i]).css("background-color", "yellow");
-                        // }
-                        
-                      });
+  #persen b{
 
-                    </script>
-                    <!-- AKHIR TAB2 -->
-                  </div>
-                  <footer>
+    margin-left: 10px;
+    /* margin-right: 50%;*/
 
-                    <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
-                    </footer>
-                  </p>
-                  <style type="text/css">
+}
+#persen span{
 
-                  #persen b{
+    float:right;
+}
+#persen hr{
+    height: 4px;
+    color: #f3f5f0
+}
+#persen i{
+    padding-left: 20px;
+    color:darkgreen;
+}
 
-                    margin-left: 10px;
-                    /* margin-right: 50%;*/
+</style>
 
-                  }
-                  #persen span{
+</div>
 
-                    float:right;
-                  }
-                  #persen hr{
-                    height: 4px;
-                    color: #f3f5f0
-                  }
-                  #persen i{
-                    padding-left: 20px;
-                    color:darkgreen;
-                  }
+<script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/bootstrap-4.0.0/dist/js/bootstrap.min.js'); ?>"></script>
 
-                </style>
+<script type="text/javascript" src="<?= site_url('assets/DataTables/datatables.min.js'); ?>"></script>
 
-              </div>
-
-              <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/bootstrap-4.0.0/dist/js/bootstrap.min.js'); ?>"></script>
-
-              <script type="text/javascript" src="<?= site_url('assets/DataTables/datatables.min.js'); ?>"></script>
-
-              <script type="text/javascript" src="<?= site_url('assets/fitur.min.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/colvis.min.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/print.min.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js'); ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/lodash.min.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/FileSaver/src/FileSaver.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/localForage/src/localforage.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/progress.min.js') ?>"></script>
-              <script src="<?= site_url('assets/ckeditor/ckeditor.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/fitur.min.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/colvis.min.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/print.min.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js'); ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/lodash.min.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/FileSaver/src/FileSaver.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/localForage/src/localforage.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/progress.min.js') ?>"></script>
+<script src="<?= site_url('assets/ckeditor/ckeditor.js') ?>"></script>
+<script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -477,48 +401,55 @@
         language: 'en',
         extraPlugins: 'notification',
         height:540
-      });
+    });
 
       editor.on( 'required', function( evt ) {
         editor.showNotification( 'This field is required.', 'warning' );
         evt.cancel();
-      } );
-    </script>
+    } );
+</script>
 
-    <script>
-      $(document).ready(function() {
-        $('.waterTankHere2').waterTank({
-          width: 80,
-          height: 410,
-          color: '#556B2F',
-          level: 80
-        }).on('click', function(event) {
-          $(this).waterTank(Math.floor(Math.random() * 100) + 0 );
-        });
-      });
-    </script>
-    <script type="text/javascript">
-      var suggestions = function(){
-        return {
-          defaultOptions:{
-            deferTableUpdatesAtRows: 5000,
-            keepRunning: false,
-            maxQueueDisplay: 5000,
-            country: "",
-            filterNegative: "",
-            filterPositive: "",
-            lang: "",
-            prefixes: [],
-            rateLimit: 750,
-            service: "google",
-            suffixes: []
-          },
+<script>
+  $(document).ready(function() {
+    $('.waterTankHere2').waterTank({
+      width: 80,
+      height: 410,
+      color: '#556B2F',
+      level: 80
+  }).on('click', function(event) {
+      $(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+  });
+});
+</script>
+<script type="text/javascript">
+  var haha=[];
+  var arr=[];
+  var sayangkuh = "";
+  var high = "";
+  var mid = "";
+  var low = "";
+  var lol=[];
+  var suggestions = function(){
+    return {
+      defaultOptions:{
+        deferTableUpdatesAtRows: 5000,
+        keepRunning: false,
+        maxQueueDisplay: 5000,
+        country: "",
+        filterNegative: "",
+        filterPositive: "",
+        lang: "",
+        prefixes: [],
+        rateLimit: 750,
+        service: "google",
+        suffixes: []
+    },
 
-          services:{
-            "google":
-            "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&gl=${country}&callback=?&q=",
+    services:{
+        "google":
+        "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&gl=${country}&callback=?&q=",
             // "kickasstorrents": "//kat.cr/get_queries.php?query=", // not jsonp
-          },
+        },
         /**
          * Get the service url based on options set in the dom.
          * @return {String} A jsonp url for search suggestions with query missing from the end.
@@ -530,93 +461,118 @@
             // https://developers.google.com/custom-search/docs/ref_languages
             options = _.defaults({},this.defaultOptions, this.getOptions(), options)
             return _.template(this.services[(service||this.options.service)])(options);
-          },
+        },
 
 
-          /** Parse response per service **/
-          parseServiceResponse: function(res, service){
+        /** Parse response per service **/
+        parseServiceResponse: function(res, service){
             // Each take a json response tand return a keyword array
             RESPONSE_TEMPLATES = {
                 // opensearch default
                 "default": function (res) {
                   return res[1];
-                },
-                "yahoo": function (res) {
+              },
+              "yahoo": function (res) {
                   return _.map(res.gossip.results, 'key');
-                },
-                "ebay": function (res) {
+              },
+              "ebay": function (res) {
                   return res.res ? res.res.sug : [];
-                },
-                "twitter": function (res) {
+              },
+              "twitter": function (res) {
                   return _.concat(res.users, _.map(res.topics, 'topic'), res.hashtags, res.oneclick);
-                },
-                "baidu": function (res) {
+              },
+              "baidu": function (res) {
                   return res.s;
-                },
-                "yandex": function(res){
+              },
+              "yandex": function(res){
                   return _.map(res[1], function(r){
                     return typeof r === 'string' ? r : r[1];
-                  });
-                },
-                "linkedin": function(res){
+                });
+              },
+              "linkedin": function(res){
                   return _.map(res.resultList,'displayName');
-                },
-                "google play": function(res){return _.map(res,'s')},
-                "google play apps": function(res){return _.map(res,'s')},
-                "google play movies": function(res){return _.map(res,'s')},
-                "google play books": function(res){return _.map(res,'s')},
-              };
-              var parser = RESPONSE_TEMPLATES[(service||this.options.service)] || RESPONSE_TEMPLATES["default"];
-              return parser(res);
-            }
-          }
-        }()
+              },
+              "google play": function(res){return _.map(res,'s')},
+              "google play apps": function(res){return _.map(res,'s')},
+              "google play movies": function(res){return _.map(res,'s')},
+              "google play books": function(res){return _.map(res,'s')},
+          };
+          var parser = RESPONSE_TEMPLATES[(service||this.options.service)] || RESPONSE_TEMPLATES["default"];
+          return parser(res);
+      }
+  }
+}()
 
-        function sum( obj ) {
-          var sum = 0;
-          for( var el in obj ) {
-            if( obj.hasOwnProperty( el ) ) {
-              sum += parseFloat( obj[el] );
-            }
-          }
-          return sum;
-        }
-        function reverseObject(object) {
-          var newObject = {};
-          var keys = [];
+function sum( obj ) {
+  var sum = 0;
+  for( var el in obj ) {
+    if( obj.hasOwnProperty( el ) ) {
+      sum += parseFloat( obj[el] );
+  }
+}
+return sum;
+}
+function reverseObject(object) {
+  var newObject = {};
+  var keys = [];
 
-          for (var key in object) {
-            keys.push(key);
-          }
+  for (var key in object) {
+    keys.push(key);
+}
 
-          for (var i = keys.length - 1; i >= 0; i--) {
-            var value = object[keys[i]];
-            newObject[keys[i]]= value;
-          }       
+for (var i = keys.length - 1; i >= 0; i--) {
+    var value = object[keys[i]];
+    newObject[keys[i]]= value;
+}       
 
-          return newObject;
-        }
-        function roundNumber(num, scale) {
-          if(!("" + num).includes("e")) {
-            return +(Math.round(num + "e+" + scale)  + "e-" + scale);
-          } else {
-            var arr = ("" + num).split("e");
-            var sig = ""
-            if(+arr[1] + scale > 0) {
-              sig = "+";
-            }
-            return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
-          }
-        }
-        var KWS = function(){
-          var haha=[];
-          var arr=[];
-          var sayangkuh = "";
-          var lol=[];
-          return {
-            table: undefined,
-            myIp: undefined,
-            options: {},
+return newObject;
+}
+function roundNumber(num, scale) {
+  if(!("" + num).includes("e")) {
+    return +(Math.round(num + "e+" + scale)  + "e-" + scale);
+} else {
+    var arr = ("" + num).split("e");
+    var sig = ""
+    if(+arr[1] + scale > 0) {
+      sig = "+";
+  }
+  return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+}
+}
+
+
+$('#idku .inputku').keyup(function () {
+  var text = $(this).val().toLowerCase();
+  var map = haha.reduce(function(prev, cur) {
+      prev[cur] = (prev[cur] || 0) + 1;
+      return prev;
+  }, {});
+  a = sum(map);
+  const sortable = Object.fromEntries(
+      Object.entries(map).sort(([,a],[,b]) => a-b)
+      );
+  ob = reverseObject(sortable);
+
+  Object.keys(ob).forEach(function(key) {
+      b = ob[key]/a * 100;
+      b = roundNumber(b, 2)
+
+      var res = text.split(" ");
+      var a =  res.indexOf(key);
+      if (a > -1) {
+        $("#"+key).css('background-color', 'green')
+    } else {
+        $("#"+key).css('background-color', 'red')
+    }
+});
+console.log(haha)
+});
+var KWS = function(){
+
+  return {
+    table: undefined,
+    myIp: undefined,
+    options: {},
         // flags
         queryLock: false,
         doWork: false,
@@ -633,13 +589,17 @@
         toggleWork: function(){
           if (this.doWork === false)
             this.StartWork();
-          else
+        else
             this.StopWork();
-        },
+    },
 
-        StartWork: function() {
-          sayangkuh = "";
-          if (this.doWork === false) {
+
+    StartWork: function() {
+      sayangkuh = "";
+      high = "";
+      mid = "";
+      low = "";
+      if (this.doWork === false) {
                 // reset these
                 this.saveSettings();
                 $('#startjob').val('Stop Job').text('Stop Generate').addClass('btn-danger');
@@ -663,14 +623,14 @@
                 // (before we start adding variations of the results)
                 if (!this.keywordsToQuery.length)
                   this.permuteResultsToQueue([' ']);
-                else {
+              else {
                   var untickedInputs = this.keywordsToQuery.filter(function(k){
                     return k.slice(-1)!=='  ' && k.slice(-1)!=='  ';
-                  });
+                });
                   this.permuteResultsToQueue(untickedInputs);
-                }
+              }
 
-                this.numOfInitialKeywords = this.keywordsToQuery.length;
+              this.numOfInitialKeywords = this.keywordsToQuery.length;
                 // show the extended queue
                 this.FilterAndDisplay();
 
@@ -680,15 +640,15 @@
                 // $('#input').hide();
                 // $('#advanced').collapse("hide");
 
-              } else {
+            } else {
 
-              }
-            },
+            }
+        },
 
-            StopWork: function(){
-              if (this.doWork){
-                $('#startjob').val('Start Job').text('Generate Keyword').removeClass('btn-danger');
-                this.doWork = false;
+        StopWork: function(){
+          if (this.doWork){
+            $('#startjob').val('Start Job').text('Generate Keyword').removeClass('btn-danger');
+            this.doWork = false;
                 // $('#input').show();
                 this.table.draw();
                 this.table.columns.adjust();
@@ -700,12 +660,16 @@
                 var map = haha.reduce(function(prev, cur) {
                   prev[cur] = (prev[cur] || 0) + 1;
                   return prev;
-                }, {});
+              }, {});
                 a = sum(map);
                 const sortable = Object.fromEntries(
                   Object.entries(map).sort(([,a],[,b]) => a-b)
                   );
                 ob = reverseObject(sortable);
+                var n = 0;
+                var p = 0;
+                var q = 0;
+                var r = 0;
                 Object.keys(ob).forEach(function(key) {
                   b = ob[key]/a * 100;
                   b = roundNumber(b, 2)
@@ -714,51 +678,82 @@
                     // var a+="<br><b>" +key+"</b>"
                     // var a+="<p>"+b+"%, </p>"
                     // var a+="</div>"
+                    n = n + 1;
+                    if (n<=5) {
+                        if (p<=15) {
+                            p = p + key.length;
+                            high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        }else {
+                            high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
 
+                            p = 0;
+                        }
+                    }else if (n>=6 && n<=10) {
+                        if (q<=15) {
+                            q = q + key.length;
+                            mid += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        }else {
+                            mid += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+
+                            q = 0;
+                        }
+                    }else {
+                        if (r<=15) {
+                            r = r + key.length;
+                            low += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        }else {
+                            low += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+
+                            r = 0;
+                        }
+                    }
                     sayangkuh += "<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>"
                     
                     // $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>");
                     // $('#idkuu').append("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
 
                     // $('#persen').html("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
-                  });
+                });
                 document.getElementById('persen').innerHTML = sayangkuh;
-                console.log (a)
-              }
-            },
 
-            DoJob: function() {
-              if (this.doWork === true && this.queryLock === false) {
-                if (this.keywordsToQueryIndex < this.numOfInitialKeywords) {
-                  var currentKw = this.keywordsToQuery[this.keywordsToQueryIndex];
-                  if (currentKw.slice(-2)!=='  ' && currentKw.slice(-2)!=='  ') {
-                    this.QueryKeyword(currentKw);
-                    this.keywordsToQueryIndex++;
-                  } else {
+                document.getElementById('hi').innerHTML = high;
+                document.getElementById('mi').innerHTML = mid;
+                document.getElementById('lo').innerHTML = low;
+            }
+        },
+
+        DoJob: function() {
+          if (this.doWork === true && this.queryLock === false) {
+            if (this.keywordsToQueryIndex < this.numOfInitialKeywords) {
+              var currentKw = this.keywordsToQuery[this.keywordsToQueryIndex];
+              if (currentKw.slice(-2)!=='  ' && currentKw.slice(-2)!=='  ') {
+                this.QueryKeyword(currentKw);
+                this.keywordsToQueryIndex++;
+            } else {
                         // we didn't do a query immediatly go to next query
                         this.keywordsToQueryIndex++;
                         this.DoJob();
-                      }
-
-                      var prog = parseInt(this.keywordsToQueryIndex/this.numOfInitialKeywords*100);
-                      this.progress1.set(prog);
-                      this.FilterAndDisplay();
-
-                    } else {
-                      if (this.options.keepRunning) {
-                        console.log('finish initial queue');
-                        this.StopWork();
-                        this.StartWork();
-                      } else {
-                        console.log('finish initial queue');
-                        this.StopWork();
-                      }
                     }
-                  }
-                },
 
-                addResultsToQueue: function(retList, search){
-                  retList=_.map(retList,this.CleanVal);
+                    var prog = parseInt(this.keywordsToQueryIndex/this.numOfInitialKeywords*100);
+                    this.progress1.set(prog);
+                    this.FilterAndDisplay();
+
+                } else {
+                  if (this.options.keepRunning) {
+                    console.log('finish initial queue');
+                    this.StopWork();
+                    this.StartWork();
+                } else {
+                    console.log('finish initial queue');
+                    this.StopWork();
+                }
+            }
+        }
+    },
+
+    addResultsToQueue: function(retList, search){
+      retList=_.map(retList,this.CleanVal);
 
             // add each result to list first before permutations
             for (var j = 0; j < retList.length; j++) {
@@ -766,18 +761,18 @@
                 // add base suggestion to queue if it's not already done and isn't empty
                 if (cleanKw && cleanKw.length && !this.hashMapInputs[cleanKw] && this.keywordsToQuery.indexOf(cleanKw)===-1)
                   this.keywordsToQuery.push(cleanKw);
-                this.hashMapInputs[cleanKw] = true;
-              }
+              this.hashMapInputs[cleanKw] = true;
+          }
 
-            },
+      },
 
-            /** Make permutations of results and add to queue **/
-            permuteResultsToQueue: function(retList, search){
-              var chr, currentx, currentKw;
-              var self = this;
-              var options = this.getOptions()
+      /** Make permutations of results and add to queue **/
+      permuteResultsToQueue: function(retList, search){
+          var chr, currentx, currentKw;
+          var self = this;
+          var options = this.getOptions()
 
-              this.hashMapInputs[search] = true;
+          this.hashMapInputs[search] = true;
 
             // sort so the shortest is first in the queue TODO add option?
             // retList.sort(function (a, b) {
@@ -786,10 +781,10 @@
 
             function addPrefix(s,prefix){
               return prefix+' '+s;
-            }
-            function addSuffix(s,suffix){
+          }
+          function addSuffix(s,suffix){
               return s+' '+suffix;
-            }
+          }
             // clean
             retList=_.map(retList,this.CleanVal);
 
@@ -800,17 +795,17 @@
                 _.map(options.prefixes,addPrefix.bind(self,keyword)),
                 _.map(options.suffixes,addSuffix.bind(self,keyword))
                 );
-            }, []);
+          }, []);
 
             // add to queue
             this.keywordsToQuery=_.concat(this.keywordsToQuery,newInputs);
 
             return newInputs;
-          },
+        },
 
 
-          /** Display results **/
-          displayResults: function(retList, search, dontDisplay, url,data){
+        /** Display results **/
+        displayResults: function(retList, search, dontDisplay, url,data){
 
             var rows=[];
             retList=_.map(retList,this.CleanVal);
@@ -826,19 +821,19 @@
                 for (var y = 0; y < arr.length; y++) {
                   if (lol.indexOf(arr[y]) < 0) {
                     lol.push(arr[y]);
-                  }
-                  haha.push(arr[y]);
                 }
+                haha.push(arr[y]);
+            }
 
 
-                var da = {
-                  id: this.table.rows()[0].length+i,
-                  keyword: cleanKw,
-                  length: cleanKw.length,
-                  words: cleanKw.trim().split(/ +/).length,
-                  search: search,
-                  domain: this.extractDomain(url)
-                };
+            var da = {
+              id: this.table.rows()[0].length+i,
+              keyword: cleanKw,
+              length: cleanKw.length,
+              words: cleanKw.trim().split(/ +/).length,
+              search: search,
+              domain: this.extractDomain(url)
+          };
 
                 // remove undefined values to avoid datatable alerts
                 da = _.mapValues(da, function(v){return v===undefined ? null: v;});
@@ -848,7 +843,7 @@
                 // if (!matches)
                 // console.log(da)
                 rows.push(da);
-              }
+            }
 
 
            // haha.join(' ');
@@ -865,7 +860,7 @@
 
 
 
-         },
+       },
 
         /** Takes url string and returns domain e.g. www.google.com or google.com
           * and some extra params to identify is
@@ -876,10 +871,10 @@
             //find & remove protocol (http, ftp, etc.) and get domain
             if (url.indexOf("://") > -1) {
               domain = url.split('/')[2];
-            }
-            else {
+          }
+          else {
               domain = url.split('/')[0];
-            }
+          }
 
             //find & remove port number
             domain = domain.split(':')[0];
@@ -899,34 +894,34 @@
             if (mr && mr[1] && mr[1].length) domain+='&uil='+mr[1];
 
             return domain;
-          },
+        },
 
-          /** mark a search as done in the queue **/
-          markAsDone: function(search){
+        /** mark a search as done in the queue **/
+        markAsDone: function(search){
             // mark as done in queue
             if (this.keywordsToQuery[this.keywordsToQueryIndex]===search)
               this.keywordsToQuery[this.keywordsToQueryIndex]+='   ';
-            else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
+          else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
               this.keywordsToQuery[this.keywordsToQueryIndex-1]+='   ';
-            else
+          else
               console.warn('Cant find ',search,'in keywordsToQuery');
-          },
+      },
 
-          /** mark a search as done in the queue **/
-          markAsNone: function(search){
+      /** mark a search as done in the queue **/
+      markAsNone: function(search){
             // mark as done in queue
             if (this.keywordsToQuery[this.keywordsToQueryIndex]===search)
               this.keywordsToQuery[this.keywordsToQueryIndex]+='   ';
-            else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
+          else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
               this.keywordsToQuery[this.keywordsToQueryIndex-1]+='   ';
-            else
+          else
               console.warn('Cant find ',search,'in keywordsToQuery');
-          },
+      },
 
-          /** Get search suggestions for a keyword **/
-          QueryKeyword: function(search) {
-            var self = this;
-            this.queryLock = true;
+      /** Get search suggestions for a keyword **/
+      QueryKeyword: function(search) {
+        var self = this;
+        this.queryLock = true;
 
             // search not done, lets do the query
             url = self.getUrl()+search;
@@ -942,28 +937,28 @@
                         self.addResultsToQueue(retList);
                         if (self.options.keepRunning) self.permuteResultsToQueue(retList);
                         self.markAsDone(search);
-                      } else {
+                    } else {
                         // console.debug('No suggestions for query: "',search,'"');
                         self.markAsNone(search);
-                      }
-                      self.queryLock = false;
-                      return;
-
-                    },
-                    error: function(jqXHR,errorText,error){
-                      console.error(errorText,this.url,this,jqXHR,error);
-                      self.queryLock = false;
-                      return;
-                    },
-                    callback: function(){
-                      console.log(this,arguments);
                     }
-                  });
-            return promise;
-          },
+                    self.queryLock = false;
+                    return;
 
-          /** Clean input, may not all be needed **/
-          CleanVal: function(input) {
+                },
+                error: function(jqXHR,errorText,error){
+                  console.error(errorText,this.url,this,jqXHR,error);
+                  self.queryLock = false;
+                  return;
+              },
+              callback: function(){
+                  console.log(this,arguments);
+              }
+          });
+            return promise;
+        },
+
+        /** Clean input, may not all be needed **/
+        CleanVal: function(input) {
             // We want to clean search terms but it's not possible to do this perfectly
             // as differen't search engines strip differen't amounts from the term
             // so we will keep as much details as possible
@@ -982,10 +977,10 @@
             if (input.length > 4 && input.substring(0, 4) == "http") input = "";
 
             return input;
-          },
+        },
 
-          /** TODO get this working **/
-          Filter: function(listToFilter) {
+        /** TODO get this working **/
+        Filter: function(listToFilter) {
             var retList = listToFilter;
 
             if ($("#filter-positive").val().length > 0) {
@@ -999,81 +994,81 @@
                     if (currentKeyword.indexOf(filterContains[j]) != -1) {
                       boolContainsKeyword = true;
                       break;
-                    }
                   }
-                }
-
-                if (boolContainsKeyword) {
-                  filteredList[filteredList.length] = currentKeyword;
-                }
               }
+          }
 
-              retList = filteredList;
-            }
+          if (boolContainsKeyword) {
+              filteredList[filteredList.length] = currentKeyword;
+          }
+      }
 
-            if ($("#filter-negative").val().length > 0) {
-              var filteredList = [];
-              var filterContains = $("#filter-negative").val().split("\n");
-              for (var l = 0; l < retList.length; l++) {
-                var currentKeyword = retList[l];
-                var boolCleanKeyword = true;
-                for (var k = 0; k < filterContains.length; k++) {
-                  if (filterContains[k].length > 0) {
-                    if (currentKeyword.indexOf(filterContains[k]) >= 0) {
-                      boolCleanKeyword = false;
-                      break;
-                    }
-                  }
-                }
+      retList = filteredList;
+  }
 
-                if (boolCleanKeyword) {
-                  filteredList[filteredList.length] = currentKeyword;
-                }
-              }
+  if ($("#filter-negative").val().length > 0) {
+      var filteredList = [];
+      var filterContains = $("#filter-negative").val().split("\n");
+      for (var l = 0; l < retList.length; l++) {
+        var currentKeyword = retList[l];
+        var boolCleanKeyword = true;
+        for (var k = 0; k < filterContains.length; k++) {
+          if (filterContains[k].length > 0) {
+            if (currentKeyword.indexOf(filterContains[k]) >= 0) {
+              boolCleanKeyword = false;
+              break;
+          }
+      }
+  }
 
-              retList = filteredList;
-            }
+  if (boolCleanKeyword) {
+      filteredList[filteredList.length] = currentKeyword;
+  }
+}
 
-            return retList;
-          },
+retList = filteredList;
+}
 
-          /** display the queue, and update description of it **/
-          FilterAndDisplay: function() {
-            var i = 0;
-            var sb = '';
+return retList;
+},
 
-            var outputKeywords = this.keywordsToQuery;
-            for (i = 0; i < Math.min(outputKeywords.length,this.options.maxQueueDisplay); i++) {
-              sb += outputKeywords[i];
-              sb += '\n';
-            }
-            if (outputKeywords.length>this.options.maxQueueDisplay) sb+='...\n';
-            $("#input").val(sb);
-            $("#numofkeywords").html('Queue:' + outputKeywords.length);
-          },
+/** display the queue, and update description of it **/
+FilterAndDisplay: function() {
+    var i = 0;
+    var sb = '';
+
+    var outputKeywords = this.keywordsToQuery;
+    for (i = 0; i < Math.min(outputKeywords.length,this.options.maxQueueDisplay); i++) {
+      sb += outputKeywords[i];
+      sb += '\n';
+  }
+  if (outputKeywords.length>this.options.maxQueueDisplay) sb+='...\n';
+  $("#input").val(sb);
+  $("#numofkeywords").html('Queue:' + outputKeywords.length);
+},
 
 
-          /** overrides default with dom options with arguments options **/
-          getOptions: function(argOptions){
-            var defaultOptions={
-              deferTableUpdatesAtRows: 5000,
-              keepRunning: false,
-              maxQueueDisplay: 5000,
-              country: "",
-              filterNegative: "",
-              filterPositive: "",
-              lang: "",
-              prefixes: [],
-              rateLimit: 750,
-              service: "google",
-              suffixes: []
+/** overrides default with dom options with arguments options **/
+getOptions: function(argOptions){
+    var defaultOptions={
+      deferTableUpdatesAtRows: 5000,
+      keepRunning: false,
+      maxQueueDisplay: 5000,
+      country: "",
+      filterNegative: "",
+      filterPositive: "",
+      lang: "",
+      prefixes: [],
+      rateLimit: 750,
+      service: "google",
+      suffixes: []
             }; // for now defaults are set in html
             if (argOptions===undefined) argOptions={};
             return _.defaults(argOptions,this.getDomOptions(),defaultOptions);
-          },
+        },
 
-          /** read settings from webpage **/
-          getDomOptions: function(){
+        /** read settings from webpage **/
+        getDomOptions: function(){
 
             var service= $('#service').val(),
             filterNegative = $('#filter-negative').val(),
@@ -1087,28 +1082,28 @@
                 keepRunning = $('#keep-running').prop('checked');
                 if (prefixes && prefixes.length)
                   prefixes=prefixes.split(',');
-                else
+              else
                   prefixes="";
-                if (suffixes && suffixes.length)
+              if (suffixes && suffixes.length)
                   suffixes=suffixes.split(',');
-                else
+              else
                   suffixes="";
 
-                var options={};
-                if (service) options.service=service;
-                if (filterNegative) options.filterNegative=filterNegative;
-                if (filterPositive) ooptions.filterPositive=filterPositive;
-                if (rateLimit) options.rateLimit=rateLimit;
-                if (prefixes) options.prefixes=prefixes;
-                if (suffixes) options.suffixes=suffixes;
-                if (country) options.country=country;
-                if (lang) options.lang=lang;
-                if (keepRunning) options.keepRunning=keepRunning;
-                return options;
-              },
+              var options={};
+              if (service) options.service=service;
+              if (filterNegative) options.filterNegative=filterNegative;
+              if (filterPositive) ooptions.filterPositive=filterPositive;
+              if (rateLimit) options.rateLimit=rateLimit;
+              if (prefixes) options.prefixes=prefixes;
+              if (suffixes) options.suffixes=suffixes;
+              if (country) options.country=country;
+              if (lang) options.lang=lang;
+              if (keepRunning) options.keepRunning=keepRunning;
+              return options;
+          },
 
-              /** load settings from localStorage **/
-              loadSettings: function(){
+          /** load settings from localStorage **/
+          loadSettings: function(){
             // Tabe settings are auto handles by datatables
             if (localStorage.service) $("#service").val( localStorage.service );
             if (localStorage.country) $('#country').val(localStorage.country);
@@ -1121,9 +1116,9 @@
             if (localStorage.suffixes) $("#suffixes").val( localStorage.suffixes );
             if (localStorage.keepRunning) $('#keep-running').prop('checked',localStorage.keepRunning=="true");
 
-          },
-          /** save settings to localStorage. **/
-          saveSettings: function(){
+        },
+        /** save settings to localStorage. **/
+        saveSettings: function(){
             localStorage.service = $('#service').val();
             localStorage.country = $('#country').val();
             localStorage.lang = $('#lang').val();
@@ -1134,34 +1129,34 @@
             localStorage.prefixes = $('#prefixes').val();
             localStorage.suffixes = $('#suffixes').val();
             localStorage.keepRunning = $('#keep-running').prop('checked');
-          },
+        },
 
-          /** reset inputs and results, but not settings **/
-          reset: function(){
+        /** reset inputs and results, but not settings **/
+        reset: function(){
             this.table.clear();
             this.table.draw();
             $('#input').val('');
             this.saveSettings();
-          },
+        },
 
-          init: function(){
+        init: function(){
             // this.setUpDb();
 
             // add this.servicess to search engine settings
             for (var service in this.services) {
               if (this.services.hasOwnProperty(service)) {
                 $('#service').append('<option>'+service+'</option>')
-              }
             }
+        }
 
 
-            this.loadSettings();
-            this.options = this.getOptions();
+        this.loadSettings();
+        this.options = this.getOptions();
 
-            window.setInterval(this.DoJob.bind(this), this.options.rateLimit);
+        window.setInterval(this.DoJob.bind(this), this.options.rateLimit);
 
-            $('#progress1').addClass('progressjs-progress');
-            this.progress1 = progressJs("#progress1");
+        $('#progress1').addClass('progressjs-progress');
+        this.progress1 = progressJs("#progress1");
 
             // bind buttons
             $('#startjob').on('click',this.toggleWork.bind(this));
@@ -1201,57 +1196,57 @@
                                     //          console.log(html);return html
                                     //      }
                                     //  }
-                                  }
-                                },
-                                {
-                                 extend: 'csvHtml5',
-                                 fieldBoundary: "",
-                                 text: 'Copy visible columns',
-                                 header: false,
-                                 exportOptions: {
-                                   columns: ':visible',
-                                   stripNewlines: true,
-                                   stripHtml: true,
-                                   decodeEntities: true,
-                                 }
-                               },
-                               ]
-                             },
-
-                             ],
-                             "columnDefs": [
-                             {
-                              "title": "id",
-                              "data": "id",
-                              "targets": 0,
-                              "visible": false,
-                            }, {
-                              "name": "keyword",
-                              "title": "Related Keyword",
-                              "data": "keyword",
-                              "responsivePriority": 1,
-                              "targets": 1,
-                            }, {
-                              "title": "Length",
-                              "data": "length",
-                              "targets": 2,
-                              "visible": false,
-                              "type": "num"
-                            }, {
-                              "title": "Root Keyword",
-                              "data": "search",
-                              "responsivePriority": 3,
-                              "targets": 3,
-                              "visible": true,
-                            },  {
-                              "title": "Words",
-                              "data": "words",
-                              "targets": 4,
-                              "visible": false,
-                              "type": "num"
+                                }
                             },
-                            ],
-                            order: [[ 0, 'desc' ]],
+                            {
+                             extend: 'csvHtml5',
+                             fieldBoundary: "",
+                             text: 'Copy visible columns',
+                             header: false,
+                             exportOptions: {
+                               columns: ':visible',
+                               stripNewlines: true,
+                               stripHtml: true,
+                               decodeEntities: true,
+                           }
+                       },
+                       ]
+                   },
+
+                   ],
+                   "columnDefs": [
+                   {
+                      "title": "id",
+                      "data": "id",
+                      "targets": 0,
+                      "visible": false,
+                  }, {
+                      "name": "keyword",
+                      "title": "Related Keyword",
+                      "data": "keyword",
+                      "responsivePriority": 1,
+                      "targets": 1,
+                  }, {
+                      "title": "Length",
+                      "data": "length",
+                      "targets": 2,
+                      "visible": false,
+                      "type": "num"
+                  }, {
+                      "title": "Root Keyword",
+                      "data": "search",
+                      "responsivePriority": 3,
+                      "targets": 3,
+                      "visible": true,
+                  },  {
+                      "title": "Words",
+                      "data": "words",
+                      "targets": 4,
+                      "visible": false,
+                      "type": "num"
+                  },
+                  ],
+                  order: [[ 0, 'desc' ]],
                 // colReorder: {},
                 stateSave: true,
                 "bDeferRender": true,
@@ -1265,37 +1260,37 @@
                 // scrollY:        500,
                 // deferRender:    true,
                 // scroller:       true
-              });
+            });
 
             // get user ip
             $.getJSON('https://api.ipify.org?format=json', function (data) {
               this.myIp = data.ip;
-            });
+          });
 
-          }
-        };
-      }();
+        }
+    };
+}();
 
-    </script>
+</script>
 
 
-    <!-- Lets see if anyone ever uses this  -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!-- Lets see if anyone ever uses this  -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-51809277-6', 'auto');
-      ga('send', 'pageview');
+ga('create', 'UA-51809277-6', 'auto');
+ga('send', 'pageview');
 
-    </script>
-    <script>
-      $(document).ready(function () {
-        KWS.init();
-      });
-    </script>
+</script>
+<script>
+  $(document).ready(function () {
+    KWS.init();
+});
+</script>
 
-  </body>
+</body>
 
-  </html>
+</html>
