@@ -131,90 +131,117 @@
   <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
 
   <div class="container" style="margin-top: 5%;">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+<!--     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active tab" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Scrapping</a>
-      </li>
-      <li class="nav-item">
+    </li>
+    <li class="nav-item">
         <a class="nav-link tab" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Optimasi</a>
-      </li>
-    </ul>
+    </li>
+</ul>
 
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="row">
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> -->
+    <div class="row">
 
-        <div class="col-lg-4">
-          <div class="form-group">
-            <label for="service" style="margin-top: 20px;">Service:</label>
-            <select class="form-control" name="service" id="service" >
-            </select>
-          </div>
-          <div class="checkbox">
-            <label for="keep-running">
-              <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever"></input>Continuous running:
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label for="country">Country code (google):</label>
-            <!-- ISO-3366-1: Alpha-2 Codes -->
-            <select value="id"  class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled="">
-            </select>
-          </div>
-          <br>
-          <div class="card cardku">
-            <div class="card-header" style="background-color: darkgreen; color: white;">
-              <b>Pengumuman</b>
-            </div>
-            <div class="card-body">
-              <div class="form-group" >
-               <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
-               </p>
-             </div>
-           </div>
-         </div>
-       </div>
-
-       <div class="col-lg-4">
+      <div class="col-lg-8">
         <!-- <div id="numofkeywords"></div> -->
-        <div class="form-group mt-4">
-          <label for="input" ><h3>Input:</h3></label>
-          <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword" class="input"></textarea>
-        </div>
+        <div class="row">
 
-        <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
-        <a class="btn btn-danger" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
-      </div>
-      <div class="col-lg-4 mt-4">
-
-        <div class="card cardku">
-          <div class="card-header" style="background-color: darkgreen; color: white;">
-            <b>Persen</b>
+          <div class="col-lg-8">
+            <label for="" style="margin-top: 20px;"></label>
+            <textarea id="input" autocomplete="off" autocorrect="off" style="overflow:hidden;resize: none; height: 35px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword" class="input"></textarea>
+            <a class="btn btn-danger primary btn-sm" id="reset" title="Empty all input and results" type="button" style="color: white; margin-top: 10px;" value="Reset">Reset Keyword</a>
+            <div id="persen" style="display: none;">
+            </div>
           </div>
-
-          <div class="card-body">
-            <div class="form-group" >
-              <script type="text/javascript">
-                const progress = document.querySelector('.progress-done');
-                progress.style.width = progress.getAttribute('data-done') + '%';
-                progress.style.opacity = 1;
-              </script>
-
-
-              <div class="card">
-                <a  class="nav-link"  data-toggle="collapse" data-target="#collapseUtilities" style="background-color: #e3ffeb; text-decoration: none;cursor: pointer;padding: 16px;border-left: 4px solid darkgreen;">
-                  <i class="fas fa-caret-down" style="color: darkgreen;font-size: 20px;"></i>
-                  <span  style="padding-left: 20px!important;color: darkgreen;font-weight: 800;margin-top: -6px;">Keyword Penting</span>
-                </a>
-                <div id="collapseUtilities" class="collapse scrollable-menu" >
-                  <div  id="persen" style="border-left: 4px solid darkgreen;padding-top: 16px;margin-bottom: -20px;" >
-                  </div>
-                </div>
-              </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="country">Country</label>
+              <!-- ISO-3366-1: Alpha-2 Codes -->
+              <select value="id" class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled="">
+              </select>
+              <!-- <label for="service" style="margin-top: 20px;">Service:</label>
+              <select class="form-control" name="service" id="service" >
+              </select> -->
+            </div>
+            
+            <div class="checkbox">
+              <label for="keep-running">
+                <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever"></input> Continuous running:
+              </label>
             </div>
           </div>
         </div>
+
+        <br>
+        <div class="form-group" id="idku">
+          <input class="form-control inputku" type="text" name="" value="" placeholder="Judul Artikel"  />
+          <br>
+          <label style="font-weight: 600;">Artikel</label>
+          <textarea class="form-control anuku" id="haha" class="input" type="text"></textarea>
+        </div>
       </div>
+
+      <div class="col-lg-4">
+        <div class="row" style="margin-top: 32px;">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+
+          </div>
+        </div>
+
+        <br>
+        
+        <div class="progressk">
+          <div style="font-weight: 800">Score :<span>80%</span></div>
+
+          <div class="progress">
+            <div class="progress-bar bg-success" style="width:80%"></div>
+          </div>
+        </div>
+        <p class="mt-1" style="font-weight: 600;">Rekomendasi Keyword</p>
+        <div class="card" style="margin-top: 20px;" >
+          <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+            <b>High</b>
+          </div>
+          <div class="card-body cb" id="idku">
+            <div class="form-group" id="hi" style="padding-top: 10px;">
+            </div>
+          </div>
+        </div>
+        <style type="text/css">
+          .cb{
+            padding-top: -0px!important;
+          }
+        </style>
+        <div class="card mt-2" >
+          <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+            <b>Medium</b>
+          </div>
+          <div class="card-body cb">
+            <div class="form-group" id="mi" style="padding-top: 10px;">
+            </div>
+          </div>
+        </div>
+        <div class="card  mt-2" >
+          <div class="card-header bg-danger" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+            <b >Low</b>
+          </div>
+          <div class="card-body cb" id="idku">
+            <div class="form-group" id="lo" style="padding-top: 10px;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
 
     </div> <!-- tutup row -->
 
@@ -232,7 +259,7 @@
    </div>
 
 
-   <div class="row">
+   <div class="row" style="display: none;">
     <div id="results" class="col-sm-12">
       <h2>Results</h2>
       <!-- <div class="table-responsive"> -->
@@ -259,11 +286,11 @@
                 </div>
 
                 <!-- AWAL TAB2 -->
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  <div class="row">
+                <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"> -->
+                  <div class="row" style="display: none;">
                     <div class="col-md-8 mt-4" id="idku">
                       <div class="form-group">
-                        <input class="form-control inputku" type="text" name="" value="" placeholder="Judul Artikel"  />
+                        <input class="form-control inputku " type="text" name="" value="" placeholder="Judul Artikel"  />
                       </div>
                       <label style="font-weight: 600;">Artikel</label>
                       <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
@@ -271,46 +298,6 @@
 
 
                     <div class="col-md-4" style="margin-top: 22px;">
-                      <div class="progressk">
-                        <div style="font-weight: 800">Score :<span>80%</span></div>
-
-                        <div class="progress">
-                          <div class="progress-bar bg-success" style="width:80%"></div>
-                        </div>
-                      </div>
-                      <p class="mt-1" style="font-weight: 600;">Rekomendasi Keyword</p>
-                      <div class="card" style="margin-top: 20px;" >
-                        <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
-                          <b>High</b>
-                        </div>
-                        <div class="card-body cb" id="idku">
-                          <div class="form-group" id="hi">
-                          </div>
-                        </div>
-                      </div>
-                      <style type="text/css">
-                        .cb{
-                          padding-top: -0px!important;
-                        }
-                      </style>
-                      <div class="card mt-2" >
-                        <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
-                          <b>Medium</b>
-                        </div>
-                        <div class="card-body cb">
-                          <div class="form-group" id="mi">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card  mt-2" >
-                        <div class="card-header bg-danger" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
-                          <b >Low</b>
-                        </div>
-                        <div class="card-body cb" id="idku">
-                          <div class="form-group" id="lo" >
-                          </div>
-                        </div>
-                      </div>
 
                       <div class="card  mt-2" >
                         <div class="card-header" style="background-color: darkgreen; color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
@@ -318,8 +305,7 @@
                         </div>
                         <div class="card-body cb">
                           <div class="form-group">
-                            <input type="text" id="kword" style="margin-top: 10px!important;border: 1px solid darkgreen; margin-bottom: 10px;">
-                            <a class="btn btn-danger primary btn-md" id="startjob"" type="button" value="Shit Keywords!" style="color: white;">Stop</a>
+                            <input type="text" id="" style="margin-top: 10px!important;border: 1px solid darkgreen;">
                           </div>
                         </div>
                       </div>
@@ -330,52 +316,52 @@
 
 
                   <!-- AKHIR TAB2 -->
+                  <!-- </div> -->
+                  <footer>
+
+                    <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
+                    </footer>
+                  </p>
+                  <style type="text/css">
+
+                    #persen b{
+
+                      margin-left: 10px;
+                      /* margin-right: 50%;*/
+
+                    }
+                    #persen span{
+
+                      float:right;
+                    }
+                    #persen hr{
+                      height: 4px;
+                      color: #f3f5f0
+                    }
+                    #persen i{
+                      padding-left: 20px;
+                      color:darkgreen;
+                    }
+
+                  </style>
+
                 </div>
-                <footer>
 
-                  <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
-                  </footer>
-                </p>
-                <style type="text/css">
+                <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/bootstrap-4.0.0/dist/js/bootstrap.min.js'); ?>"></script>
 
-                  #persen b{
+                <script type="text/javascript" src="<?= site_url('assets/DataTables/datatables.min.js'); ?>"></script>
 
-                    margin-left: 10px;
-                    /* margin-right: 50%;*/
-
-                  }
-                  #persen span{
-
-                    float:right;
-                  }
-                  #persen hr{
-                    height: 4px;
-                    color: #f3f5f0
-                  }
-                  #persen i{
-                    padding-left: 20px;
-                    color:darkgreen;
-                  }
-
-                </style>
-
-              </div>
-
-              <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/bootstrap-4.0.0/dist/js/bootstrap.min.js'); ?>"></script>
-
-              <script type="text/javascript" src="<?= site_url('assets/DataTables/datatables.min.js'); ?>"></script>
-
-              <script type="text/javascript" src="<?= site_url('assets/fitur.min.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/colvis.min.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/print.min.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js'); ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/lodash.min.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/FileSaver/src/FileSaver.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/localForage/src/localforage.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/progress.min.js') ?>"></script>
-              <script src="<?= site_url('assets/ckeditor/ckeditor.js') ?>"></script>
-              <script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/fitur.min.js') ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/colvis.min.js') ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/print.min.js') ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js'); ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/lodash.min.js') ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/FileSaver/src/FileSaver.js') ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/localForage/src/localforage.js') ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/progress.min.js') ?>"></script>
+                <script src="<?= site_url('assets/ckeditor/ckeditor.js') ?>"></script>
+                <script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -395,23 +381,26 @@
         height:540
       });
 
+      editor.on( 'change', function( evt ) {
+        console.log(evt.editor.getData());
+      });
+
       editor.on( 'required', function( evt ) {
         editor.showNotification( 'This field is required.', 'warning' );
         evt.cancel();
       } );
     </script>
-    <script>
-      $('#kword').keyup(function () {
-        var w = $(this).val();
-        $('textarea[id="input"]').val(w);
 
+    <script>
+      $('textarea[id="input"]').keyup(function (event) {
         if (event.keyCode === 13) {
          event.preventDefault();
          document.getElementById("startjob").click();
        }
-    });
-  </script>
-  <script>
+     });
+   </script>
+
+   <script>
     $(document).ready(function() {
       $('.waterTankHere2').waterTank({
         width: 80,
@@ -544,31 +533,31 @@
 
 
         $('#idku .inputku').keyup(function () {
-          var text = $(this).val().toLowerCase();
-          var map = haha.reduce(function(prev, cur) {
-            prev[cur] = (prev[cur] || 0) + 1;
-            return prev;
-          }, {});
-          a = sum(map);
-          const sortable = Object.fromEntries(
-            Object.entries(map).sort(([,a],[,b]) => a-b)
-            );
-          ob = reverseObject(sortable);
+         var text = $(this).val().toLowerCase();
+         var map = haha.reduce(function(prev, cur) {
+          prev[cur] = (prev[cur] || 0) + 1;
+          return prev;
+        }, {});
+         a = sum(map);
+         const sortable = Object.fromEntries(
+          Object.entries(map).sort(([,a],[,b]) => a-b)
+          );
+         ob = reverseObject(sortable);
 
-          Object.keys(ob).forEach(function(key) {
-            b = ob[key]/a * 100;
-            b = roundNumber(b, 2)
+         Object.keys(ob).forEach(function(key) {
+          b = ob[key]/a * 100;
+          b = roundNumber(b, 2)
 
-            var res = text.split(" ");
-            var a =  res.indexOf(key);
-            if (a > -1) {
-              $("#"+key).css('background-color', 'green')
-            } else {
-              $("#"+key).css('background-color', 'red')
-            }
-          });
-          console.log(haha)
+          var res = text.split(" ");
+          var a =  res.indexOf(key);
+          if (a > -1) {
+            $("#"+key).css('background-color', 'green')
+          } else {
+            $("#"+key).css('background-color', 'red')
+          }
         });
+         console.log(haha)
+       });
         var KWS = function(){
 
           return {
@@ -684,27 +673,27 @@
                     if (n<=5) {
                       if (p<=15) {
                         p = p + key.length;
-                        high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
                       }else {
-                        high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
 
                         p = 0;
                       }
                     }else if (n>=6 && n<=10) {
                       if (q<=15) {
                         q = q + key.length;
-                        mid += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        mid += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
                       }else {
-                        mid += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        mid += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
 
                         q = 0;
                       }
                     }else {
                       if (r<=15) {
                         r = r + key.length;
-                        low += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        low += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
                       }else {
-                        low += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                        low += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
 
                         r = 0;
                       }
