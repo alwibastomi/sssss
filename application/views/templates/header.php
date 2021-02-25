@@ -1,199 +1,59 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-    <meta name="author" content="Coderthemes">
-
-    <link rel="shortcut icon" href="<?= site_url('assets/images/favicon.ico'); ?>">
-
-    <title>Tittle</title>
-
-    <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="<?= site_url('assets/plugins/morris/morris.css'); ?>">
-
-    <!-- DataTables -->
-    <link href="<?= site_url('assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css'); ?>" />
-    <link href="<?= site_url('assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css'); ?>" />
-    <link href="<?= site_url('assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css'); ?>" />
-    <link href="<?= site_url('assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css'); ?>" />
-    <link href="<?= site_url('assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css'); ?>" />
-
-    <!-- App css -->
-    <link href="<?= site_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?= site_url('assets/css/core.css'); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?= site_url('assets/css/components.css'); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?= site_url('assets/css/icons.css'); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?= site_url('assets/css/pages.css'); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?= site_url('assets/css/menu.css'); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?= site_url('assets/css/responsive.css'); ?>" rel="stylesheet" type="text/css" />
-
-    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- JS -->
-    <script type="text/javascript"> var BASE_URL = "<?php echo base_url();?>"; </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <!-- jQuery  -->
-    <script src="<?= base_url('vendor/ckeditor/ckeditor.js') ?>"></script>
-    <script src="<?= site_url('assets/js/jquery.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/js/bootstrap.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/js/detect.js'); ?>"></script>
-    <script src="<?= site_url('assets/js/fastclick.js'); ?>"></script>
-    <script src="<?= site_url('assets/js/jquery.slimscroll.js'); ?>"></script>
-    <script src="<?= site_url('assets/js/jquery.blockUI.js'); ?>"></script>
-    <script src="<?= site_url('assets/js/waves.js'); ?>"></script>
-    <script src="<?= site_url('assets/js/jquery.nicescroll.js'); ?>"></script>
-    <script src="<?= site_url('assets/js/jquery.scrollTo.min.js'); ?>"></script>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- SweetAlert -->
-    <script src="<?= site_url('assets/vendors/sweetalert/dist/sweetalert.min.js'); ?>"></script>
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@themepixels">
+    <meta name="twitter:creator" content="@themepixels">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bracket">
+    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="twitter:image" content="http://themepixels.me/bracket/img/bracket-social.png">
 
-    <!-- Custom Alert -->
-    <script src="<?= site_url('assets/js/custom_alert.js'); ?>"></script>
+    <!-- Facebook -->
+    <meta property="og:url" content="http://themepixels.me/bracket">
+    <meta property="og:title" content="Bracket">
+    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
 
-    <!-- JQueryUI Get Auto Complete -->
-    <script src="<?= site_url('assets/plugins/jquery-ui/jquery-ui.js'); ?>"></script>
+    <meta property="og:image" content="http://themepixels.me/bracket/img/bracket-social.png">
+    <meta property="og:image:secure_url" content="http://themepixels.me/bracket/img/bracket-social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
 
-    <!-- Datatables-->
-    <script src="<?= site_url('assets/plugins/datatables/jquery.dataTables.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/dataTables.bootstrap.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/dataTables.buttons.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/buttons.bootstrap.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/jszip.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/pdfmake.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/vfs_fonts.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/buttons.html5.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/buttons.print.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/dataTables.fixedHeader.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/dataTables.keyTable.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/dataTables.responsive.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/responsive.bootstrap.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/datatables/dataTables.scroller.min.js'); ?>"></script>
+    <!-- Meta -->
+    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="author" content="ThemePixels">
 
-    <!-- Datatable init js -->
-    <script src="<?= site_url('assets/pages/datatables.init.js'); ?>"></script>
-    
-    <!-- Date Picker -->
-    <script src="<?= site_url('assets/plugins/switchery/switchery.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?= site_url('assets/plugins/multiselect/js/jquery.multi-select.js'); ?>"></script>
-    <script type="text/javascript" src="<?= site_url('assets/plugins/jquery-quicksearch/jquery.quicksearch.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/select2/dist/js/select2.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?= site_url('assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?= site_url('assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?= site_url('assets/plugins/moment/moment.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/timepicker/bootstrap-timepicker.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/bootstrap-daterangepicker/daterangepicker.js'); ?>"></script>
-    <script src="<?= site_url('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js'); ?>" type="text/javascript"></script>
-    
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <!-- CSS only -->
+    <title>Bracket Responsive Bootstrap 4 Admin Template</title>
+    <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/DataTables-1.10.23/css/jquery.dataTables.min.css'); ?>"/>
+      <link rel="stylesheet" type="text/css" href="<?= site_url('assets/bootstrap-4.0.0/dist/css/bootstrap.min.css'); ?>"/>
+      <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/datatables.min.css'); ?>"/>
+      <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/KeyTable-2.6.1/css/keyTable.dataTables.min.css'); ?>"/>
+      <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/Responsive-2.2.7/css/responsive.dataTables.min.css'); ?>"/>
+      <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/Scroller-2.0.3/css/scroller.dataTables.min.css'); ?>"/>
+      <link rel="stylesheet" type="text/css" href="<?= site_url('assets/fitur.min.css'); ?>"/>  
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 
-    <script src="<?= site_url('assets/cus.js'); ?>"></script>
-    <style type="text/css">
+  <!-- <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/datatables.min.css'); ?>"/> 
+  -->
+  <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
 
+    <!-- vendor css -->
+    <link href="<?= site_url('vendor/lib/font-awesome/css/font-awesome.css') ?>" rel="stylesheet">
+    <link href="<?= site_url('vendor/lib/Ionicons/css/ionicons.css') ?>" rel="stylesheet">
+    <link href="<?= site_url('vendor/lib/perfect-scrollbar/css/perfect-scrollbar.css') ?>" rel="stylesheet">
+    <link href="<?= site_url('vendor/lib/jquery-switchbutton/jquery.switchButton.css') ?>" rel="stylesheet">
+    <link href="<?= site_url('vendor/lib/rickshaw/rickshaw.min.css') ?>" rel="stylesheet">
+    <link href="<?= site_url('vendor/lib/chartist/chartist.css') ?>" rel="stylesheet">
 
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="<?= site_url('vendor/css/bracket.css') ?>">
+  </head>
 
-.dropdown-container {
-    width: 88%;
-  display: none;
-  background-color: white;
-  padding-left: 8px;
-  margin-left: 20px;
-}
-
-
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}
-   
-    .scrollable-menu {
-    height: auto;
-    max-height: 200px;
-    overflow-x: hidden;
-
-}
-
-.scrollku::-webkit-scrollbar {
-    
-  width: 8px;
-}
-
-
-.scrollku::-webkit-scrollbar-track {
-   
-  
-}
- 
-
-.scrollku::-webkit-scrollbar-thumb {
-  background: #888; 
- /* border-radius: 10px;*/
-}
-
-
-.scrollku::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-        .area::-webkit-scrollbar {
-    
-  width: 8px;
-}
-
-
-.area::-webkit-scrollbar-track {
-   
-  
-}
- 
-
-.area::-webkit-scrollbar-thumb {
-  background: #888; 
- /* border-radius: 10px;*/
- 
-}
-
-
-.area::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-  
-}
-textarea {
-    cursor: auto;
-}
-.activeku{
-    background-color: #00415a!important;
-    border-color: #00415a!important;
-}
-.cardku{
-    border: 2px solid #00415a;
-    border-radius: 2px;
-    
-}
-.dataTables_filter input{
-    border: 2px solid #00415a;
-}
-
-    </style>
-
-</head>
-
-
-<body class="fixed-left">
-
-    <!-- Begin page -->
-    <div id="wrapper">
+  <body>

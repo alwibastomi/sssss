@@ -1,99 +1,35 @@
-<div class="left side-menu">
-    <div class="sidebar-inner slimscrollleft">
+<!-- ########## START: LEFT PANEL ########## -->
+    <div class="br-logo"><a href=""><span>[</span>bracket<span>]</span></a></div>
+    <div class="br-sideleft overflow-y-auto">
+      <label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
+      <div class="br-sideleft-menu">
+        <a href="index.html" class="br-menu-link active">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+            <span class="menu-item-label">Dashboard</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+        <a href="<?= site_url('User') ?>" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+            <span class="menu-item-label">Management User</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+       </div>
 
-        <!-- User -->
-        <div class="user-box">
-            <div class="user-img">
-                <img src="<?= site_url('assets/images/users/user_image.png'); ?>" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
-            </div>
-            <h5><a href="#"><?= $nama ?></a> </h5>
-            <ul class="list-inline">
-                <li>
-                    <a href="#" >
-                        <i class="zmdi zmdi-settings"></i>
-                    </a>
-                </li>
+     <a href="<?= site_url('Tool1') ?>" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-briefcase-outline tx-22"></i>
+            <span class="menu-item-label">Tool1</span>
+            <i class="menu-item-arrow fa fa-angle-down"></i>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+        <ul class="br-menu-sub nav flex-column">
+          <li class="nav-item"><a href="background.html" class="nav-link">Tool1</a></li>
+          <li class="nav-item"><a href="border.html" class="nav-link">Tool2</a></li>
+          <li class="nav-item"><a href="height.html" class="nav-link">Tool3</a></li>
+        </ul>
 
-                <li>
-                    <a href="<?= site_url('Login/logout'); ?>" class="text-custom">
-                        <i class="zmdi zmdi-power"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- End User -->
-
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
-            <ul>
-                <li class="text-muted menu-title">Navigation</li>
-                <li>
-                    <a href="<?= site_url('Dashboard'); ?>" class="waves-effect <?php if($this->uri->segment(1)=="Dashboard"){echo "active";}?>"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
-                </li>
-
-                <li>
-                    <a href="<?= site_url('User') ?>" class="waves-effect <?php if($this->uri->segment(1)=="User"){echo "active";}?>"><i class="zmdi zmdi-format-underlined"></i> <span> User </span> </a>
-                </li>
-
-                <li>
-                    <a href="<?= site_url('Tool1'); ?>" class="waves-effect <?php if($this->uri->segment(1)=="Tool1"){echo "active";}?>"><i class="zmdi zmdi-settings"></i> <span> Tool </span> </a>
-                </li>
-
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-chart"></i><span> Charts </span> <span class="menu-arrow"></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="chart-flot.html">Flot Chart</a></li>
-                        <li><a href="chart-morris.html">Morris Chart</a></li>
-                        <li><a href="chart-chartist.html">Chartist Charts</a></li>
-                        <li><a href="chart-other.html">Other Chart</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="calendar.html" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span class="label label-purple pull-right">New</span><span> Calendar </span></a>
-                </li>
-
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-collection-item"></i><span> Pages </span> <span class="menu-arrow"></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="page-starter.html">Starter Page</a></li>
-                        <li><a href="page-login.html">Login</a></li>
-                        <li><a href="page-register.html">Register</a></li>
-                        <li><a href="page-recoverpw.html">Recover Password</a></li>
-                        <li><a href="page-lock-screen.html">Lock Screen</a></li>
-                        <li><a href="page-confirm-mail.html">Confirm Mail</a></li>
-                        <li><a href="page-404.html">Error 404</a></li>
-                        <li><a href="page-500.html">Error 500</a></li>
-                    </ul>
-                </li>
-
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-layers"></i><span>Extra Pages </span> <span class="menu-arrow"></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="extras-projects.html">Projects</a></li>
-                        <li><a href="extras-tour.html">Tour</a></li>
-                        <li><a href="extras-taskboard.html">Taskboard</a></li>
-                        <li><a href="extras-taskdetail.html">Task Detail</a></li>
-                        <li><a href="extras-maps.html">Maps</a></li>
-                        <li><a href="extras-contact.html">Contact list</a></li>
-                        <li><a href="extras-pricing.html">Pricing</a></li>
-                        <li><a href="extras-timeline.html">Timeline</a></li>
-                        <li><a href="extras-invoice.html">Invoice</a></li>
-                        <li><a href="extras-faq.html">FAQ</a></li>
-                        <li><a href="extras-gallery.html">Gallery</a></li>
-                        <li><a href="extras-email-template.html">Email template</a></li>
-                        <li><a href="extras-maintenance.html">Maintenance</a></li>
-                        <li><a href="extras-comingsoon.html">Coming soon</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Sidebar -->
-        <div class="clearfix"></div>
-
-    </div>
-
-</div>
+      <br>
+    </div><!-- br-sideleft -->
+    <!-- ########## END: LEFT PANEL ########## -->

@@ -1,22 +1,8 @@
-<script>
-		var resizefunc = [];
-	</script>
 
-	<!-- jQuery  -->
-	<script src="<?= base_url();?>assets/js/jquery.min.js"></script>
-	<script src="<?= base_url();?>assets/js/bootstrap.min.js"></script>
-	<script src="<?= base_url();?>assets/js/detect.js"></script>
-	<script src="<?= base_url();?>assets/js/fastclick.js"></script>
-	<script src="<?= base_url();?>assets/js/jquery.slimscroll.js"></script>
-	<script src="<?= base_url();?>assets/js/jquery.blockUI.js"></script>
-	<script src="<?= base_url();?>assets/js/waves.js"></script>
-	<script src="<?= base_url();?>assets/js/wow.min.js"></script>
-	<script src="<?= base_url();?>assets/js/jquery.nicescroll.js"></script>
-	<script src="<?= base_url();?>assets/js/jquery.scrollTo.min.js"></script>
 
-	<!-- App js -->
-	<script src="<?= base_url();?>assets/js/jquery.core.js"></script>
-	<script src="<?= base_url();?>assets/js/jquery.app.js"></script>
-	
-</body>
+	 <script src="<?= site_url('vendor/lib/jquery/jquery.js') ?>"></script>
+    <script src="<?= site_url('vendor/lib/popper.js/popper.js') ?>"></script>
+    <script src="<?= site_url('vendor/lib/bootstrap/bootstrap.js') ?>"></script>
+
+  </body>
 </html>

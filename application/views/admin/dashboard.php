@@ -1,455 +1,314 @@
+<!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+      <div class="pd-30">
+        <h4 class="tx-gray-800 mg-b-5">Dashboard</h4>
+        <p class="mg-b-0">Do big things with Bracket, the responsive bootstrap 4 admin template.</p>
+      </div><!-- d-flex -->
 
-<!-- Top Bar Start -->
-
-<!-- Top Bar End -->
-
-
-<!-- ========== Left Sidebar Start ========== -->
-
-<!-- Left Sidebar End -->
-
-
-
-<!-- ============================================================== -->
-<!-- Start right Content here -->
-<!-- ============================================================== -->
-<div class="content-page">
-    <!-- Start content -->
-    <div class="content">
-        <div class="container">
-
-
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-box">
-                        <div class="dropdown pull-right">
-                            <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                                <i class="zmdi zmdi-more-vert"></i>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-
-                        <h4 class="header-title m-t-0 m-b-30">Total Revenue</h4>
-
-                        <div class="widget-chart-1">
-                            <div class="widget-chart-box-1">
-                                <input data-plugin="knob" data-width="80" data-height="80" data-fgColor="#f05050 "
-                                data-bgColor="#F9B9B9" value="58"
-                                data-skin="tron" data-angleOffset="180" data-readOnly=true
-                                data-thickness=".15"/>
-                            </div>
-
-                            <div class="widget-detail-1">
-                                <h2 class="p-t-10 m-b-0"> 256 </h2>
-                                <p class="text-muted">Revenue today</p>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end col -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-box">
-                        <div class="dropdown pull-right">
-                            <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                                <i class="zmdi zmdi-more-vert"></i>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-
-                        <h4 class="header-title m-t-0 m-b-30">Sales Analytics</h4>
-
-                        <div class="widget-box-2">
-                            <div class="widget-detail-2">
-                                <span class="badge badge-success pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                                <h2 class="m-b-0"> 8451 </h2>
-                                <p class="text-muted m-b-25">Revenue today</p>
-                            </div>
-                            <div class="progress progress-bar-success-alt progress-sm m-b-0">
-                                <div class="progress-bar progress-bar-success" role="progressbar"
-                                aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-                                style="width: 77%;">
-                                <span class="sr-only">77% Complete</span>
-                            </div>
-                        </div>
-                    </div>
+      <div class="br-pagebody mg-t-5 pd-x-30">
+        <div class="row row-sm">
+          <div class="col-sm-6 col-xl-3">
+            <div class="bg-teal rounded overflow-hidden">
+              <div class="pd-25 d-flex align-items-center">
+                <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
+                <div class="mg-l-20">
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Today's Visits</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">1,975,224</p>
+                  <span class="tx-11 tx-roboto tx-white-6">24% higher yesterday</span>
                 </div>
-            </div><!-- end col -->
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card-box">
-                    <div class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                            <i class="zmdi zmdi-more-vert"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-
-                    <h4 class="header-title m-t-0 m-b-30">Statistics</h4>
-
-                    <div class="widget-chart-1">
-                        <div class="widget-chart-box-1">
-                            <input data-plugin="knob" data-width="80" data-height="80" data-fgColor="#ffbd4a"
-                            data-bgColor="#FFE6BA" value="80"
-                            data-skin="tron" data-angleOffset="180" data-readOnly=true
-                            data-thickness=".15"/>
-                        </div>
-                        <div class="widget-detail-1">
-                            <h2 class="p-t-10 m-b-0"> 4569 </h2>
-                            <p class="text-muted">Revenue today</p>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end col -->
-
-            <div class="col-lg-3 col-md-6">
-                <div class="card-box">
-                    <div class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                            <i class="zmdi zmdi-more-vert"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-
-                    <h4 class="header-title m-t-0 m-b-30">Daily Sales</h4>
-
-                    <div class="widget-box-2">
-                        <div class="widget-detail-2">
-                            <span class="badge badge-pink pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                            <h2 class="m-b-0"> 158 </h2>
-                            <p class="text-muted m-b-25">Revenue today</p>
-                        </div>
-                        <div class="progress progress-bar-pink-alt progress-sm m-b-0">
-                            <div class="progress-bar progress-bar-pink" role="progressbar"
-                            aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-                            style="width: 77%;">
-                            <span class="sr-only">77% Complete</span>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </div><!-- end col -->
-
-    </div>
-    <!-- end row -->
-
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="card-box">
-                <div class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                        <i class="zmdi zmdi-more-vert"></i>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+          </div><!-- col-3 -->
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
+            <div class="bg-danger rounded overflow-hidden">
+              <div class="pd-25 d-flex align-items-center">
+                <i class="ion ion-bag tx-60 lh-0 tx-white op-7"></i>
+                <div class="mg-l-20">
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Today Sales</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">$329,291</p>
+                  <span class="tx-11 tx-roboto tx-white-6">$390,212 before tax</span>
                 </div>
-
-                <h4 class="header-title m-t-0">Daily Sales</h4>
-
-                <div class="widget-chart text-center">
-                    <div id="morris-donut-example"style="height: 245px;"></div>
-                    <ul class="list-inline chart-detail-list m-b-0">
-                        <li>
-                            <h5 style="color: #ff8acc;"><i class="fa fa-circle m-r-5"></i>Series A</h5>
-                        </li>
-                        <li>
-                            <h5 style="color: #5b69bc;"><i class="fa fa-circle m-r-5"></i>Series B</h5>
-                        </li>
-                    </ul>
-                </div>
+              </div>
             </div>
-        </div><!-- end col -->
-
-        <div class="col-lg-4">
-            <div class="card-box">
-                <div class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                        <i class="zmdi zmdi-more-vert"></i>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+          </div><!-- col-3 -->
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
+            <div class="bg-primary rounded overflow-hidden">
+              <div class="pd-25 d-flex align-items-center">
+                <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
+                <div class="mg-l-20">
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">% Unique Visits</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">54.45%</p>
+                  <span class="tx-11 tx-roboto tx-white-6">23% average duration</span>
                 </div>
-                <h4 class="header-title m-t-0">Statistics</h4>
-                <div id="morris-bar-example" style="height: 280px;"></div>
+              </div>
             </div>
-        </div><!-- end col -->
-
-        <div class="col-lg-4">
-            <div class="card-box">
-                <div class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                        <i class="zmdi zmdi-more-vert"></i>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
+          </div><!-- col-3 -->
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
+            <div class="bg-br-primary rounded overflow-hidden">
+              <div class="pd-25 d-flex align-items-center">
+                <i class="ion ion-clock tx-60 lh-0 tx-white op-7"></i>
+                <div class="mg-l-20">
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Bounce Rate</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">32.16%</p>
+                  <span class="tx-11 tx-roboto tx-white-6">65.45% on average time</span>
                 </div>
-                <h4 class="header-title m-t-0">Total Revenue</h4>
-                <div id="morris-line-example" style="height: 280px;"></div>
+              </div>
             </div>
-        </div><!-- end col -->
+          </div><!-- col-3 -->
+        </div><!-- row -->
 
-    </div>
-    <!-- end row -->
+        <div class="row row-sm mg-t-20">
+          <div class="col-8">
+            <div class="card pd-0 bd-0 shadow-base">
+              <div class="pd-x-30 pd-t-30 pd-b-15">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Network Performance</h6>
+                    <p class="mg-b-0">Duis autem vel eum iriure dolor in hendrerit in vulputate...</p>
+                  </div>
+                  <div class="tx-13">
+                    <p class="mg-b-0"><span class="square-8 rounded-circle bg-purple mg-r-10"></span> TCP Reset Packets</p>
+                    <p class="mg-b-0"><span class="square-8 rounded-circle bg-pink mg-r-10"></span> TCP FIN Packets</p>
+                  </div>
+                </div><!-- d-flex -->
+              </div>
+              <div class="pd-x-15 pd-b-15">
+                <div id="ch1" class="br-chartist br-chartist-2 ht-200 ht-sm-300"></div>
+              </div>
+            </div><!-- card -->
 
-
-    <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <div class="card-box widget-user">
+            <div class="card bd-0 shadow-base pd-30 mg-t-20">
+              <div class="d-flex align-items-center justify-content-between mg-b-30">
                 <div>
-                    <img src="assets/images/users/avatar-3.jpg" class="img-responsive img-circle" alt="user">
-                    <div class="wid-u-info">
-                        <h4 class="m-t-0 m-b-5 font-600">Chadengle</h4>
-                        <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                        <small class="text-warning"><b>Admin</b></small>
-                    </div>
+                  <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Newly Registered Users</h6>
+                  <p class="mg-b-0"><i class="icon ion-calendar mg-r-5"></i> From October 2017 - December 2017</p>
                 </div>
-            </div>
-        </div><!-- end col -->
+                <a href="" class="btn btn-outline-info btn-oblong tx-11 tx-uppercase tx-mont tx-medium tx-spacing-1 pd-x-30 bd-2">See more</a>
+              </div><!-- d-flex -->
 
-        <div class="col-lg-3 col-md-6">
-            <div class="card-box widget-user">
-                <div>
-                    <img src="assets/images/users/avatar-2.jpg" class="img-responsive img-circle" alt="user">
-                    <div class="wid-u-info">
-                        <h4 class="m-t-0 m-b-5 font-600"> Michael Zenaty</h4>
-                        <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                        <small class="text-custom"><b>Support Lead</b></small>
-                    </div>
+              <table class="table table-valign-middle mg-b-0">
+                <tbody>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Deborah Miner</h6>
+                      <span class="tx-12">@deborah.miner</span>
+                    </td>
+                    <td>Nov 01, 2017</td>
+                    <td><span id="sparkline1">1,4,4,7,5,9,4,7,5,9,1</span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Belinda Connor</h6>
+                      <span class="tx-12">@belinda.connor</span>
+                    </td>
+                    <td>Oct 28, 2017</td>
+                    <td><span id="sparkline2">1,3,6,4,5,8,4,2,4,5,0</span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Andrew Wiggins</h6>
+                      <span class="tx-12">@andrew.wiggins</span>
+                    </td>
+                    <td>Oct 27, 2017</td>
+                    <td><span id="sparkline3">1,2,4,2,3,6,4,2,4,3,0</span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Brandon Lawrence</h6>
+                      <span class="tx-12">@brandon.lawrence</span>
+                    </td>
+                    <td>Oct 27, 2017</td>
+                    <td><span id="sparkline4">1,4,4,7,5,9,4,7,5,9,1</span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Marilyn Tarter</h6>
+                      <span class="tx-12">@marilyn.tarter</span>
+                    </td>
+                    <td>Oct 27, 2017</td>
+                    <td><span id="sparkline5">1,3,6,4,5,8,4,2,4,5,0</span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- card -->
+
+            <div class="card shadow-base card-body pd-25 bd-0 mg-t-20">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h6 class="card-title tx-uppercase tx-12">Statistics Summary</h6>
+                  <p class="display-4 tx-medium tx-inverse mg-b-5 tx-lato">25%</p>
+                  <div class="progress mg-b-10">
+                    <div class="progress-bar bg-primary progress-bar-xs wd-30p" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div><!-- progress -->
+                  <p class="tx-12">Nulla consequat massa quis enim. Donec pede justo, fringilla vel...</p>
+                  <p class="tx-11 lh-3 mg-b-0">You can also use other progress variant found in <a href="progress.html" target="blank">progress section</a>.</p>
+                </div><!-- col-6 -->
+                <div class="col-sm-6 mg-t-20 mg-sm-t-0 d-flex align-items-center justify-content-center">
+                  <span class="peity-donut" data-peity='{ "fill": ["#0866C6", "#E9ECEF"],  "innerRadius": 60, "radius": 90 }'>30/100</span>
+                </div><!-- col-6 -->
+              </div><!-- row -->
+            </div><!-- card -->
+
+
+          </div><!-- col-9 -->
+          <div class="col-4">
+
+
+            <div class="card bd-0 shadow-base pd-30">
+              <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Server Status</h6>
+              <p class="mg-b-25">Summary of the status of your server.</p>
+
+              <label class="tx-12 tx-gray-600 mg-b-10">CPU Usage (40.05 - 32 cpus)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar wd-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+              <label class="tx-12 tx-gray-600 mg-b-10">Memory Usage (32.2%)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-teal wd-60p" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+              <label class="tx-12 tx-gray-600 mg-b-10">Disk Usage (82.2%)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-danger wd-70p" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+              <label class="tx-12 tx-gray-600 mg-b-10">Databases (63/100)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-warning wd-50p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+              <label class="tx-12 tx-gray-600 mg-b-10">Domains (30/50)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-info wd-45p" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+              <label class="tx-12 tx-gray-600 mg-b-10">Email Account (13/50)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-purple wd-65p" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+              <div class="mg-t-20 tx-13">
+                <a href="" class="tx-gray-600 hover-info">Generate Report</a>
+                <a href="" class="tx-gray-600 hover-info bd-l mg-l-10 pd-l-10">Print Report</a>
+              </div>
+            </div><!-- card -->
+
+            <div class="card bg-transparent shadow-base bd-0 mg-t-20">
+              <div class="bg-primary rounded-top">
+                <div class="pd-x-30 pd-t-30">
+                  <h6 class="tx-13 tx-uppercase tx-white tx-semibold tx-spacing-1">Sale Status</h6>
+                  <p class="mg-b-20 tx-white-6">As of October 10 - 17, 2017</p>
+                  <h3 class="tx-lato tx-white mg-b-0">$12, 201 <i class="icon ion-android-arrow-up tx-white-5"></i></h3>
                 </div>
-            </div>
-        </div><!-- end col -->
+                <div id="chartLine1" class="wd-100p ht-150"></div>
+              </div>
+              <div class="bg-white pd-20 rounded-bottom d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-start">
+                  <div><span id="sparkline6">5,4,7,5,9,7,4</span></div>
+                  <div class="mg-l-15">
+                    <label class="tx-uppercase tx-10 tx-medium tx-spacing-1 mg-b-0">Average Sales</label>
+                    <h6 class="tx-inverse mg-b-0 tx-lato tx-bold">$603, 201</h6>
+                  </div>
+                </div><!-- d-flex -->
+                <div class="d-flex align-items-center">
+                  <div><span id="sparkline7">4,7,5,9,4,7,5</span></div>
+                  <div class="mg-l-15">
+                    <label class="tx-uppercase tx-10 tx-medium tx-spacing-1 mg-b-0">Total Sales</label>
+                    <h6 class="tx-inverse mg-b-0 tx-lato tx-bold">$822, 677</h6>
+                  </div>
+                </div><!-- d-flex -->
+              </div><!-- d-flex -->
+            </div><!-- card -->
 
-        <div class="col-lg-3 col-md-6">
-            <div class="card-box widget-user">
-                <div>
-                    <img src="assets/images/users/avatar-1.jpg" class="img-responsive img-circle" alt="user">
-                    <div class="wid-u-info">
-                        <h4 class="m-t-0 m-b-5 font-600">Stillnotdavid</h4>
-                        <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                        <small class="text-success"><b>Designer</b></small>
-                    </div>
-                </div>
-            </div>
-        </div><!-- end col -->
+            <div class="card bd-0 mg-t-20">
+              <div id="carousel2" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel2" data-slide-to="1"></li>
+                  <li data-target="#carousel2" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                    <div class="bg-br-primary pd-30 ht-300 pos-relative d-flex align-items-center rounded">
+                      <div class="pos-absolute t-15 r-25">
+                        <a href="" class="tx-white-5 hover-info"><i class="icon ion-edit tx-16"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-stats-bars tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-gear-a tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
+                      </div>
+                      <div class="tx-white">
+                        <p class="tx-uppercase tx-11 tx-medium tx-mont tx-spacing-2 tx-white-5">Recent Article</p>
+                        <h5 class="lh-5 mg-b-20">20 Best Travel Tips After 5 Years Of Traveling The World</h5>
+                        <nav class="nav flex-row tx-13">
+                          <a href="" class="tx-white-8 hover-white pd-l-0 pd-r-5">12K+ Views</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">234 Shares</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">43 Comments</a>
+                        </nav>
+                      </div>
+                    </div><!-- d-flex -->
+                  </div>
+                  <div class="carousel-item">
+                    <div class="bg-info pd-30 ht-300 pos-relative d-flex align-items-center rounded">
+                      <div class="pos-absolute t-15 r-25">
+                        <a href="" class="tx-white-5 hover-info"><i class="icon ion-edit tx-16"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-stats-bars tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-gear-a tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
+                      </div>
+                      <div class="tx-white">
+                        <p class="tx-uppercase tx-11 tx-medium tx-mont tx-spacing-2 tx-white-5">Recent Article</p>
+                        <h5 class="lh-5 mg-b-20">How I Flew Around the World in Business Class for $1,340</h5>
+                        <nav class="nav flex-row tx-13">
+                          <a href="" class="tx-white-8 hover-white pd-l-0 pd-r-5">Edit</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">Unpublish</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">Delete</a>
+                        </nav>
+                      </div>
+                    </div><!-- d-flex -->
+                  </div>
+                  <div class="carousel-item">
+                    <div class="bg-purple pd-30 ht-300 d-flex pos-relative align-items-center rounded">
+                      <div class="pos-absolute t-15 r-25">
+                        <a href="" class="tx-white-5 hover-info"><i class="icon ion-edit tx-16"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-stats-bars tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-gear-a tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
+                      </div>
+                      <div class="tx-white">
+                        <p class="tx-uppercase tx-11 tx-medium tx-mont tx-spacing-2 tx-white-5">Recent Article</p>
+                        <h5 class="lh-5 mg-b-20">10 Reasons Why Travel Makes You a Happier Person</h5>
+                        <nav class="nav flex-row tx-13">
+                          <a href="" class="tx-white-8 hover-white pd-l-0 pd-r-5">Edit</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">Unpublish</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">Delete</a>
+                        </nav>
+                      </div>
+                    </div><!-- d-flex -->
+                  </div>
+                </div><!-- carousel-inner -->
+              </div><!-- carousel -->
+            </div><!-- card -->
 
-        <div class="col-lg-3 col-md-6">
-            <div class="card-box widget-user">
-                <div>
-                    <img src="assets/images/users/avatar-10.jpg" class="img-responsive img-circle" alt="user">
-                    <div class="wid-u-info">
-                        <h4 class="m-t-0 m-b-5 font-600">Tomaslau</h4>
-                        <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                        <small class="text-info"><b>Developer</b></small>
-                    </div>
-                </div>
-            </div>
-        </div><!-- end col -->
-    </div>
-    <!-- end row -->
-
-
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="card-box">
-                <div class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                        <i class="zmdi zmdi-more-vert"></i>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
-
-                <h4 class="header-title m-t-0 m-b-30">Inbox</h4>
-
-                <div class="inbox-widget nicescroll" style="height: 315px;">
-                    <a href="#">
-                        <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg" class="img-circle" alt=""></div>
-                            <p class="inbox-item-author">Chadengle</p>
-                            <p class="inbox-item-text">Hey! there I'm available...</p>
-                            <p class="inbox-item-date">13:40 PM</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg" class="img-circle" alt=""></div>
-                            <p class="inbox-item-author">Tomaslau</p>
-                            <p class="inbox-item-text">I've finished it! See you so...</p>
-                            <p class="inbox-item-date">13:34 PM</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg" class="img-circle" alt=""></div>
-                            <p class="inbox-item-author">Stillnotdavid</p>
-                            <p class="inbox-item-text">This theme is awesome!</p>
-                            <p class="inbox-item-date">13:17 PM</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg" class="img-circle" alt=""></div>
-                            <p class="inbox-item-author">Kurafire</p>
-                            <p class="inbox-item-text">Nice to meet you</p>
-                            <p class="inbox-item-date">12:20 PM</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="inbox-item">
-                            <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg" class="img-circle" alt=""></div>
-                            <p class="inbox-item-author">Shahedk</p>
-                            <p class="inbox-item-text">Hey! there I'm available...</p>
-                            <p class="inbox-item-date">10:15 AM</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div><!-- end col -->
-
-        <div class="col-lg-8">
-            <div class="card-box">
-                <div class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                        <i class="zmdi zmdi-more-vert"></i>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
-
-                <h4 class="header-title m-t-0 m-b-30">Latest Projects</h4>
-
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Project Name</th>
-                                <th>Start Date</th>
-                                <th>Due Date</th>
-                                <th>Status</th>
-                                <th>Assign</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Adminto Admin v1</td>
-                                <td>01/01/2016</td>
-                                <td>26/04/2016</td>
-                                <td><span class="label label-danger">Released</span></td>
-                                <td>Coderthemes</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Adminto Frontend v1</td>
-                                <td>01/01/2016</td>
-                                <td>26/04/2016</td>
-                                <td><span class="label label-success">Released</span></td>
-                                <td>Adminto admin</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Adminto Admin v1.1</td>
-                                <td>01/05/2016</td>
-                                <td>10/05/2016</td>
-                                <td><span class="label label-pink">Pending</span></td>
-                                <td>Coderthemes</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Adminto Frontend v1.1</td>
-                                <td>01/01/2016</td>
-                                <td>31/05/2016</td>
-                                <td><span class="label label-purple">Work in Progress</span>
-                                </td>
-                                <td>Adminto admin</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Adminto Admin v1.3</td>
-                                <td>01/01/2016</td>
-                                <td>31/05/2016</td>
-                                <td><span class="label label-warning">Coming soon</span></td>
-                                <td>Coderthemes</td>
-                            </tr>
-
-                            <tr>
-                                <td>6</td>
-                                <td>Adminto Admin v1.3</td>
-                                <td>01/01/2016</td>
-                                <td>31/05/2016</td>
-                                <td><span class="label label-primary">Coming soon</span></td>
-                                <td>Adminto admin</td>
-                            </tr>
-
-                            <tr>
-                                <td>7</td>
-                                <td>Adminto Admin v1.3</td>
-                                <td>01/01/2016</td>
-                                <td>31/05/2016</td>
-                                <td><span class="label label-primary">Coming soon</span></td>
-                                <td>Adminto admin</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div><!-- end col -->
-
-    </div>
-    <!-- end row -->
-
-</div> <!-- container -->
-
-</div> <!-- content -->
-
+          </div><!-- col-3 -->
+        </div><!-- row -->

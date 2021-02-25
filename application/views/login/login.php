@@ -1,30 +1,21 @@
-<style type="text/css">
-    ::-webkit-input-placeholder{
-    color: gray!important;
-}
-</style>
-<div class="account-pages"></div>
-<div class="clearfix"></div>
-<div class="wrapper-page">
-    <div class="text-center">
-        <a href="index.html" class="logo"><span>FORM LOGIN<span></span></span></a>
-    </div>
-    <div class="m-t-40 card-box">
-        <div class="text-center">
-            <h4 class="text-uppercase font-bold m-b-0">Sign In</h4>
-        </div>
-        <div class="panel-body">
-            <form class="form-horizontal m-t-20 validate-form" method="post">
+
+
+    <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+
+      <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
+        <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> bracket <span class="tx-normal">]</span></div>
+        <div class="tx-center mg-b-60">The Admin Template For Perfectionist</div>
+          <form class="form-horizontal m-t-20 validate-form" method="post">
 
                 <div class="form-group ">
                     <div class="col-xs-12">
-                        <input class="form-control" style="color: black;" name="email" type="email" required="" placeholder="Email">
+                        <input class="form-control" name="email" type="email" required="" placeholder="Email">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control" style="color: black;" name="password" type="password" required="" placeholder="Password">
+                        <input class="form-control" name="password" type="password" required="" placeholder="Password">
                     </div>
                 </div>
 
@@ -45,7 +36,7 @@
 
                         <label for="captcha"><?php echo $captcha['image']; ?></label>
                         <br>
-                        <input class="form-control form-control-user" style="color: black;" type="text" autocomplete="off" name="userCaptcha" placeholder="Captcha" value="<?php if(!empty($userCaptcha)){ echo $userCaptcha;} ?>" />
+                        <input class="form-control form-control-user" type="text" autocomplete="off" name="userCaptcha" placeholder="Captcha" value="<?php if(!empty($userCaptcha)){ echo $userCaptcha;} ?>" />
                         <span class="required-server"><?php echo form_error('userCaptcha','<p style="color:#F83A18">','</p>'); ?></span> </div>
                         <div class="col-xs-12">
                             <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" name="login" type="submit">Log In</button>
@@ -58,16 +49,7 @@
                         </div>
                     </div>
                 </form>
+      </div><!-- login-wrapper -->
+    </div><!-- d-flex -->
 
-            </div>
-        </div>
-        <!-- end card-box-->
-
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p class="text-muted">Don't have an account? <a href="page-register.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
-            </div>
-        </div>
-
-    </div>
-    <!-- end wrapper page -->
+   

@@ -1,530 +1,109 @@
-<div class="content-page" style="background-color: #edeff0;">
-  <!-- Start content -->
-  <div class="content">
-    <div class="container">
 
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="card-box table-responsive" style="background-color: white;">
+<div class="br-mainpanel bg-white">
+    
+  <div class="container" >
+    <ul class="nav nav-tabs" id="myTab" role="tablist" >
+      <li class="nav-item" style="margin-top: 20px!important;">
+        <a class="nav-link active tab" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" >Scrapping</a>
+      </li>
+      <li class="nav-item" style="margin-top: 20px!important;">
+        <a class="nav-link tab" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Optimasi</a>
+      </li>
+    </ul>
 
-            <center><h1 ><b style="color: #00415a">Related Keyword Generator</b></h1></center>
-            <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
-            <ul class="navbar-nav" id="divku" >
-                  <li class="nav-item btn btn-primary activeku" style="border-radius: 0;"><a class="nav-link nav-menu" style="color: white;" id="" href="<?= base_url('Tool1') ?>" >Scrapping</a></li>
-                  <li class="nav-item btn btn-primary" style="background-color:;border-radius: 0;"><a class="nav-link nav-menu" style="color: white;" id="application/views/admin/optimasi">Optimasi</a></li>
-                </ul>
-                
-                    
- 
-                <script>
-                
-                var header = document.getElementById("divku");
-                var btns = header.getElementsByClassName("btn");
-                for (var i = 0; i < btns.length; i++) {
-                  btns[i].addEventListener("click", function() {
-                  var current = document.getElementsByClassName("activeku");
-                  current[0].className = current[0].className.replace(" activeku", "");
-                  this.className += " activeku";
-                  });
-                }
-                </script>
-                <script type="text/javascript">
-                    $(document).ready(function(){
-                        var halaman=getCookie("halaman");
-                        if (halaman == "") {
-                            setCookie("halaman", "application/controller/Tool1.php", 30);
-                            $('.halaman-menu').load(getCookie("halaman"));
-                            console.log('ini di halaman menu');
-                        } else {
-                            $('.halaman-menu').load(getCookie("halaman"));
-                        }
-                 
-                        $('.nav-link').click(function(){
-                            var menu = $(this).attr('id');
-                            setCookie("halaman", menu + ".php", 30);
-                            $('.halaman-menu').load(getCookie("halaman"));
-                        });
-                    });
-                 
-                    function setCookie(cname,cvalue,exdays) {
-                      var d = new Date();
-                      d.setTime(d.getTime() + (30*24*60*60*1000));
-                      var expires = "expires=" + d.toGMTString();
-                      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-                    }
-                 
-                    function getCookie(cname) {
-                      var name = cname + "=";
-                      var decodedCookie = decodeURIComponent(document.cookie);
-                      var ca = decodedCookie.split(';');
-                      for(var i = 0; i < ca.length; i++) {
-                        var c = ca[i];
-                        while (c.charAt(0) == ' ') {
-                          c = c.substring(1);
-                        }
-                        if (c.indexOf(name) == 0) {
-                          return c.substring(name.length, c.length);
-                        }
-                      }
-                      return "";
-                    }
-                </script>
-                <hr style="width: 92.2%;height: 4px;background-color: #00415a;">
-                
-                
-<div class="halaman-menu">
-                
-            <div class="container" style="margin-top: 5%;">
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="row">
 
-                
-                <div class="row">
-
-                  <div class="col-sm-6">
-                    <div id="numofkeywords"></div>
-                    <div class="form-group">
-                      <label for="input" ><h3>Input:</h3></label>
-                      <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px; width: 400px;background-color: white;color:#00415a; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);border:1px solid #00415a;margin-left: 6%;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control area"  placeholder="Isi Keyword"></textarea>
-                  </div>
-
-                  <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;margin-left: 6%;">Generate Keyword</a>
-                  
-
-<!-- 
-      <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#advanced" aria-expanded="false" aria-controls="advanced">
-        Advanced
-    </button> -->
-
-
-
-    <a class="btn btn-danger" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
-</div>
-<div class="col-sm-5">
-
-    <div class="form-group lala" style="margin-top: 40px!important;">
-      <label for="service"  >Select Jenis:</label>
-      <select class="form-control" name="service" id="service" style="background-color: white;color:#00415a;border-color: #00719c">
-                        <!-- <option>google</option>
-                        <option>twitter</option>
-                        <option>yahoo</option>
-                        <option>bing</option>
-                        <option>ebay</option>
-                        <option>amazon</option>
-                        <option>google images</option>
-                        <option>youtube</option>
-                        <option>google videos</option>
-                        <option>google books</option>
-                        <option>google news</option>
-                        <option>google shopping</option>
-                        <option>yandex</option>
-                        <option>baidu</option>
-                        <option>linkedin</option> -->
-                        <!-- <option>yelp</option> -->
-                    </select>
-                </div>
-                <div class="checkbox">
-                  <label for="keep-running">
-                    <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever"></input>Continuous running:
-                </label>
-            </div>
-
-            <div class="form-group">
-              <label for="country">Country code (google):</label>
-              <!-- ISO-3366-1: Alpha-2 Codes -->
-              <select value="id"  class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled="">
-                <option value=""></option>
-                <option value="us">United States (us)</option>
-                <option value="af">Afghanistan (af)</option>
-                <option value="ax">Åland Islands (ax)</option>
-                <option value="al">Albania (al)</option>
-                <option value="dz">Algeria (dz)</option>
-                <option value="as">American Samoa (as)</option>
-                <option value="ad">Andorra (ad)</option>
-                <option value="ao">Angola (ao)</option>
-                <option value="ai">Anguilla (ai)</option>
-                <option value="aq">Antarctica (aq)</option>
-                <option value="ag">Antigua and Barbuda (ag)</option>
-                <option value="ar">Argentina (ar)</option>
-                <option value="am">Armenia (am)</option>
-                <option value="aw">Aruba (aw)</option>
-                <option value="au">Australia (au)</option>
-                <option value="at">Austria (at)</option>
-                <option value="az">Azerbaijan (az)</option>
-                <option value="bs">Bahamas (bs)</option>
-                <option value="bh">Bahrain (bh)</option>
-                <option value="bd">Bangladesh (bd)</option>
-                <option value="bb">Barbados (bb)</option>
-                <option value="by">Belarus (by)</option>
-                <option value="be">Belgium (be)</option>
-                <option value="bz">Belize (bz)</option>
-                <option value="bj">Benin (bj)</option>
-                <option value="bm">Bermuda (bm)</option>
-                <option value="bt">Bhutan (bt)</option>
-                <option value="bo">Bolivia, Plurinational State of (bo)</option>
-                <option value="bq">Bonaire, Sint Eustatius and Saba (bq)</option>
-                <option value="ba">Bosnia and Herzegovina (ba)</option>
-                <option value="bw">Botswana (bw)</option>
-                <option value="bv">Bouvet Island (bv)</option>
-                <option value="br">Brazil (br)</option>
-                <option value="io">British Indian Ocean Territory (io)</option>
-                <option value="bn">Brunei Darussalam (bn)</option>
-                <option value="bg">Bulgaria (bg)</option>
-                <option value="bf">Burkina Faso (bf)</option>
-                <option value="bi">Burundi (bi)</option>
-                <option value="kh">Cambodia (kh)</option>
-                <option value="cm">Cameroon (cm)</option>
-                <option value="ca">Canada (ca)</option>
-                <option value="cv">Cape Verde (cv)</option>
-                <option value="ky">Cayman Islands (ky)</option>
-                <option value="cf">Central African Republic (cf)</option>
-                <option value="td">Chad (td)</option>
-                <option value="cl">Chile (cl)</option>
-                <option value="cn">China (cn)</option>
-                <option value="cx">Christmas Island (cx)</option>
-                <option value="cc">Cocos (Keeling) Islands (cc)</option>
-                <option value="co">Colombia (co)</option>
-                <option value="km">Comoros (km)</option>
-                <option value="cg">Congo (cg)</option>
-                <option value="cd">Congo, the Democratic Republic of the (cd)</option>
-                <option value="ck">Cook Islands (ck)</option>
-                <option value="cr">Costa Rica (cr)</option>
-                <option value="ci">Côte d'Ivoire (ci)</option>
-                <option value="hr">Croatia (hr)</option>
-                <option value="cu">Cuba (cu)</option>
-                <option value="cw">Curaçao (cw)</option>
-                <option value="cy">Cyprus (cy)</option>
-                <option value="cz">Czech Republic (cz)</option>
-                <option value="dk">Denmark (dk)</option>
-                <option value="dj">Djibouti (dj)</option>
-                <option value="dm">Dominica (dm)</option>
-                <option value="do">Dominican Republic (do)</option>
-                <option value="ec">Ecuador (ec)</option>
-                <option value="eg">Egypt (eg)</option>
-                <option value="sv">El Salvador (sv)</option>
-                <option value="gq">Equatorial Guinea (gq)</option>
-                <option value="er">Eritrea (er)</option>
-                <option value="ee">Estonia (ee)</option>
-                <option value="et">Ethiopia (et)</option>
-                <option value="fk">Falkland Islands (Malvinas) (fk)</option>
-                <option value="fo">Faroe Islands (fo)</option>
-                <option value="fj">Fiji (fj)</option>
-                <option value="fi">Finland (fi)</option>
-                <option value="fr">France (fr)</option>
-                <option value="gf">French Guiana (gf)</option>
-                <option value="pf">French Polynesia (pf)</option>
-                <option value="tf">French Southern Territories (tf)</option>
-                <option value="ga">Gabon (ga)</option>
-                <option value="gm">Gambia (gm)</option>
-                <option value="ge">Georgia (ge)</option>
-                <option value="de">Germany (de)</option>
-                <option value="gh">Ghana (gh)</option>
-                <option value="gi">Gibraltar (gi)</option>
-                <option value="gr">Greece (gr)</option>
-                <option value="gl">Greenland (gl)</option>
-                <option value="gd">Grenada (gd)</option>
-                <option value="gp">Guadeloupe (gp)</option>
-                <option value="gu">Guam (gu)</option>
-                <option value="gt">Guatemala (gt)</option>
-                <option value="gg">Guernsey (gg)</option>
-                <option value="gn">Guinea (gn)</option>
-                <option value="gw">Guinea-Bissau (gw)</option>
-                <option value="gy">Guyana (gy)</option>
-                <option value="ht">Haiti (ht)</option>
-                <option value="hm">Heard Island and McDonald Islands (hm)</option>
-                <option value="va">Holy See (Vatican City State) (va)</option>
-                <option value="hn">Honduras (hn)</option>
-                <option value="hk">Hong Kong (hk)</option>
-                <option value="hu">Hungary (hu)</option>
-                <option value="is">Iceland (is)</option>
-                <option value="in">India (in)</option>
-                <option value="id">Indonesia (id)</option>
-                <option value="ir">Iran, Islamic Republic of (ir)</option>
-                <option value="iq">Iraq (iq)</option>
-                <option value="ie">Ireland (ie)</option>
-                <option value="im">Isle of Man (im)</option>
-                <option value="il">Israel (il)</option>
-                <option value="it">Italy (it)</option>
-                <option value="jm">Jamaica (jm)</option>
-                <option value="jp">Japan (jp)</option>
-                <option value="je">Jersey (je)</option>
-                <option value="jo">Jordan (jo)</option>
-                <option value="kz">Kazakhstan (kz)</option>
-                <option value="ke">Kenya (ke)</option>
-                <option value="ki">Kiribati (ki)</option>
-                <option value="kp">Korea, Democratic People's Republic of (kp)</option>
-                <option value="kr">Korea, Republic of (kr)</option>
-                <option value="kw">Kuwait (kw)</option>
-                <option value="kg">Kyrgyzstan (kg)</option>
-                <option value="la">Lao People's Democratic Republic (la)</option>
-                <option value="lv">Latvia (lv)</option>
-                <option value="lb">Lebanon (lb)</option>
-                <option value="ls">Lesotho (ls)</option>
-                <option value="lr">Liberia (lr)</option>
-                <option value="ly">Libya (ly)</option>
-                <option value="li">Liechtenstein (li)</option>
-                <option value="lt">Lithuania (lt)</option>
-                <option value="lu">Luxembourg (lu)</option>
-                <option value="mo">Macao (mo)</option>
-                <option value="mk">Macedonia, the former Yugoslav Republic of (mk)</option>
-                <option value="mg">Madagascar (mg)</option>
-                <option value="mw">Malawi (mw)</option>
-                <option value="my">Malaysia (my)</option>
-                <option value="mv">Maldives (mv)</option>
-                <option value="ml">Mali (ml)</option>
-                <option value="mt">Malta (mt)</option>
-                <option value="mh">Marshall Islands (mh)</option>
-                <option value="mq">Martinique (mq)</option>
-                <option value="mr">Mauritania (mr)</option>
-                <option value="mu">Mauritius (mu)</option>
-                <option value="yt">Mayotte (yt)</option>
-                <option value="mx">Mexico (mx)</option>
-                <option value="fm">Micronesia, Federated States of (fm)</option>
-                <option value="md">Moldova, Republic of (md)</option>
-                <option value="mc">Monaco (mc)</option>
-                <option value="mn">Mongolia (mn)</option>
-                <option value="me">Montenegro (me)</option>
-                <option value="ms">Montserrat (ms)</option>
-                <option value="ma">Morocco (ma)</option>
-                <option value="mz">Mozambique (mz)</option>
-                <option value="mm">Myanmar (mm)</option>
-                <option value="na">Namibia (na)</option>
-                <option value="nr">Nauru (nr)</option>
-                <option value="np">Nepal (np)</option>
-                <option value="nl">Netherlands (nl)</option>
-                <option value="nc">New Caledonia (nc)</option>
-                <option value="nz">New Zealand (nz)</option>
-                <option value="ni">Nicaragua (ni)</option>
-                <option value="ne">Niger (ne)</option>
-                <option value="ng">Nigeria (ng)</option>
-                <option value="nu">Niue (nu)</option>
-                <option value="nf">Norfolk Island (nf)</option>
-                <option value="mp">Northern Mariana Islands (mp)</option>
-                <option value="no">Norway (no)</option>
-                <option value="om">Oman (om)</option>
-                <option value="pk">Pakistan (pk)</option>
-                <option value="pw">Palau (pw)</option>
-                <option value="ps">Palestinian Territory, Occupied (ps)</option>
-                <option value="pa">Panama (pa)</option>
-                <option value="pg">Papua New Guinea (pg)</option>
-                <option value="py">Paraguay (py)</option>
-                <option value="pe">Peru (pe)</option>
-                <option value="ph">Philippines (ph)</option>
-                <option value="pn">Pitcairn (pn)</option>
-                <option value="pl">Poland (pl)</option>
-                <option value="pt">Portugal (pt)</option>
-                <option value="pr">Puerto Rico (pr)</option>
-                <option value="qa">Qatar (qa)</option>
-                <option value="re">Réunion (re)</option>
-                <option value="ro">Romania (ro)</option>
-                <option value="ru">Russian Federation (ru)</option>
-                <option value="rw">Rwanda (rw)</option>
-                <option value="bl">Saint Barthélemy (bl)</option>
-                <option value="sh">Saint Helena, Ascension and Tristan da Cunha (sh)</option>
-                <option value="kn">Saint Kitts and Nevis (kn)</option>
-                <option value="lc">Saint Lucia (lc)</option>
-                <option value="mf">Saint Martin (French part) (mf)</option>
-                <option value="pm">Saint Pierre and Miquelon (pm)</option>
-                <option value="vc">Saint Vincent and the Grenadines (vc)</option>
-                <option value="ws">Samoa (ws)</option>
-                <option value="sm">San Marino (sm)</option>
-                <option value="st">Sao Tome and Principe (st)</option>
-                <option value="sa">Saudi Arabia (sa)</option>
-                <option value="sn">Senegal (sn)</option>
-                <option value="rs">Serbia (rs)</option>
-                <option value="sc">Seychelles (sc)</option>
-                <option value="sl">Sierra Leone (sl)</option>
-                <option value="sg">Singapore (sg)</option>
-                <option value="sx">Sint Maarten (Dutch part) (sx)</option>
-                <option value="sk">Slovakia (sk)</option>
-                <option value="si">Slovenia (si)</option>
-                <option value="sb">Solomon Islands (sb)</option>
-                <option value="so">Somalia (so)</option>
-                <option value="za">South Africa (za)</option>
-                <option value="gs">South Georgia and the South Sandwich Islands (gs)</option>
-                <option value="ss">South Sudan (ss)</option>
-                <option value="es">Spain (es)</option>
-                <option value="lk">Sri Lanka (lk)</option>
-                <option value="sd">Sudan (sd)</option>
-                <option value="sr">Suriname (sr)</option>
-                <option value="sj">Svalbard and Jan Mayen (sj)</option>
-                <option value="sz">Swaziland (sz)</option>
-                <option value="se">Sweden (se)</option>
-                <option value="ch">Switzerland (ch)</option>
-                <option value="sy">Syrian Arab Republic (sy)</option>
-                <option value="tw">Taiwan, Province of China (tw)</option>
-                <option value="tj">Tajikistan (tj)</option>
-                <option value="tz">Tanzania, United Republic of (tz)</option>
-                <option value="th">Thailand (th)</option>
-                <option value="tl">Timor-Leste (tl)</option>
-                <option value="tg">Togo (tg)</option>
-                <option value="tk">Tokelau (tk)</option>
-                <option value="to">Tonga (to)</option>
-                <option value="tt">Trinidad and Tobago (tt)</option>
-                <option value="tn">Tunisia (tn)</option>
-                <option value="tr">Turkey (tr)</option>
-                <option value="tm">Turkmenistan (tm)</option>
-                <option value="tc">Turks and Caicos Islands (tc)</option>
-                <option value="tv">Tuvalu (tv)</option>
-                <option value="ug">Uganda (ug)</option>
-                <option value="ua">Ukraine (ua)</option>
-                <option value="ae">United Arab Emirates (ae)</option>
-                <option value="gb">United Kingdom (gb)</option>
-                <option value="um">United States Minor Outlying Islands (um)</option>
-                <option value="uy">Uruguay (uy)</option>
-                <option value="uz">Uzbekistan (uz)</option>
-                <option value="vu">Vanuatu (vu)</option>
-                <option value="ve">Venezuela, Bolivarian Republic of (ve)</option>
-                <option value="vn">Viet Nam (vn)</option>
-                <option value="vg">Virgin Islands, British (vg)</option>
-                <option value="vi">Virgin Islands, U.S. (vi)</option>
-                <option value="wf">Wallis and Futuna (wf)</option>
-                <option value="eh">Western Sahara (eh)</option>
-                <option value="ye">Yemen (ye)</option>
-                <option value="zm">Zambia (zm)</option>
-                <option value="zw">Zimbabwe (zw)</option>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label for="service" style="margin-top: 20px;">Service:</label>
+            <select class="form-control" name="service" id="service" >
             </select>
-        </div>
-        <br>
-        <div class="card cardku">
-          <div class="card-header" style="background-color: #00415a; color: white;padding-top: 4px;padding-left: 6px;padding-bottom: 4px;">
-            <b>Pengumuman</b>
-        </div>
-        <div class="card-body">
-            <div class="form-group" style="padding-top: 4px;padding-left: 6px;">
-             <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
-             </p>
+          </div>
+          <div class="checkbox">
+            <label for="keep-running">
+              <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever"></input>Continuous running:
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country code (google):</label>
+            <!-- ISO-3366-1: Alpha-2 Codes -->
+            <select value="id"  class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled="">
+            </select>
+          </div>
+          <br>
+          <div class="card cardku">
+            <div class="card-header" style="background-color: darkgreen; color: white;">
+              <b>Pengumuman</b>
+            </div>
+            <div class="card-body">
+              <div class="form-group" >
+               <p>Ini adalah fitur free dari semanticarticle.com akan ada launching tool premium untuk optimasi artikel agar bisa merangking puluhan/ratusan keyword sekaligus pakai 1 artikel saja, akan di launching insyaAlloh ahir maret
+               </p>
+             </div>
+           </div>
          </div>
-     </div>
- </div>
- <br>
- <div class="card cardku" >
-  <div class="card-header" style="background-color: #00415a; color: white;padding-top: 4px;padding-left: 6px;padding-bottom: 4px;">
-    <b>Persen</b>
-</div>
-<div class="card-body">
-    <div class="form-group" >
-         
-                
-      
+       </div>
 
-<div class="card">
+       <div class="col-lg-4">
+        <!-- <div id="numofkeywords"></div> -->
+        <div class="form-group mt-4">
+          <label for="input" ><h3>Input:</h3></label>
+          <textarea id="input" autocomplete="off" autocorrect="off" style="resize: none; height: 400px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword" class="input"></textarea>
+        </div>
 
-                <button class="dropdown-btn" style="width: 88%;margin-left: 20px;margin-top: 20px;border: none;background-color: #def6ff;padding: 10px;color: #00719c;border-left: 4px solid #00719c;font-weight: 600;">KEYWORD YOU ALREADY USE 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container scrollable-menu scrollku" id="persen" style="border-left: 4px solid #00719c;padding-top: 20px;">
-   
-  </div>
-  </div>
-  <script type="text/javascript">
-      var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
+        <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
+        <a class="btn btn-danger" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
+      </div>
+      <div class="col-lg-4 mt-4">
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
-  });
-}
-  </script>
+        <div class="card cardku">
+          <div class="card-header" style="background-color: darkgreen; color: white;">
+            <b>Persen</b>
+          </div>
 
- </div>
-</div>
-</div>
+          <div class="card-body">
+            <div class="form-group" >
+              <script type="text/javascript">
+                const progress = document.querySelector('.progress-done');
+                progress.style.width = progress.getAttribute('data-done') + '%';
+                progress.style.opacity = 1;
+              </script>
 
 
-<form id="advanced" class="collapse">
-    <br>
+              <div class="card">
+                <a  class="nav-link"  data-toggle="collapse" data-target="#collapseUtilities" style="background-color: #e3ffeb; text-decoration: none;cursor: pointer;padding: 16px;border-left: 4px solid darkgreen;">
+                  <i class="fas fa-caret-down" style="color: darkgreen;font-size: 20px;"></i>
+                  <span  style="padding-left: 20px!important;color: darkgreen;font-weight: 800;margin-top: -6px;">Keyword Penting</span>
+                </a>
+                <div id="collapseUtilities" class="collapse scrollable-menu" >
+                  <div  id="persen" style="border-left: 4px solid darkgreen;padding-top: 16px;margin-bottom: -20px;" >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- tutup row -->
 
 
-    <div class="form-group">
-      <label for="prefixes">Prefixes</label>
-      <textarea type="text" title="These values are added before words to prompt the search suggestions" class="form-control" name="prefixes" id="prefixes"  ></textarea>
-  </div>
-  <div class="form-group">
-      <label for="suffixes">Suffixes:</label>
-      <textarea type="text" rows="2" title="These values are added after words to prompt the search suggestions" class="form-control" id="suffixes"></textarea>
-  </div>
-
-  <div class="form-group" style="display: none">
-      <label for="rate-limit">Rate limit (for experts):</label>
-      <input type="text"  class="form-control" id="rate-limit" value="750" name="rate-limit" title="Value between searches in milliseconds only change if you know what you are doing. This could get your ip banned, or place an unfair burden on the suggest servers." disabled>
-  </div>
-
-
-
-  <div class="form-group">
-      <label for="lang">Lang code (google & yandex):</label>
-      <select class="form-control" title="Lang code. Two letters. Only works for google for now" class="form-control" id="lang" value="en" >
-        <option value=""></option>
-        <option value="en" >English (default) (en)</option>
-        <option value="ar" >Arabic (ar)</option>
-        <option value="bg" >Bulgarian (bg)</option>
-        <option value="ca" >Catalan (ca)</option>
-        <option value="hr" >Croatian (hr)</option>
-        <option value="zh-hans" >Chinese (Simplified) (zh-hans)</option>
-        <option value="zh-hant" >Chinese (Traditional) (zh-hant)</option>
-        <option value="cs" >Czech (cs)</option>
-        <option value="da" >Danish (da)</option>
-        <option value="nl" >Dutch (nl)</option>
-        <option value="fi" >Filipino (fi)</option>l
-        <option value="fi" >Finnish (fi)</option>
-        <option value="fr" >French (fr)</option>
-        <option value="de" >German (de)</option>
-        <option value="el" >Greek (el)</option>
-        <option value="he" >Hebrew (he)</option>
-        <option value="hi" >Hindi (hi)</option>
-        <option value="hu" >Hungarian (hu)</option>
-        <option value="id" >Indonesian (id)</option>
-        <option value="it" >Italian (it)</option>
-        <option value="ja" >Japanese (ja)</option>
-        <option value="ko" >Korean (ko)</option>
-        <option value="lv" >Latvian (lv)</option>
-        <option value="lt" >Lithuanian (lt)</option>
-        <option value="no" >Norwegian (no)</option>
-        <option value="pl" >Polish (pl)</option>
-        <option value="pt" >Portuguese (pt)</option>
-        <option value="ro" >Romanian (ro)</option>
-        <option value="ru" >Russian (ru)</option>
-        <option value="sr" >Serbian (sr)</option>
-        <option value="sk" >Slovak (sk)</option>
-        <option value="sl" >Slovenian (sl)</option>
-        <option value="es" >Spanish (es)</option>
-        <option value="sv" >Swedish (sv)</option>
-        <option value="th" >Thai (th)</option>
-        <option value="tr" >Turkish (tr)</option>
-        <option value="uk" >Ukrainian (uk)</option>
-        <option value="vi" >Vietnamese (vi)</option>
-    </select>
-</div>
-
-
-</form>
-
-
-</div>
-
-</div>
-
-
-<div class="row">
-    <div class="col-sm-12">
-      <hr id="progress1">
-      <br id="progress2">
-  </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
+    <div class="row">
+      <div class="col-sm-12">
+        <hr id="progress1">
+        <br id="progress2">
+      </div>
+    </div>
+    <div class="row" style="display:none;">
+      <div class="col-sm-12">
        <div id="txt"></div>
+     </div>
    </div>
-</div>
 
 
-<div class="row">
+   <div class="row">
     <div id="results" class="col-sm-12">
       <h2>Results</h2>
       <!-- <div class="table-responsive"> -->
@@ -539,107 +118,211 @@ for (i = 0; i < dropdown.length; i++) {
                             <th title="Search that prompted the keyword suggestion">Search</th>
                             <th title="Source">Source</th>
                             <th title="Number of words">Words</th> -->
-                        </tr>
-                    </thead>
-                    <tbody>
+                          </tr>
+                        </thead>
+                        <tbody>
 
-                    </tbody>
-                </table>
-                <!-- </div> -->
-            </div>
-        </div>
-        <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
-        </p>
-<style type="text/css">
-     #persen b{
+                        </tbody>
+                      </table>
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                </div>
 
-                margin-left: 10px;
-               /* margin-right: 50%;*/
-               
-            }
-            #persen span{
-                
-                float:right;
-            }
-            #persen hr{
-                height: 4px;
-                background-color: #e8e6e6;
-            }
-            #persen i{
-                padding-left: 20px;
-                color:#00719c;
-            }
-            .form-control{
-                background-color: #ffff;
+                <!-- AWAL TAB2 -->
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <div class="row">
+                    <div class="col-md-8 mt-4" id="idku">
+                      <div class="form-group">
+                        <input class="form-control inputku" type="text" name="" value="" placeholder="Judul Artikel"  />
+                      </div>
+                      <label style="font-weight: 600;">Artikel</label>
+                      <textarea class="form-control inputku" id="haha"  required name="haha" type="text"></textarea>
+                    </div>
 
-            }
-</style>
-</div>
-    </div>
-</div>
-</div>
-</div>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+                    <div class="col-md-4" style="margin-top: 22px;">
+                      <div class="progressk">
+                        <div style="font-weight: 800">Score :<span>80%</span></div>
+
+                        <div class="progress">
+                          <div class="progress-bar bg-success" style="width:80%"></div>
+                        </div>
+                      </div>
+                      <p class="mt-1" style="font-weight: 600;">Rekomendasi Keyword</p>
+                      <div class="card" style="margin-top: 20px;" >
+                        <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+                          <b>High</b>
+                        </div>
+                        <div class="card-body cb" id="idku">
+                          <div class="form-group" id="hi">
+                          </div>
+                        </div>
+                      </div>
+                      <style type="text/css">
+                        .cb{
+                          padding-top: -0px!important;
+                        }
+                      </style>
+                      <div class="card mt-2" >
+                        <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+                          <b>Medium</b>
+                        </div>
+                        <div class="card-body cb">
+                          <div class="form-group" id="mi">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card  mt-2" >
+                        <div class="card-header bg-danger" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+                          <b >Low</b>
+                        </div>
+                        <div class="card-body cb" id="idku">
+                          <div class="form-group" id="lo" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card  mt-2" >
+                        <div class="card-header" style="background-color: darkgreen; color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+                          <b >Inputan</b>
+                        </div>
+                        <div class="card-body cb">
+                          <div class="form-group">
+                            <input type="text" id="kword" style="margin-top: 10px!important;border: 1px solid darkgreen; margin-bottom: 10px;">
+                            <a class="btn btn-danger primary btn-sm" id="startjob"" type="button" value="Shit Keywords!" style="color: white;margin-top: -6px;">Stop</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- akhir row -->
+
+
+
+                  <!-- AKHIR TAB2 -->
+                </div>
+                </div>
+                <footer>
+
+                  <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
+                  </footer>
+                </p>
+                <style type="text/css">
+
+                  #persen b{
+
+                    margin-left: 10px;
+                    /* margin-right: 50%;*/
+
+                  }
+                  #persen span{
+
+                    float:right;
+                  }
+                  #persen hr{
+                    height: 4px;
+                    color: #f3f5f0
+                  }
+                  #persen i{
+                    padding-left: 20px;
+                    color:darkgreen;
+                  }
+
+                </style>
+
+              
+            </footer>
+
+              <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/bootstrap-4.0.0/dist/js/bootstrap.min.js'); ?>"></script>
+
+              <script type="text/javascript" src="<?= site_url('assets/DataTables/datatables.min.js'); ?>"></script>
+
+              <script type="text/javascript" src="<?= site_url('assets/fitur.min.js') ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/colvis.min.js') ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/print.min.js') ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js'); ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/lodash.min.js') ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/FileSaver/src/FileSaver.js') ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/localForage/src/localforage.js') ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/progress.min.js') ?>"></script>
+              <script src="<?= site_url('assets/ckeditor/ckeditor.js') ?>"></script>
+              <script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="//cdn.datatables.net/s/bs/jszip-2.5.0,dt-1.10.10,b-1.1.0,b-colvis-1.1.0,b-html5-1.1.0,b-print-1.1.0,cr-1.3.0,fh-3.1.0,kt-2.1.0,r-2.0.0,se-1.1.0/datatables.min.js" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.2.0/lodash.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/localforage/1.3.3/localforage.js"></script> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progress.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/localforage/1.3.3/localforage.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progress.min.js"></script> -->
 
 
 
     <!-- <script type="text/javascript" src="<?= base_url();?>assets/suggestions.js"></script> -->
-    <script type="text/javascript">
-        var suggestions = function(){
-            return {
-                defaultOptions:{
-                    deferTableUpdatesAtRows: 5000,
-                    keepRunning: false,
-                    maxQueueDisplay: 5000,
-                    country: "",
-                    filterNegative: "",
-                    filterPositive: "",
-                    lang: "",
-                    prefixes: [],
-                    rateLimit: 750,
-                    service: "google",
-                    suffixes: []
-                },
+    <script>
+      var editor = CKEDITOR.replace( 'haha', {
+        language: 'en',
+        extraPlugins: 'notification',
+        height:540
 
-                services:{
-                    "google":
-                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&gl=${country}&callback=?&q=",
-                    "google news":
-                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=n&gl=${country}&callback=?&q=",
-                    "google shopping":
-                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=sh&gl=${country}&callback=?&q=",
-                    "google books":
-                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=bo&gl=${country}&callback=?&q=",
-                    "youtube":
-                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=yt&gl=${country}&callback=?&q=",
-                    "google videos":
-                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=v&gl=${country}&callback=?&q=",
-                    "google images":
-                    "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&ds=i&gl=${country}&callback=?&q=",
-                    "yahoo":
-                    "//search.yahoo.com/sugg/ff?output=jsonp&appid=ffd&callback=?&command=",
-                    "bing": "//api.bing.com/osjson.aspx?JsonType=callback&JsonCallback=?&query=",
-                    "ebay":
-                    "//autosug.ebay.com/autosug?_jgr=1&sId=0&_ch=0&callback=?&kwd=",
-                    "amazon":
-                    "//completion.amazon.co.uk/search/complete?method=completion&search-alias=aps&mkt=3&callback=?&q=",
-                    "twitter":
-                    "//twitter.com/i/search/typeahead.json?count=30&result_type=topics&src=SEARCH_BOX&callback=?&q=",
-                    "baidu": "//suggestion.baidu.com/su?cb=?&wd=",
-                    "yandex": "//yandex.com/suggest/suggest-ya.cgi?callback=?&q=?&n=30&v=4&uil={lang}&part=",
-            "google play": "//market.android.com/suggest/SuggRequest?json=1&c=0&hl=${lang}&gl=${country}&callback=?&query=", //
-            "google play apps": "//market.android.com/suggest/SuggRequest?json=1&c=3&hl=${lang}&gl=${country}&callback=?&query=",
-            "google play movies": "//market.android.com/suggest/SuggRequest?json=1&c=4&hl=${lang}&gl=${country}&callback=?&query=",
-            "google play books": "//market.android.com/suggest/SuggRequest?json=1&c=1&hl=${lang}&gl=${country}&callback=?&query=",
-            // "kickasstorrents": "//kat.cr/get_queries.php?query=", // not jsonp
+      });
+      
+    
+      
+      editor.on( 'required', function( evt ) {
+        editor.showNotification( 'This field is required.', 'warning' );
+        evt.cancel();
+      } );
+      $('#haha').keyup(function(){
+        var desc = CKEDITOR.instances['haha'].getData();
+        console.log(desc);
+      });
+    
+      $('#kword').keyup(function () {
+        var w = $(this).val();
+        
+        
+        $('textarea[id="input"]').val(w);
+
+
+        if (event.keyCode === 13) {
+         event.preventDefault();
+         document.getElementById("startjob").click();
+
+       }
+    });
+  </script>
+  <script type="text/javascript">
+    var haha=[];
+    var arr=[];
+    var sayangkuh = "";
+    var high = "";
+    var mid = "";
+    var low = "";
+    var lol=[];
+    var suggestions = function(){
+      return {
+        defaultOptions:{
+          deferTableUpdatesAtRows: 5000,
+          keepRunning: false,
+          maxQueueDisplay: 5000,
+          country: "",
+          filterNegative: "",
+          filterPositive: "",
+          lang: "",
+          prefixes: [],
+          rateLimit: 750,
+          service: "google",
+          suffixes: []
         },
+
+        services:{
+          "google":
+          "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&gl=${country}&callback=?&q=",
+            // "kickasstorrents": "//kat.cr/get_queries.php?query=", // not jsonp
+          },
         /**
          * Get the service url based on options set in the dom.
          * @return {String} A jsonp url for search suggestions with query missing from the end.
@@ -651,93 +334,118 @@ for (i = 0; i < dropdown.length; i++) {
             // https://developers.google.com/custom-search/docs/ref_languages
             options = _.defaults({},this.defaultOptions, this.getOptions(), options)
             return _.template(this.services[(service||this.options.service)])(options);
-        },
+          },
 
 
-        /** Parse response per service **/
-        parseServiceResponse: function(res, service){
+          /** Parse response per service **/
+          parseServiceResponse: function(res, service){
             // Each take a json response tand return a keyword array
             RESPONSE_TEMPLATES = {
                 // opensearch default
                 "default": function (res) {
-                    return res[1];
+                  return res[1];
                 },
                 "yahoo": function (res) {
-                    return _.map(res.gossip.results, 'key');
+                  return _.map(res.gossip.results, 'key');
                 },
                 "ebay": function (res) {
-                    return res.res ? res.res.sug : [];
+                  return res.res ? res.res.sug : [];
                 },
                 "twitter": function (res) {
-                    return _.concat(res.users, _.map(res.topics, 'topic'), res.hashtags, res.oneclick);
+                  return _.concat(res.users, _.map(res.topics, 'topic'), res.hashtags, res.oneclick);
                 },
                 "baidu": function (res) {
-                    return res.s;
+                  return res.s;
                 },
                 "yandex": function(res){
-                    return _.map(res[1], function(r){
-                        return typeof r === 'string' ? r : r[1];
-                    });
+                  return _.map(res[1], function(r){
+                    return typeof r === 'string' ? r : r[1];
+                  });
                 },
                 "linkedin": function(res){
-                    return _.map(res.resultList,'displayName');
+                  return _.map(res.resultList,'displayName');
                 },
                 "google play": function(res){return _.map(res,'s')},
                 "google play apps": function(res){return _.map(res,'s')},
                 "google play movies": function(res){return _.map(res,'s')},
                 "google play books": function(res){return _.map(res,'s')},
-            };
-            var parser = RESPONSE_TEMPLATES[(service||this.options.service)] || RESPONSE_TEMPLATES["default"];
-            return parser(res);
+              };
+              var parser = RESPONSE_TEMPLATES[(service||this.options.service)] || RESPONSE_TEMPLATES["default"];
+              return parser(res);
+            }
+          }
+        }()
+
+        function sum( obj ) {
+          var sum = 0;
+          for( var el in obj ) {
+            if( obj.hasOwnProperty( el ) ) {
+              sum += parseFloat( obj[el] );
+            }
+          }
+          return sum;
         }
-    }
-}()
+        function reverseObject(object) {
+          var newObject = {};
+          var keys = [];
 
-function sum( obj ) {
-  var sum = 0;
-  for( var el in obj ) {
-    if( obj.hasOwnProperty( el ) ) {
-      sum += parseFloat( obj[el] );
-  }
-}
-return sum;
-}
-function reverseObject(object) {
-    var newObject = {};
-    var keys = [];
+          for (var key in object) {
+            keys.push(key);
+          }
 
-    for (var key in object) {
-        keys.push(key);
-    }
+          for (var i = keys.length - 1; i >= 0; i--) {
+            var value = object[keys[i]];
+            newObject[keys[i]]= value;
+          }       
 
-    for (var i = keys.length - 1; i >= 0; i--) {
-      var value = object[keys[i]];
-      newObject[keys[i]]= value;
-  }       
+          return newObject;
+        }
+        function roundNumber(num, scale) {
+          if(!("" + num).includes("e")) {
+            return +(Math.round(num + "e+" + scale)  + "e-" + scale);
+          } else {
+            var arr = ("" + num).split("e");
+            var sig = ""
+            if(+arr[1] + scale > 0) {
+              sig = "+";
+            }
+            return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+          }
+        }
 
-  return newObject;
-}
-function roundNumber(num, scale) {
-  if(!("" + num).includes("e")) {
-    return +(Math.round(num + "e+" + scale)  + "e-" + scale);
-} else {
-    var arr = ("" + num).split("e");
-    var sig = ""
-    if(+arr[1] + scale > 0) {
-      sig = "+";
-  }
-  return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
-}
-}
-var KWS = function(){
-    var haha=[];
-    var arr=[];
 
-    var lol=[];
-    return {
-        table: undefined,
-        myIp: undefined,
-        options: {},
+        $('#idku .inputku').keyup(function () {
+          var text = $(this).val().toLowerCase();
+          var map = haha.reduce(function(prev, cur) {
+            prev[cur] = (prev[cur] || 0) + 1;
+            return prev;
+          }, {});
+          a = sum(map);
+          const sortable = Object.fromEntries(
+            Object.entries(map).sort(([,a],[,b]) => a-b)
+            );
+          ob = reverseObject(sortable);
+
+          Object.keys(ob).forEach(function(key) {
+            b = ob[key]/a * 100;
+            b = roundNumber(b, 2)
+
+            var res = text.split(" ");
+            var a =  res.indexOf(key);
+            if (a > -1) {
+              $("#"+key).css('background-color', 'green')
+            } else {
+              $("#"+key).css('background-color', 'red')
+            }
+          });
+          console.log(haha)
+        });
+        var KWS = function(){
+
+          return {
+            table: undefined,
+            myIp: undefined,
+            options: {},
         // flags
         queryLock: false,
         doWork: false,
@@ -752,14 +460,19 @@ var KWS = function(){
         parseServiceResponse: suggestions.parseServiceResponse,
 
         toggleWork: function(){
-            if (this.doWork === false)
-                this.StartWork();
-            else
-                this.StopWork();
+          if (this.doWork === false)
+            this.StartWork();
+          else
+            this.StopWork();
         },
 
+
         StartWork: function() {
-            if (this.doWork === false) {
+          sayangkuh = "";
+          high = "";
+          mid = "";
+          low = "";
+          if (this.doWork === false) {
                 // reset these
                 this.saveSettings();
                 $('#startjob').val('Stop Job').text('Stop Generate').addClass('btn-danger');
@@ -782,12 +495,12 @@ var KWS = function(){
                 // add variations of the initial terms
                 // (before we start adding variations of the results)
                 if (!this.keywordsToQuery.length)
-                    this.permuteResultsToQueue([' ']);
+                  this.permuteResultsToQueue([' ']);
                 else {
-                    var untickedInputs = this.keywordsToQuery.filter(function(k){
-                        return k.slice(-1)!=='✓' && k.slice(-1)!=='❌';
-                    });
-                    this.permuteResultsToQueue(untickedInputs);
+                  var untickedInputs = this.keywordsToQuery.filter(function(k){
+                    return k.slice(-1)!=='  ' && k.slice(-1)!=='  ';
+                  });
+                  this.permuteResultsToQueue(untickedInputs);
                 }
 
                 this.numOfInitialKeywords = this.keywordsToQuery.length;
@@ -800,13 +513,13 @@ var KWS = function(){
                 // $('#input').hide();
                 // $('#advanced').collapse("hide");
 
-            } else {
+              } else {
 
-            }
-        },
+              }
+            },
 
-        StopWork: function(){
-            if (this.doWork){
+            StopWork: function(){
+              if (this.doWork){
                 $('#startjob').val('Start Job').text('Generate Keyword').removeClass('btn-danger');
                 this.doWork = false;
                 // $('#input').show();
@@ -820,73 +533,128 @@ var KWS = function(){
                 var map = haha.reduce(function(prev, cur) {
                   prev[cur] = (prev[cur] || 0) + 1;
                   return prev;
-              }, {});
+                }, {});
                 a = sum(map);
                 const sortable = Object.fromEntries(
-                    Object.entries(map).sort(([,a],[,b]) => a-b)
-                    );
+                  Object.entries(map).sort(([,a],[,b]) => a-b)
+                  );
                 ob = reverseObject(sortable);
+                var n = 0;
+                var p = 0;
+                var q = 0;
+                var r = 0;
                 Object.keys(ob).forEach(function(key) {
-                    b = ob[key]/a * 100;
-                    b = roundNumber(b, 2)
+                  b = ob[key]/a * 100;
+                  b = roundNumber(b, 2)
                     // console.log(key, b+"%");
-                    $('#persen').append("<i class='fas fa-asterisk'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>")
-                });
-                console.log (a)
-            }
-        },
+                    // var a="<div>"
+                    // var a+="<br><b>" +key+"</b>"
+                    // var a+="<p>"+b+"%, </p>"
+                    // var a+="</div>"
+                    n = n + 1;
+                    if (n<=5) {
+                      if (p<=15) {
+                        p = p + key.length;
+                        high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
 
-        DoJob: function() {
-            if (this.doWork === true && this.queryLock === false) {
+                      }else {
+                        high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+
+                        p = 0;
+                      }
+                    }else if (n>=6 && n<=10) {
+                      if (q<=15) {
+                        q = q + key.length;
+                        mid += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                      }else {
+                        mid += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+
+                        q = 0;
+                      }
+                    }else {
+                      if (r<=15) {
+                        r = r + key.length;
+                        low += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+                      }else {
+                        low += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
+
+                        r = 0;
+                      }
+                    }
+                    sayangkuh += "<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>"
+                    
+                    // $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>");
+                    // $('#idkuu').append("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
+
+                    // $('#persen').html("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
+                  });
+                document.getElementById('persen').innerHTML = sayangkuh;
+
+                document.getElementById('hi').innerHTML = high;
+                document.getElementById('mi').innerHTML = mid;
+                document.getElementById('lo').innerHTML = low;
+                var close = document.getElementsByClassName("delete");
+                var i;
+
+                for (i = 0; i < close.length; i++) {
+                  close[i].addEventListener("click", function() {
+                    this.parentElement.style.display = 'none';
+                  });
+                }
+              }
+            },
+
+            DoJob: function() {
+              if (this.doWork === true && this.queryLock === false) {
                 if (this.keywordsToQueryIndex < this.numOfInitialKeywords) {
-                    var currentKw = this.keywordsToQuery[this.keywordsToQueryIndex];
-                    if (currentKw.slice(-1)!=='✓' && currentKw.slice(-1)!=='❌') {
-                        this.QueryKeyword(currentKw);
-                        this.keywordsToQueryIndex++;
-                    } else {
+                  var currentKw = this.keywordsToQuery[this.keywordsToQueryIndex];
+                  if (currentKw.slice(-2)!=='  ' && currentKw.slice(-2)!=='  ') {
+                    this.QueryKeyword(currentKw);
+                    this.keywordsToQueryIndex++;
+                  } else {
                         // we didn't do a query immediatly go to next query
                         this.keywordsToQueryIndex++;
                         this.DoJob();
-                    }
+                      }
 
-                    var prog = parseInt(this.keywordsToQueryIndex/this.numOfInitialKeywords*100);
-                    this.progress1.set(prog);
-                    this.FilterAndDisplay();
+                      var prog = parseInt(this.keywordsToQueryIndex/this.numOfInitialKeywords*100);
+                      this.progress1.set(prog);
+                      this.FilterAndDisplay();
 
-                } else {
-                    if (this.options.keepRunning) {
+                    } else {
+                      if (this.options.keepRunning) {
                         console.log('finish initial queue');
                         this.StopWork();
                         this.StartWork();
-                    } else {
+                      } else {
                         console.log('finish initial queue');
                         this.StopWork();
+                      }
                     }
-                }
-            }
-        },
+                  }
+                },
 
-        addResultsToQueue: function(retList, search){
-            retList=_.map(retList,this.CleanVal);
+                addResultsToQueue: function(retList, search){
+                  retList=_.map(retList,this.CleanVal);
 
             // add each result to list first before permutations
             for (var j = 0; j < retList.length; j++) {
-                cleanKw = retList[j];
+              cleanKw = retList[j];
                 // add base suggestion to queue if it's not already done and isn't empty
                 if (cleanKw && cleanKw.length && !this.hashMapInputs[cleanKw] && this.keywordsToQuery.indexOf(cleanKw)===-1)
-                    this.keywordsToQuery.push(cleanKw);
+                  this.keywordsToQuery.push(cleanKw);
                 this.hashMapInputs[cleanKw] = true;
-            }
+              }
 
-        },
+            },
 
-        /** Make permutations of results and add to queue **/
-        permuteResultsToQueue: function(retList, search){
-            var chr, currentx, currentKw;
-            var self = this;
-            var options = this.getOptions()
+            /** Make permutations of results and add to queue **/
+            permuteResultsToQueue: function(retList, search){
+              var chr, currentx, currentKw;
+              var self = this;
+              var options = this.getOptions()
 
-            this.hashMapInputs[search] = true;
+              this.hashMapInputs[search] = true;
 
             // sort so the shortest is first in the queue TODO add option?
             // retList.sort(function (a, b) {
@@ -894,38 +662,38 @@ var KWS = function(){
             // });
 
             function addPrefix(s,prefix){
-                return prefix+' '+s;
+              return prefix+' '+s;
             }
             function addSuffix(s,suffix){
-                return s+' '+suffix;
+              return s+' '+suffix;
             }
             // clean
             retList=_.map(retList,this.CleanVal);
 
             // get permutations
             var newInputs = retList.reduce(function(result, keyword){
-                return _.concat(
-                    result,
-                    _.map(options.prefixes,addPrefix.bind(self,keyword)),
-                    _.map(options.suffixes,addSuffix.bind(self,keyword))
-                    );
+              return _.concat(
+                result,
+                _.map(options.prefixes,addPrefix.bind(self,keyword)),
+                _.map(options.suffixes,addSuffix.bind(self,keyword))
+                );
             }, []);
 
             // add to queue
             this.keywordsToQuery=_.concat(this.keywordsToQuery,newInputs);
 
             return newInputs;
-        },
+          },
 
 
-        /** Display results **/
-        displayResults: function(retList, search, dontDisplay, url,data){
+          /** Display results **/
+          displayResults: function(retList, search, dontDisplay, url,data){
 
             var rows=[];
             retList=_.map(retList,this.CleanVal);
 
             for (var i = 0; i < retList.length; i++) {
-                var  cleanKw = retList[i];
+              var  cleanKw = retList[i];
 
                 // url might be in retlist
                 if (url===undefined) url=data[i].url;
@@ -933,20 +701,20 @@ var KWS = function(){
 
                 arr = cleanKw.split(" ");
                 for (var y = 0; y < arr.length; y++) {
-                    if (lol.indexOf(arr[y]) < 0) {
-                        lol.push(arr[y]);
-                    }
-                    haha.push(arr[y]);
+                  if (lol.indexOf(arr[y]) < 0) {
+                    lol.push(arr[y]);
+                  }
+                  haha.push(arr[y]);
                 }
 
 
                 var da = {
-                    id: this.table.rows()[0].length+i,
-                    keyword: cleanKw,
-                    length: cleanKw.length,
-                    words: cleanKw.trim().split(/ +/).length,
-                    search: search,
-                    domain: this.extractDomain(url)
+                  id: this.table.rows()[0].length+i,
+                  keyword: cleanKw,
+                  length: cleanKw.length,
+                  words: cleanKw.trim().split(/ +/).length,
+                  search: search,
+                  domain: this.extractDomain(url)
                 };
 
                 // remove undefined values to avoid datatable alerts
@@ -955,10 +723,11 @@ var KWS = function(){
                 // TODO Check if suggestion is already displayed before adding
                 // var matches = table.data().filter(function(v){return v[1]===cleanKw && v[5]==search;}).count();
                 // if (!matches)
+                // console.log(da)
                 rows.push(da);
-            }
+              }
 
-            
+
            // haha.join(' ');
 
 
@@ -973,7 +742,7 @@ var KWS = function(){
 
 
 
-       },
+         },
 
         /** Takes url string and returns domain e.g. www.google.com or google.com
           * and some extra params to identify is
@@ -983,10 +752,10 @@ var KWS = function(){
             var domain;
             //find & remove protocol (http, ftp, etc.) and get domain
             if (url.indexOf("://") > -1) {
-                domain = url.split('/')[2];
+              domain = url.split('/')[2];
             }
             else {
-                domain = url.split('/')[0];
+              domain = url.split('/')[0];
             }
 
             //find & remove port number
@@ -1007,71 +776,71 @@ var KWS = function(){
             if (mr && mr[1] && mr[1].length) domain+='&uil='+mr[1];
 
             return domain;
-        },
+          },
 
-        /** mark a search as done in the queue **/
-        markAsDone: function(search){
+          /** mark a search as done in the queue **/
+          markAsDone: function(search){
             // mark as done in queue
             if (this.keywordsToQuery[this.keywordsToQueryIndex]===search)
-                this.keywordsToQuery[this.keywordsToQueryIndex]+=' ✓';
+              this.keywordsToQuery[this.keywordsToQueryIndex]+='   ';
             else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
-                this.keywordsToQuery[this.keywordsToQueryIndex-1]+=' ✓';
+              this.keywordsToQuery[this.keywordsToQueryIndex-1]+='   ';
             else
-                console.warn('Cant find ',search,'in keywordsToQuery');
-        },
+              console.warn('Cant find ',search,'in keywordsToQuery');
+          },
 
-        /** mark a search as done in the queue **/
-        markAsNone: function(search){
+          /** mark a search as done in the queue **/
+          markAsNone: function(search){
             // mark as done in queue
             if (this.keywordsToQuery[this.keywordsToQueryIndex]===search)
-                this.keywordsToQuery[this.keywordsToQueryIndex]+=' ❌';
+              this.keywordsToQuery[this.keywordsToQueryIndex]+='   ';
             else if (this.keywordsToQuery[this.keywordsToQueryIndex-1]===search)
-                this.keywordsToQuery[this.keywordsToQueryIndex-1]+=' ❌';
+              this.keywordsToQuery[this.keywordsToQueryIndex-1]+='   ';
             else
-                console.warn('Cant find ',search,'in keywordsToQuery');
-        },
+              console.warn('Cant find ',search,'in keywordsToQuery');
+          },
 
-        /** Get search suggestions for a keyword **/
-        QueryKeyword: function(search) {
+          /** Get search suggestions for a keyword **/
+          QueryKeyword: function(search) {
             var self = this;
             this.queryLock = true;
 
             // search not done, lets do the query
             url = self.getUrl()+search;
             var promise = $.ajax({
-                url: url,
+              url: url,
                 // jsonp: "jsonp",
                 dataType: "jsonp",
                 success: function (res, statusText, jqXHR) {
-                    var retList = self.parseServiceResponse(res);
-                    if (retList && retList.length){
+                  var retList = self.parseServiceResponse(res);
+                  if (retList && retList.length){
                         // self.storeResults(retList, search, this.url);
                         self.displayResults(retList, search, undefined, this.url);
                         self.addResultsToQueue(retList);
                         if (self.options.keepRunning) self.permuteResultsToQueue(retList);
                         self.markAsDone(search);
-                    } else {
+                      } else {
                         // console.debug('No suggestions for query: "',search,'"');
                         self.markAsNone(search);
+                      }
+                      self.queryLock = false;
+                      return;
+
+                    },
+                    error: function(jqXHR,errorText,error){
+                      console.error(errorText,this.url,this,jqXHR,error);
+                      self.queryLock = false;
+                      return;
+                    },
+                    callback: function(){
+                      console.log(this,arguments);
                     }
-                    self.queryLock = false;
-                    return;
-
-                },
-                error: function(jqXHR,errorText,error){
-                    console.error(errorText,this.url,this,jqXHR,error);
-                    self.queryLock = false;
-                    return;
-                },
-                callback: function(){
-                    console.log(this,arguments);
-                }
-            });
+                  });
             return promise;
-        },
+          },
 
-        /** Clean input, may not all be needed **/
-        CleanVal: function(input) {
+          /** Clean input, may not all be needed **/
+          CleanVal: function(input) {
             // We want to clean search terms but it's not possible to do this perfectly
             // as differen't search engines strip differen't amounts from the term
             // so we will keep as much details as possible
@@ -1090,98 +859,98 @@ var KWS = function(){
             if (input.length > 4 && input.substring(0, 4) == "http") input = "";
 
             return input;
-        },
+          },
 
-        /** TODO get this working **/
-        Filter: function(listToFilter) {
+          /** TODO get this working **/
+          Filter: function(listToFilter) {
             var retList = listToFilter;
 
             if ($("#filter-positive").val().length > 0) {
-                var filteredList = [];
-                var filterContains = $("#filter-positive").val().split("\n");
-                for (var i = 0; i < retList.length; i++) {
-                    var currentKeyword = retList[i];
-                    var boolContainsKeyword = false;
-                    for (var j = 0; j < filterContains.length; j++) {
-                        if (filterContains[j].length > 0) {
-                            if (currentKeyword.indexOf(filterContains[j]) != -1) {
-                                boolContainsKeyword = true;
-                                break;
-                            }
-                        }
+              var filteredList = [];
+              var filterContains = $("#filter-positive").val().split("\n");
+              for (var i = 0; i < retList.length; i++) {
+                var currentKeyword = retList[i];
+                var boolContainsKeyword = false;
+                for (var j = 0; j < filterContains.length; j++) {
+                  if (filterContains[j].length > 0) {
+                    if (currentKeyword.indexOf(filterContains[j]) != -1) {
+                      boolContainsKeyword = true;
+                      break;
                     }
-
-                    if (boolContainsKeyword) {
-                        filteredList[filteredList.length] = currentKeyword;
-                    }
+                  }
                 }
 
-                retList = filteredList;
+                if (boolContainsKeyword) {
+                  filteredList[filteredList.length] = currentKeyword;
+                }
+              }
+
+              retList = filteredList;
             }
 
             if ($("#filter-negative").val().length > 0) {
-                var filteredList = [];
-                var filterContains = $("#filter-negative").val().split("\n");
-                for (var l = 0; l < retList.length; l++) {
-                    var currentKeyword = retList[l];
-                    var boolCleanKeyword = true;
-                    for (var k = 0; k < filterContains.length; k++) {
-                        if (filterContains[k].length > 0) {
-                            if (currentKeyword.indexOf(filterContains[k]) >= 0) {
-                                boolCleanKeyword = false;
-                                break;
-                            }
-                        }
+              var filteredList = [];
+              var filterContains = $("#filter-negative").val().split("\n");
+              for (var l = 0; l < retList.length; l++) {
+                var currentKeyword = retList[l];
+                var boolCleanKeyword = true;
+                for (var k = 0; k < filterContains.length; k++) {
+                  if (filterContains[k].length > 0) {
+                    if (currentKeyword.indexOf(filterContains[k]) >= 0) {
+                      boolCleanKeyword = false;
+                      break;
                     }
-
-                    if (boolCleanKeyword) {
-                        filteredList[filteredList.length] = currentKeyword;
-                    }
+                  }
                 }
 
-                retList = filteredList;
+                if (boolCleanKeyword) {
+                  filteredList[filteredList.length] = currentKeyword;
+                }
+              }
+
+              retList = filteredList;
             }
 
             return retList;
-        },
+          },
 
-        /** display the queue, and update description of it **/
-        FilterAndDisplay: function() {
+          /** display the queue, and update description of it **/
+          FilterAndDisplay: function() {
             var i = 0;
             var sb = '';
 
             var outputKeywords = this.keywordsToQuery;
             for (i = 0; i < Math.min(outputKeywords.length,this.options.maxQueueDisplay); i++) {
-                sb += outputKeywords[i];
-                sb += '\n';
+              sb += outputKeywords[i];
+              sb += '\n';
             }
             if (outputKeywords.length>this.options.maxQueueDisplay) sb+='...\n';
             $("#input").val(sb);
             $("#numofkeywords").html('Queue:' + outputKeywords.length);
-        },
+          },
 
 
-        /** overrides default with dom options with arguments options **/
-        getOptions: function(argOptions){
+          /** overrides default with dom options with arguments options **/
+          getOptions: function(argOptions){
             var defaultOptions={
-                deferTableUpdatesAtRows: 5000,
-                keepRunning: false,
-                maxQueueDisplay: 5000,
-                country: "",
-                filterNegative: "",
-                filterPositive: "",
-                lang: "",
-                prefixes: [],
-                rateLimit: 750,
-                service: "google",
-                suffixes: []
+              deferTableUpdatesAtRows: 5000,
+              keepRunning: false,
+              maxQueueDisplay: 5000,
+              country: "",
+              filterNegative: "",
+              filterPositive: "",
+              lang: "",
+              prefixes: [],
+              rateLimit: 750,
+              service: "google",
+              suffixes: []
             }; // for now defaults are set in html
             if (argOptions===undefined) argOptions={};
             return _.defaults(argOptions,this.getDomOptions(),defaultOptions);
-        },
+          },
 
-        /** read settings from webpage **/
-        getDomOptions: function(){
+          /** read settings from webpage **/
+          getDomOptions: function(){
 
             var service= $('#service').val(),
             filterNegative = $('#filter-negative').val(),
@@ -1194,13 +963,13 @@ var KWS = function(){
                 lang = $('#lang').val(),
                 keepRunning = $('#keep-running').prop('checked');
                 if (prefixes && prefixes.length)
-                    prefixes=prefixes.split(',');
+                  prefixes=prefixes.split(',');
                 else
-                    prefixes="";
+                  prefixes="";
                 if (suffixes && suffixes.length)
-                    suffixes=suffixes.split(',');
+                  suffixes=suffixes.split(',');
                 else
-                    suffixes="";
+                  suffixes="";
 
                 var options={};
                 if (service) options.service=service;
@@ -1213,10 +982,10 @@ var KWS = function(){
                 if (lang) options.lang=lang;
                 if (keepRunning) options.keepRunning=keepRunning;
                 return options;
-            },
+              },
 
-            /** load settings from localStorage **/
-            loadSettings: function(){
+              /** load settings from localStorage **/
+              loadSettings: function(){
             // Tabe settings are auto handles by datatables
             if (localStorage.service) $("#service").val( localStorage.service );
             if (localStorage.country) $('#country').val(localStorage.country);
@@ -1229,9 +998,9 @@ var KWS = function(){
             if (localStorage.suffixes) $("#suffixes").val( localStorage.suffixes );
             if (localStorage.keepRunning) $('#keep-running').prop('checked',localStorage.keepRunning=="true");
 
-        },
-        /** save settings to localStorage. **/
-        saveSettings: function(){
+          },
+          /** save settings to localStorage. **/
+          saveSettings: function(){
             localStorage.service = $('#service').val();
             localStorage.country = $('#country').val();
             localStorage.lang = $('#lang').val();
@@ -1242,24 +1011,24 @@ var KWS = function(){
             localStorage.prefixes = $('#prefixes').val();
             localStorage.suffixes = $('#suffixes').val();
             localStorage.keepRunning = $('#keep-running').prop('checked');
-        },
+          },
 
-        /** reset inputs and results, but not settings **/
-        reset: function(){
+          /** reset inputs and results, but not settings **/
+          reset: function(){
             this.table.clear();
             this.table.draw();
             $('#input').val('');
             this.saveSettings();
-        },
+          },
 
-        init: function(){
+          init: function(){
             // this.setUpDb();
 
             // add this.servicess to search engine settings
             for (var service in this.services) {
-                if (this.services.hasOwnProperty(service)) {
-                    $('#service').append('<option>'+service+'</option>')
-                }
+              if (this.services.hasOwnProperty(service)) {
+                $('#service').append('<option>'+service+'</option>')
+              }
             }
 
 
@@ -1277,89 +1046,89 @@ var KWS = function(){
 
             // setup table
             this.table = $('#outtable').DataTable({
-                pageLength: 10,
-                "lengthMenu": [ 10, 25, 50, 75, 100,800],
-                dom:
-                "<'row'<'col-sm-5'B><'col-sm-7'<'pull-right'p>>>" +
-                "<'row'<'col-sm-8'i><'col-sm-4'<'pull-right'f>>>" +
-                "<'row'<'col-sm-12'tr>>",
-                buttons: [
-                'colvis',
-                'pageLength',
-                {
-                   extend: 'collection',
-                   text: 'Export',
-                   buttons: [
-                   'csvHtml5',
-                   {
-                       extend: 'csvHtml5',
-                       fieldBoundary: "",
-                       text: 'Copy keywords',
+              pageLength: 10,
+              "lengthMenu": [ 10, 25, 50, 75, 100,800],
+              dom:
+              "<'row'<'col-sm-5'B><'col-sm-7'<'pull-right'p>>>" +
+              "<'row'<'col-sm-8'i><'col-sm-4'<'pull-right'f>>>" +
+              "<'row'<'col-sm-12'tr>>",
+              buttons: [
+              'colvis',
+              'pageLength',
+              {
+               extend: 'collection',
+               text: 'Export',
+               buttons: [
+               'csvHtml5',
+               {
+                 extend: 'csvHtml5',
+                 fieldBoundary: "",
+                 text: 'Copy keywords',
                                 //  'customize': function(data,options){
                                 //      console.log(data,options);return data.split('\n').join(',');
                                 //  },
                                 header: false,
                                 exportOptions: {
-                                   stripNewlines: true,
-                                   stripHtml: true,
-                                   decodeEntities: true,
-                                   columns: 1,
+                                 stripNewlines: true,
+                                 stripHtml: true,
+                                 decodeEntities: true,
+                                 columns: 1,
                                     //  format:{
                                     //      body: function(html,i){
                                     //          console.log(html);return html
                                     //      }
                                     //  }
-                                }
-                            },
-                            {
-                               extend: 'csvHtml5',
-                               fieldBoundary: "",
-                               text: 'Copy visible columns',
-                               header: false,
-                               exportOptions: {
+                                  }
+                                },
+                                {
+                                 extend: 'csvHtml5',
+                                 fieldBoundary: "",
+                                 text: 'Copy visible columns',
+                                 header: false,
+                                 exportOptions: {
                                    columns: ':visible',
                                    stripNewlines: true,
                                    stripHtml: true,
                                    decodeEntities: true,
-                               }
-                           },
-                           ]
-                       },
+                                 }
+                               },
+                               ]
+                             },
 
-                       ],
-                       "columnDefs": [
-                       {
-                        "title": "id",
-                        "data": "id",
-                        "targets": 0,
-                        "visible": false,
-                    }, {
-                        "name": "keyword",
-                        "title": "Related Keyword",
-                        "data": "keyword",
-                        "responsivePriority": 1,
-                        "targets": 1,
-                    }, {
-                        "title": "Length",
-                        "data": "length",
-                        "targets": 2,
-                        "visible": false,
-                        "type": "num"
-                    }, {
-                        "title": "Root Keyword",
-                        "data": "search",
-                        "responsivePriority": 3,
-                        "targets": 3,
-                        "visible": true,
-                    },  {
-                        "title": "Words",
-                        "data": "words",
-                        "targets": 4,
-                        "visible": false,
-                        "type": "num"
-                    },
-                    ],
-                    order: [[ 0, 'desc' ]],
+                             ],
+                             "columnDefs": [
+                             {
+                              "title": "id",
+                              "data": "id",
+                              "targets": 0,
+                              "visible": false,
+                            }, {
+                              "name": "keyword",
+                              "title": "Related Keyword",
+                              "data": "keyword",
+                              "responsivePriority": 1,
+                              "targets": 1,
+                            }, {
+                              "title": "Length",
+                              "data": "length",
+                              "targets": 2,
+                              "visible": false,
+                              "type": "num"
+                            }, {
+                              "title": "Root Keyword",
+                              "data": "search",
+                              "responsivePriority": 3,
+                              "targets": 3,
+                              "visible": true,
+                            },  {
+                              "title": "Words",
+                              "data": "words",
+                              "targets": 4,
+                              "visible": false,
+                              "type": "num"
+                            },
+                            ],
+                            order: [[ 0, 'desc' ]],
                 // colReorder: {},
                 stateSave: true,
                 "bDeferRender": true,
@@ -1373,37 +1142,36 @@ var KWS = function(){
                 // scrollY:        500,
                 // deferRender:    true,
                 // scroller:       true
-            });
+              });
 
             // get user ip
             $.getJSON('https://api.ipify.org?format=json', function (data) {
-                this.myIp = data.ip;
+              this.myIp = data.ip;
             });
 
-        }
-    };
-}();
+          }
+        };
+      }();
 
-</script>
+    </script>
 
+    
 
-<!-- Lets see if anyone ever uses this  -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!-- Lets see if anyone ever uses this  -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-51809277-6', 'auto');
-ga('send', 'pageview');
+      ga('create', 'UA-51809277-6', 'auto');
+      ga('send', 'pageview');
 
-</script>
-<script>
-  $(document).ready(function () {
-    KWS.init();
-});
-</script>
+    </script>
+    <script>
+      $(document).ready(function () {
+        KWS.init();
+      });
+    </script>
 
-</body>
-
-</html>
+    

@@ -15,36 +15,37 @@ if ($alert == 'sukses') { ?>
 
 
 
-<!-- ============================================================== -->
-<!-- Start right Content here -->
-<!-- ============================================================== -->
-<div class="content-page">
-  <!-- Start content -->
-  <div class="content">
+
+<div class="br-mainpanel bg-white">
+    
+
+
     <div class="container">
+
 
       <div class="row">
         <div class="col-sm-12">
-          <div class="card-box table-responsive">
+          <div class="container-fluid">
 
-            <div class="dropdown pull-right">
-              <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                <i class="zmdi zmdi-more-vert"></i>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="<?= site_url('User/tambah'); ?>">Tambah User</a></li>
-              </ul>
-            </div>
 
-            <h4 class="header-title m-t-0 m-b-30">List User</h4>
-            <!-- class  dt-responsive -->
-            <table id="datatable-responsive" class="table table-striped table-bordered nowrap datatable-ku" data-func="user" data-meth="penulis_datatable" cellspacing="0" width="100%">
+  <!-- Page Heading -->
+  
+  <!--  <h1 class="h3 mb-4 text-gray-800">Artikel</h1> -->
+
+  
+  <div class="card" style="border: none;">
+    <div class="card-body" style="height: 600px; ">
+      <div class="row ">
+        <div class="col-lg-12" >
+          <h3 class="text-center">Iklan</h3>
+       <a href="<?= site_url('user/tambah') ?>" class="btn btn-primary btn-tambah mb-3">Tambah<i class="fa fa-plus ml-2" aria-hidden="true"></i></a>
+      
+      <!-- id="tableactiviti" tablehead  -->
+      <table id="datatable-responsive" class="table table-striped table-bordered nowrap datatable-ku" data-func="user" data-meth="penulis_datatable" cellspacing="0" width="100%">
               <thead>
                 <tr>
                   <th>Email</th>
                   <th>Nama Lengkap</th>
-                  <th>Date Status</th>
-                  <th>Status</th>
                   <th>Level</th>
                   <th>Action</th>
                 </tr>
@@ -53,12 +54,37 @@ if ($alert == 'sukses') { ?>
               <tbody>
               </tbody>
             </table>
-          </div>
-        </div><!-- end col -->
+          
+        </div>
+        
       </div>
-      <!-- end row -->
+     
+      
+    </div>
+  </div>
+  
+  
 
-    </div> <!-- container -->
+</div>
+<!-- /.container-fluid -->
 
-  </div> <!-- content -->
+          
+        
 
+  
+
+
+
+
+
+              
+                  
+            </div>
+
+          </div>
+
+        </div>
+
+                
+
+    
