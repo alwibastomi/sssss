@@ -26,26 +26,26 @@ class Core extends CI_Controller {
 		$data['nama'] = $this->session->userdata('nama');
 		$data['email'] = $this->session->userdata('email');
 		$data['level'] = $this->session->userdata('level');
-		$this->load->view('template/header',$data);
+		$this->load->view('template_admin/header',$data);
 		$this->load->view($view, $data);
-		$this->load->view('template/footer');
+		$this->load->view('template_admin/footer');
 	}
 	
 	public function renderlog($view,$data = array()){
-		$this->load->view('template/auth_header',$data);
+		$this->load->view('template_login/auth_header',$data);
 		$this->load->view($view,$data);
-		$this->load->view('template/auth_footer');
+		$this->load->view('template_login/auth_footer');
 	}
 
 	public function renderadm($view,$data = array()){
 		$data['nama'] = $this->session->userdata('nama');
 		$data['email'] = $this->session->userdata('email');
 		$data['level'] = $this->session->userdata('level');
-		$this->load->view('templates/header',$data);
-		$this->load->view('templates/sidebar');
-		$this->load->view('templates/topbar',$data);
+		$this->load->view('template_admin/header',$data);
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/topbar',$data);
 		$this->load->view($view,$data);
-		$this->load->view('templates/footer');
+		$this->load->view('template_admin/footer');
 	}
 
 	public function restatus()

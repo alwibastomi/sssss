@@ -183,7 +183,7 @@
         </div>
 
         <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
-        <a class="btn btn-danger" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
+        <a class="btn btn-danger" style="color: white;" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
       </div>
       <div class="col-lg-4 mt-4">
 
@@ -266,7 +266,7 @@
                         <input class="form-control inputku" type="text" name="" value="" placeholder="Judul Artikel"  />
                       </div>
                       <label style="font-weight: 600;">Artikel</label>
-                      <textarea class="form-control inputku" id="haha"  required name="haha" type="text"></textarea>
+                      <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
                     </div>
 
 
@@ -319,7 +319,7 @@
                         <div class="card-body cb">
                           <div class="form-group">
                             <input type="text" id="kword" style="margin-top: 10px!important;border: 1px solid darkgreen; margin-bottom: 10px;">
-                            <a class="btn btn-danger primary btn-sm" id="startjob"" type="button" value="Shit Keywords!" style="color: white;margin-top: -6px;">Stop</a>
+                            <a class="btn btn-danger primary btn-md" id="startjob"" type="button" value="Shit Keywords!" style="color: white;">Stop</a>
                           </div>
                         </div>
                       </div>
@@ -393,32 +393,34 @@
         language: 'en',
         extraPlugins: 'notification',
         height:540
-
       });
-      
-    
-      
+
       editor.on( 'required', function( evt ) {
         editor.showNotification( 'This field is required.', 'warning' );
         evt.cancel();
       } );
-      $('#haha').keyup(function(){
-        var desc = CKEDITOR.instances['haha'].getData();
-        console.log(desc);
-      });
-    
+    </script>
+    <script>
       $('#kword').keyup(function () {
         var w = $(this).val();
-        
-        
         $('textarea[id="input"]').val(w);
-
 
         if (event.keyCode === 13) {
          event.preventDefault();
          document.getElementById("startjob").click();
-
        }
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('.waterTankHere2').waterTank({
+        width: 80,
+        height: 410,
+        color: '#556B2F',
+        level: 80
+      }).on('click', function(event) {
+        $(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+      });
     });
   </script>
   <script type="text/javascript">
@@ -683,7 +685,6 @@
                       if (p<=15) {
                         p = p + key.length;
                         high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
-
                       }else {
                         high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
 
@@ -720,14 +721,6 @@
                 document.getElementById('hi').innerHTML = high;
                 document.getElementById('mi').innerHTML = mid;
                 document.getElementById('lo').innerHTML = low;
-                var close = document.getElementsByClassName("delete");
-                var i;
-
-                for (i = 0; i < close.length; i++) {
-                  close[i].addEventListener("click", function() {
-                    this.parentElement.style.display = 'none';
-                  });
-                }
               }
             },
 
@@ -1282,7 +1275,16 @@
 
     </script>
 
-    
+    <script type="text/javascript">
+      var close = document.getElementsByClassName("delete");
+      var i;
+
+      for (i = 0; i < close.length; i++) {
+        close[i].addEventListener("click", function() {
+          this.parentElement.style.display = 'none';
+        });
+      }
+    </script>
 
     <!-- Lets see if anyone ever uses this  -->
     <script>

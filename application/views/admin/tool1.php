@@ -1,16 +1,167 @@
-<div class="br-mainpanel">
-      <div class="br-pageheader pd-y-15 pd-l-20">
-        <nav class="breadcrumb pd-0 mg-0 tx-12">
-          <a class="breadcrumb-item" href="index.html">Bracket</a>
-          <a class="breadcrumb-item" href="#">UI ELements</a>
-          <span class="breadcrumb-item active">Cards</span>
-        </nav>
-      </div>
+<!DOCTYPE html>
+<html>
+<title>Related Keyword Generator</title>
 
-      <div class="br-pagebody">
-        <div class="br-section-wrapper">
-          <div class="container" style="margin-top: 5%;">
-    <div class="container" style="margin-top: 5%;">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta property="og:site_name" content="semanticarticle.com"/>
+  <meta property="og:title" content="semanticarticle.com"/>
+  <meta property="og:url" content="https://www.semanticarticle.com"/>
+  <meta property="og:type" content="website"/>
+<!--   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.0/css/buttons.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/fixedheader/3.1.0/css/fixedHeader.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/keytable/2.1.0/css/keyTable.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/2.0.0/css/responsive.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/scroller/1.4.0/css/scroller.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progressjs.min.css"/> -->
+  
+  <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/DataTables-1.10.23/css/jquery.dataTables.min.css'); ?>"/>
+  <link rel="stylesheet" type="text/css" href="<?= site_url('assets/bootstrap-4.0.0/dist/css/bootstrap.min.css'); ?>"/>
+  <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/datatables.min.css'); ?>"/>
+  <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/KeyTable-2.6.1/css/keyTable.dataTables.min.css'); ?>"/>
+  <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/Responsive-2.2.7/css/responsive.dataTables.min.css'); ?>"/>
+  <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/Scroller-2.0.3/css/scroller.dataTables.min.css'); ?>"/>
+  <link rel="stylesheet" type="text/css" href="<?= site_url('assets/fitur.min.css'); ?>"/>  
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+  <!-- <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/datatables.min.css'); ?>"/> 
+  -->
+  <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
+  
+  <!--   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
+
+
+  <link rel="stylesheet" href="<?= base_url();?>assets/style.css">
+  
+
+  <!-- Bracket CSS -->
+  <link rel="stylesheet" href="<?= site_url('assets/template/css/bracket.css'); ?>">
+
+  <!-- JS -->
+  <script type="text/javascript"> var BASE_URL = "<?php echo base_url();?>"; </script>
+
+  <!-- JS template -->
+  <script src="<?= site_url('assets/template/lib/jquery/jquery.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/popper.js/popper.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/bootstrap/bootstrap.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/moment/moment.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/jquery-ui/jquery-ui.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/jquery-switchbutton/jquery.switchButton.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/peity/jquery.peity.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/chartist/chartist.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/jquery.sparkline.bower/jquery.sparkline.min.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/d3/d3.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/lib/rickshaw/rickshaw.min.js'); ?>"></script>
+
+
+<!--   <script src="<?= site_url('assets/template/js/bracket.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/js/ResizeSensor.js'); ?>"></script>
+  <script src="<?= site_url('assets/template/js/dashboard.js'); ?>"></script> -->
+
+  <style type="text/css">
+
+    .paginate_button {
+      background-color: #e3ffeb;
+      color: darkgreen;
+    }
+
+    .paginate_button::hover{
+      background-color: darkgreen;
+    }
+    .cardku{
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    .scrollable-menu {
+      height: auto;
+      max-height: 200px;
+      overflow-x: hidden;
+    }
+    #collapseUtilities::-webkit-scrollbar {
+
+      width: 8px;
+    }
+
+
+    #collapseUtilities::-webkit-scrollbar-track {
+
+
+    }
+
+
+    #collapseUtilities::-webkit-scrollbar-thumb {
+      background: #888; 
+      /* border-radius: 10px;*/
+    }
+
+
+    #collapseUtilities::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+    .tex::-webkit-scrollbar {
+
+      width: 8px;
+    }
+
+
+    .tex::-webkit-scrollbar-track {
+
+
+    }
+
+
+    .tex::-webkit-scrollbar-thumb {
+      background: #888; 
+      /* border-radius: 10px;*/
+    }
+
+
+    .tex::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+    .tab{
+      font-weight: 400;
+      color: #00415a;
+    }
+  /*nav-tabs{
+    border:2px solid #00415a!important;
+    }*/
+    .nav-item a:hover{
+      color: darkgreen;
+    }
+    li .active{
+      color:darkgreen;
+      font-weight: 700;
+    }
+
+    @media (min-width: 990px){ 
+      body{
+        padding: 80px 70px 0px 250px;
+      }
+    }
+  </style>
+</head>
+
+<body style="padding-top: 70px;">
+
+
+
+  <!-- <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> -->
+<!--   <nav class="navbar navbar-light " style="background-color: #556B2F;">
+
+    <a class="navbar-brand" href="#" style="color: white;margin:  10px;font-size: 30px;font-family: 'Roboto', sans-serif;">semanticarticle.com</a>
+
+  </nav> -->
+
+  <center><h1><b>Related Keyword Generator</b></h1></center>
+  <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
+
+  <div class="container" style="margin-top: 5%;">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active tab" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Scrapping</a>
@@ -63,7 +214,7 @@
         </div>
 
         <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
-        <a class="btn btn-danger" id="reset" title="Empty all input and results" type="button" value="Reset">Reset</a>
+        <a class="btn btn-danger" id="reset" style="color: white;" title="Empty all input and results" type="button" value="Reset">Reset</a>
       </div>
       <div class="col-lg-4 mt-4">
 
@@ -146,7 +297,7 @@
                         <input class="form-control inputku" type="text" name="" value="" placeholder="Judul Artikel"  />
                       </div>
                       <label style="font-weight: 600;">Artikel</label>
-                      <textarea class="form-control inputku" id="haha"  required name="haha" type="text"></textarea>
+                      <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
                     </div>
 
 
@@ -164,7 +315,7 @@
                           <b>High</b>
                         </div>
                         <div class="card-body cb" id="idku">
-                          <div class="form-group" id="hi">
+                          <div class="form-group" id="hi" style="padding-top: 10px;">
                           </div>
                         </div>
                       </div>
@@ -178,7 +329,7 @@
                           <b>Medium</b>
                         </div>
                         <div class="card-body cb">
-                          <div class="form-group" id="mi">
+                          <div class="form-group" id="mi" style="padding-top: 10px;">
                           </div>
                         </div>
                       </div>
@@ -187,7 +338,7 @@
                           <b >Low</b>
                         </div>
                         <div class="card-body cb" id="idku">
-                          <div class="form-group" id="lo" >
+                          <div class="form-group" id="lo" style="padding-top: 10px;">
                           </div>
                         </div>
                       </div>
@@ -199,7 +350,7 @@
                         <div class="card-body cb">
                           <div class="form-group">
                             <input type="text" id="kword" style="margin-top: 10px!important;border: 1px solid darkgreen; margin-bottom: 10px;">
-                            <a class="btn btn-danger primary btn-sm" id="startjob"" type="button" value="Shit Keywords!" style="color: white;margin-top: -6px;">Stop</a>
+                            <a class="btn btn-danger primary btn-md" id="startjob"" type="button" value="Shit Keywords!" style="color: white;">Stop</a>
                           </div>
                         </div>
                       </div>
@@ -257,6 +408,7 @@
               <script src="<?= site_url('assets/ckeditor/ckeditor.js') ?>"></script>
               <script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
 
+
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="//cdn.datatables.net/s/bs/jszip-2.5.0,dt-1.10.10,b-1.1.0,b-colvis-1.1.0,b-html5-1.1.0,b-print-1.1.0,cr-1.3.0,fh-3.1.0,kt-2.1.0,r-2.0.0,se-1.1.0/datatables.min.js" crossorigin="anonymous"></script>
@@ -273,32 +425,34 @@
         language: 'en',
         extraPlugins: 'notification',
         height:540
-
       });
-      
-    
-      
+
       editor.on( 'required', function( evt ) {
         editor.showNotification( 'This field is required.', 'warning' );
         evt.cancel();
       } );
-      $('#haha').keyup(function(){
-        var desc = CKEDITOR.instances['haha'].getData();
-        console.log(desc);
-      });
-    
+    </script>
+    <script>
       $('#kword').keyup(function () {
         var w = $(this).val();
-        
-        
         $('textarea[id="input"]').val(w);
-
 
         if (event.keyCode === 13) {
          event.preventDefault();
          document.getElementById("startjob").click();
-
        }
+     });
+   </script>
+   <script>
+    $(document).ready(function() {
+      $('.waterTankHere2').waterTank({
+        width: 80,
+        height: 410,
+        color: '#556B2F',
+        level: 80
+      }).on('click', function(event) {
+        $(this).waterTank(Math.floor(Math.random() * 100) + 0 );
+      });
     });
   </script>
   <script type="text/javascript">
@@ -563,7 +717,6 @@
                       if (p<=15) {
                         p = p + key.length;
                         high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
-
                       }else {
                         high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span>';
 
@@ -589,7 +742,7 @@
                       }
                     }
                     sayangkuh += "<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>"
-                    
+
                     // $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>");
                     // $('#idkuu').append("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
 
@@ -600,14 +753,6 @@
                 document.getElementById('hi').innerHTML = high;
                 document.getElementById('mi').innerHTML = mid;
                 document.getElementById('lo').innerHTML = low;
-                var close = document.getElementsByClassName("delete");
-                var i;
-
-                for (i = 0; i < close.length; i++) {
-                  close[i].addEventListener("click", function() {
-                    this.parentElement.style.display = 'none';
-                  });
-                }
               }
             },
 
@@ -1162,7 +1307,16 @@
 
     </script>
 
-    
+    <script type="text/javascript">
+      var close = document.getElementsByClassName("delete");
+      var i;
+
+      for (i = 0; i < close.length; i++) {
+        close[i].addEventListener("click", function() {
+          this.parentElement.style.display = 'none';
+        });
+      }
+    </script>
 
     <!-- Lets see if anyone ever uses this  -->
     <script>
@@ -1181,5 +1335,6 @@
       });
     </script>
 
-</div><!-- br-section-wrapper -->
-</div><!-- br-pagebody -->
+  </body>
+
+  </html>

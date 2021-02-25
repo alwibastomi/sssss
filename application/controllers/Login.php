@@ -50,8 +50,6 @@ class Login extends Core{
 				$this->session->set_flashdata('login','login');
 
 				redirect('Dashboard');
-        
-
 			}else {
 
 				$data['title'] = "Login";

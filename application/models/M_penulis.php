@@ -97,7 +97,10 @@ class M_penulis extends CI_Model
         $aktif = 'Non Aktif';
       }
 
-      $btn = '<a class="btn btn-sm btn-danger" href="'.site_url('User/hapus/'.$val->email).'" title="Hapus"><i class="glyphicon glyphicon-pencil"></i> Hapus</a>';
+      $btn = '<a href="'.site_url('User/edit/'.$val->email).'" class="btn btn-outline-info btn-icon rounded-circle mg-r-5"><div><i class="fa fa-download"></i></div></a>
+      <a href="'.site_url('User/edit/'.$val->email).'" class="btn btn-outline-warning btn-icon rounded-circle mg-r-5"><div><i class="fa fa-pencil"></i></div></a>
+      <a href="'.site_url('User/hapus/'.$val->email).'" class="btn btn-outline-danger btn-icon rounded-circle mg-r-5"><div><i class="fa fa-trash"></i></div></a>
+      ';
 
       $output['data'][] = array(
         $val->email,
