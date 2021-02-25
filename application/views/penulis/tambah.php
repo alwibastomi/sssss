@@ -1,73 +1,47 @@
-<?php 
-if ($alert == 'sukses') { ?>
-  <script type="text/javascript">
-    window.location = "<?= site_url('User') ?>";
-  </script>
-<?php }?>
-<!-- Top Bar Start -->
-
-<!-- Top Bar End -->
-
-
-<!-- ========== Left Sidebar Start ========== -->
-
-<!-- Left Sidebar End -->
-
-
-
-<!-- ============================================================== -->
-<!-- Start right Content here -->
-<!-- ============================================================== -->
-<div class="br-mainpanel bg-white">
-
-  <!-- Start content -->
-  <div class="content">
-    <div class="container">
-
-
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="card-body" style="height: 600px;" >
-
-            <h4 class="header-title m-t-0 m-b-30 mt-4">Add User</h4>
-
-            <form class="form-horizontal" action="" role="form" method="post" enctype="multipart/form-data">
-
-              <div class="form-group has-feedback mt-4 ml-4" >
-                <label class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-6">
-                  <input type="email" name="email" class="form-control" placeholder="Email" required>
-                </div>
-              </div>
-
-              <div class="form-group has-feedback ml-4">
-                <label class="col-sm-2 control-label">Level</label>
-                <div class="col-sm-6">
-                  <select class="form-control" name="level" style="border-radius: 0;">
-                    <option value="1">Admin</option>
-                    <option value="2">User</option>
-                  </select>
-                </div>
-              </div>
-
-              <h4 class="page-header m-t-0"></h4>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="col-sm-2">
-                  </div>
-                  <div class="col-sm-10">
-                    <button type="submit" class="btn btn-info waves-effect waves-light m-b-5 ml-4" name="save"> <i class="fa fa-save m-r-5"></i> <span>Save</span> </button>
-                    <a href="<?= site_url('User') ?>" class="btn btn-primary m-b-5"><i class="fa fa-mail-reply"></i> Back</a>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div><!-- end col -->
+<div class="br-mainpanel">
+      <div class="br-pageheader pd-y-15 pd-l-20">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+          <a class="breadcrumb-item" href="index.html">Bracket</a>
+          <a class="breadcrumb-item" href="#">UI ELements</a>
+          <span class="breadcrumb-item active">Cards</span>
+        </nav>
       </div>
-      <!-- end row -->
 
-    </div> <!-- container -->
- <!-- content -->
-</div>
 
+      <div class="br-pagebody">
+        <div class="br-section-wrapper">
+          <div class="container" >
+            <h4 style="text-align: center;">Tambah Data</h4>
+        <form method="post" action="form-validation.html" data-parsley-validate>
+
+          <div class="wd-300">
+            <div class="d-flex mg-b-30">
+
+              <div class="form-group">
+                <label>Firstname: <span class="tx-danger"></span></label>
+                <input type="text" name="firstname" class="form-control wd-600" placeholder="Enter firstname" required>
+              </div><!-- form-group -->
+             
+            </div><!-- d-flex -->
+              <div class="d-flex-2">
+                <div id="slWrapper" class="parsley-select wd-600">
+                  <select class="form-control select2" data-placeholder="Choose one"
+                  data-parsley-class-handler="#slWrapper"
+                  data-parsley-errors-container="#slErrorContainer" required>
+                    <option label="Choose one"></option>
+                    <option value="Firefox">Firefox</option>
+                    <option value="Chrome">Chrome</option>
+                    <option value="Safari">Safari</option>
+                    <option value="Opera">Opera</option>
+                    <option value="Internet Explorer">Internet Explorer</option>
+                  </select>
+                  <div id="slErrorContainer"></div>
+                </div>
+                
+              </div>
+            <button type="submit" class="btn btn-info mt-2">Validate Form</button>
+            <button type="submit" class="btn btn-danger mt-2">Back</button>
+          </div>
+        </form>
+         </div><!-- br-section-wrapper -->
+      </div><!-- b

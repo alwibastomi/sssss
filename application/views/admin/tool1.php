@@ -1,12 +1,21 @@
+<div class="br-mainpanel">
+      <div class="br-pageheader pd-y-15 pd-l-20">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+          <a class="breadcrumb-item" href="index.html">Bracket</a>
+          <a class="breadcrumb-item" href="#">UI ELements</a>
+          <span class="breadcrumb-item active">Cards</span>
+        </nav>
+      </div>
 
-<div class="br-mainpanel bg-white">
-    
-  <div class="container" >
-    <ul class="nav nav-tabs" id="myTab" role="tablist" >
-      <li class="nav-item" style="margin-top: 20px!important;">
-        <a class="nav-link active tab" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" >Scrapping</a>
+      <div class="br-pagebody">
+        <div class="br-section-wrapper">
+          <div class="container" style="margin-top: 5%;">
+    <div class="container" style="margin-top: 5%;">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active tab" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Scrapping</a>
       </li>
-      <li class="nav-item" style="margin-top: 20px!important;">
+      <li class="nav-item">
         <a class="nav-link tab" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Optimasi</a>
       </li>
     </ul>
@@ -202,7 +211,6 @@
 
                   <!-- AKHIR TAB2 -->
                 </div>
-                </div>
                 <footer>
 
                   <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
@@ -231,8 +239,7 @@
 
                 </style>
 
-              
-            </footer>
+              </div>
 
               <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
               <script type="text/javascript" src="<?= site_url('assets/bootstrap-4.0.0/dist/js/bootstrap.min.js'); ?>"></script>
@@ -1174,4 +1181,5 @@
       });
     </script>
 
-    
+</div><!-- br-section-wrapper -->
+</div><!-- br-pagebody -->

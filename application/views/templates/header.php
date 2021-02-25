@@ -30,7 +30,7 @@
     <meta name="author" content="ThemePixels">
 
     <title>Bracket Responsive Bootstrap 4 Admin Template</title>
-    <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/DataTables-1.10.23/css/jquery.dataTables.min.css'); ?>"/>
+    <!-- <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/DataTables-1.10.23/css/jquery.dataTables.min.css'); ?>"/>
       <link rel="stylesheet" type="text/css" href="<?= site_url('assets/bootstrap-4.0.0/dist/css/bootstrap.min.css'); ?>"/>
       <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/datatables.min.css'); ?>"/>
       <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/KeyTable-2.6.1/css/keyTable.dataTables.min.css'); ?>"/>
@@ -42,7 +42,7 @@
 
   <!-- <link rel="stylesheet" type="text/css" href="<?= site_url('assets/DataTables/datatables.min.css'); ?>"/> 
   -->
-  <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script> -->
 
     <!-- vendor css -->
     <link href="<?= site_url('vendor/lib/font-awesome/css/font-awesome.css') ?>" rel="stylesheet">

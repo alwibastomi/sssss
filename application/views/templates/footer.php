@@ -1,34 +1,5 @@
-    <footer>
-
-                  <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
-                  </footer>
-                </p>
-                <style type="text/css">
-
-                  #persen b{
-
-                    margin-left: 10px;
-                    /* margin-right: 50%;*/
-
-                  }
-                  #persen span{
-
-                    float:right;
-                  }
-                  #persen hr{
-                    height: 4px;
-                    color: #f3f5f0
-                  }
-                  #persen i{
-                    padding-left: 20px;
-                    color:darkgreen;
-                  }
-
-                </style>
-
-              
-            </footer>
-    <!-- </div>
+   
+    </div>
       <footer class="br-footer">
         <div class="footer-left">
           <div class="mg-b-2">Copyright &copy; 2017. Bracket. All Rights Reserved.</div>
@@ -40,8 +11,8 @@
           <a target="_blank" class="pd-x-5" href="https://twitter.com/home?status=Bracket,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/bracket/intro"><i class="fa fa-twitter tx-20"></i></a>
         </div>
       </footer>
-    </div> --><!-- br-mainpanel -->
-    <!-- ########## END: MAIN PANEL ########## -->
+    </div>
+    
    
               
 
