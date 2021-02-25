@@ -113,7 +113,19 @@
 
 
     }
+    #myProgress {
+      width: 100%;
+      background-color: #ddd;
+    }
 
+    #myBar {
+      width: 0%;
+      height: 30px;
+      background-color: #4CAF50;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+    }
 
     .tex::-webkit-scrollbar-thumb {
       background: #888; 
@@ -223,12 +235,8 @@
 
         <br>
         
-        <div class="progressk">
-          <div style="font-weight: 800">Score :<span>80%</span></div>
-
-          <div class="progress">
-            <div class="progress-bar bg-success" style="width:80%"></div>
-          </div>
+        <div id="myProgress">
+          <div id="myBar">0%</div>
         </div>
         <p class="mt-1" style="font-weight: 600;">Rekomendasi Keyword</p>
         <div class="card" style="margin-top: 20px;" >
@@ -401,6 +409,20 @@
 
     <!-- <script type="text/javascript" src="<?= base_url();?>assets/suggestions.js"></script> -->
     <script>
+      var i = 0;
+
+      var haha=[];
+      var jml=[];
+      var asd=[];
+      var arr=[];
+      var sayangkuh = "";
+      var high = "";
+      var mid = "";
+      var low = "";
+      zonx  = 0;
+      zinx  = 0;
+      var lol=[];
+
       var editor = CKEDITOR.replace( 'haha', {
         language: 'en',
         extraPlugins: 'notification',
@@ -408,8 +430,67 @@
       });
 
       editor.on( 'change', function( evt ) {
-        console.log(evt.editor.getData());
+        var div = document.createElement("div");
+        div.innerHTML = evt.editor.getData();
+        var text = div.innerText.toLowerCase();
+        var map = haha.reduce(function(prev, cur) {
+          prev[cur] = (prev[cur] || 0) + 1;
+          return prev;
+        }, {});
+        x = sum(map);
+        const sortable = Object.fromEntries(
+          Object.entries(map).sort(([,a],[,b]) => a-b)
+          );
+        ob = reverseObject(sortable);
+
+        Object.keys(ob).forEach(function(key) {
+
+          var res = text.split(" ");
+          var a =  res.indexOf(key);
+          if (a > -1) {
+            b = ob[key]/x * 100;
+            b = b.toFixed(0);
+
+            if (asd.indexOf(a) == -1) {
+              asd.push(a);
+              zonx = parseInt(zonx) + parseInt(b);
+              // zonx = b + zonx;  
+            }
+            
+
+
+            $("#"+key).css('background-color', 'green')
+          } else {
+
+
+            $("#"+key).css('background-color', 'red')
+
+          }
+        });
+
+        console.log(zonx)
+        if (zonx != zinx) {
+          var elem = document.getElementById("myBar");
+          var id = setInterval(frame, 10);
+          function frame() {
+            if (zinx == zonx) {
+              clearInterval(id);
+            } else {
+              if (zonx > zinx) {
+
+                zinx++;
+                elem.style.width = zinx + "%";
+                elem.innerHTML = zinx  + "%";
+              }else {
+                zinx--;
+                elem.style.width = zinx + "%";
+                elem.innerHTML = zinx  + "%";
+              }
+            }
+          }
+        }
       });
+      $('.progress-bar').css('width', zonx+'%').attr('aria-valuenow', zonx);
 
       editor.on( 'required', function( evt ) {
         editor.showNotification( 'This field is required.', 'warning' );
@@ -439,13 +520,6 @@
     });
   </script>
   <script type="text/javascript">
-    var haha=[];
-    var arr=[];
-    var sayangkuh = "";
-    var high = "";
-    var mid = "";
-    var low = "";
-    var lol=[];
     var suggestions = function(){
       return {
         defaultOptions:{
@@ -558,32 +632,6 @@
         }
 
 
-        $('#idku .inputku').keyup(function () {
-         var text = $(this).val().toLowerCase();
-         var map = haha.reduce(function(prev, cur) {
-          prev[cur] = (prev[cur] || 0) + 1;
-          return prev;
-        }, {});
-         a = sum(map);
-         const sortable = Object.fromEntries(
-          Object.entries(map).sort(([,a],[,b]) => a-b)
-          );
-         ob = reverseObject(sortable);
-
-         Object.keys(ob).forEach(function(key) {
-          b = ob[key]/a * 100;
-          b = roundNumber(b, 2)
-
-          var res = text.split(" ");
-          var a =  res.indexOf(key);
-          if (a > -1) {
-            $("#"+key).css('background-color', 'green')
-          } else {
-            $("#"+key).css('background-color', 'red')
-          }
-        });
-         console.log(haha)
-       });
         var KWS = function(){
 
           return {
