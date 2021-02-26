@@ -432,7 +432,13 @@
       editor.on( 'change', function( evt ) {
         var div = document.createElement("div");
         div.innerHTML = evt.editor.getData();
-        var text = div.innerText.toLowerCase();
+        var lala = div.innerText.toLowerCase().substr(div.innerText.toLowerCase().length - 1);
+        if (lala == " ") {
+          var text = div.innerText.toLowerCase().slice(0, -1);
+        }else {
+
+          var text = div.innerText.toLowerCase();
+        }
         var map = haha.reduce(function(prev, cur) {
           prev[cur] = (prev[cur] || 0) + 1;
           return prev;
@@ -442,18 +448,24 @@
           Object.entries(map).sort(([,a],[,b]) => a-b)
           );
         ob = reverseObject(sortable);
-
+        asd = [];
+        var res = text.split(" ");
         Object.keys(ob).forEach(function(key) {
 
-          var res = text.split(" ");
+
           var a =  res.indexOf(key);
           if (a > -1) {
-            b = ob[key]/x * 100;
-            b = b.toFixed(0);
+            // b = ob[key]/x * 100;
+            // b = b.toFixed(0);
 
             if (asd.indexOf(a) == -1) {
               asd.push(a);
-              zonx = parseInt(zonx) + parseInt(b);
+              zonx = 0;
+              for (var o = 0, l = asd.length; o < l; ++o) {
+                var p = Object.values(ob)[asd[o]]/x * 100;
+                p = p.toFixed(0);
+                zonx = parseInt(zonx) + parseInt(p);
+              }
               // zonx = b + zonx;  
             }
             
@@ -461,14 +473,16 @@
 
             $("#"+key).css('background-color', 'green')
           } else {
+              $("#"+key).css('background-color', 'red')
 
 
-            $("#"+key).css('background-color', 'red')
 
           }
         });
-
+        console.log(res)
         console.log(zonx)
+
+        console.log(asd)
         if (zonx != zinx) {
           var elem = document.getElementById("myBar");
           var id = setInterval(frame, 10);
