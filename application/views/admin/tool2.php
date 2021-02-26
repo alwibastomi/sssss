@@ -761,43 +761,54 @@
                     if (n<=5) {
                       if (p<=15) {
                         p = p + key.length;
-                        high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
+                        high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
                       }else {
-                        high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
+                        high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;" ></i></span> ';
 
                         p = 0;
                       }
                     }else if (n>=6 && n<=10) {
                       if (q<=15) {
                         q = q + key.length;
-                        mid += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
+                        mid += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle mt-2 del" style="margin-left: 1%;" ></i></span> ';
                       }else {
-                        mid += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
+                        mid += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle mt-2 del" style="margin-left: 1%;"></i></span> ';
 
                         q = 0;
                       }
                     }else {
                       if (r<=15) {
                         r = r + key.length;
-                        low += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
+                        low += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
                       }else {
-                        low += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i></span> ';
+                        low += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
 
                         r = 0;
                       }
                     }
-                    sayangkuh += "<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>"
+                    sayangkuh += "<i class='fas fa-circle del'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>"
                     
                     // $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>");
                     // $('#idkuu').append("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
 
                     // $('#persen').html("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
+                    
+
                   });
+                
                 document.getElementById('persen').innerHTML = sayangkuh;
 
                 document.getElementById('hi').innerHTML = high;
                 document.getElementById('mi').innerHTML = mid;
                 document.getElementById('lo').innerHTML = low;
+                var close = document.getElementsByClassName('del');
+                var i;
+
+                for (i = 0; i < close.length; i++) {
+                  close[i].addEventListener("click", function() {
+                    this.parentElement.style.display = 'none';
+                  });
+                }
               }
             },
 

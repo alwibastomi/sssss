@@ -747,12 +747,21 @@
                     // $('#idkuu').append("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
 
                     // $('#persen').html("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
+                    var close = document.getElementsByClassName("delete");
+                var i;
+
+                for (i = 0; i < close.length; i++) {
+                  close[i].addEventListener("click", function() {
+                    this.parentElement.style.display = 'none';
+                  });
+                }
                   });
                 document.getElementById('persen').innerHTML = sayangkuh;
 
                 document.getElementById('hi').innerHTML = high;
                 document.getElementById('mi').innerHTML = mid;
                 document.getElementById('lo').innerHTML = low;
+
               }
             },
 
@@ -1307,16 +1316,7 @@
 
     </script>
 
-    <script type="text/javascript">
-      var close = document.getElementsByClassName("delete");
-      var i;
-
-      for (i = 0; i < close.length; i++) {
-        close[i].addEventListener("click", function() {
-          this.parentElement.style.display = 'none';
-        });
-      }
-    </script>
+    
 
     <!-- Lets see if anyone ever uses this  -->
     <script>
