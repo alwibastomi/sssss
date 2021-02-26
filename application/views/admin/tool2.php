@@ -120,7 +120,7 @@
 
     #myBar {
       width: 0%;
-      height: 30px;
+      height: 35px;
       background-color: #4CAF50;
       text-align: center;
       line-height: 30px;
@@ -187,8 +187,9 @@
         <div class="row">
 
           <div class="col-lg-8">
-            <label for="" style="margin-top: 20px;"></label>
-            <textarea id="input" autocomplete="off" autocorrect="off" style="overflow:hidden;resize: none; height: 35px;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword" class="input"></textarea>
+            <label for="" style="margin-top: 15px;"></label>
+            <input class="form-control" type="text" id="lolo" placeholder="Isi Keyword Utama"  />
+            <textarea id="input" autocomplete="off" autocorrect="off" style="overflow:hidden; resize: none; height: 1000px; font-size: 17px; display: none;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword Utama" class="input"></textarea>
             <a class="btn btn-danger primary btn-sm" id="reset" title="Empty all input and results" type="button" style="color: white; margin-top: 10px;" value="Reset">Reset Keyword</a>
             <div id="persen" style="display: none;">
             </div>
@@ -235,10 +236,11 @@
 
         <br>
         
+        <label style="font-weight: 600;">Score</label>
         <div id="myProgress">
-          <div id="myBar">0%</div>
+          <div id="myBar"> 0%</div>
         </div>
-        <p class="mt-1" style="font-weight: 600;">Rekomendasi Keyword</p>
+        <p class="mt-5" style="font-weight: 600;">Rekomendasi Keyword</p>
         <div class="card" style="margin-top: 20px;" >
           <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
             <b>High</b>
@@ -409,52 +411,74 @@
 
     <!-- <script type="text/javascript" src="<?= base_url();?>assets/suggestions.js"></script> -->
     <script>
-      var i = 0;
+      function getPlainText(strSrc) {
+        var resultStr = "";
 
-      var haha=[];
-      var jml=[];
-      var asd=[];
-      var arr=[];
-      var sayangkuh = "";
-      var high = "";
-      var mid = "";
-      var low = "";
-      zonx  = 0;
-      zinx  = 0;
-      var lol=[];
+  // Ignore the <p> tag if it is in very start of the text
+  if (strSrc.indexOf('<p>') == 0)
+    resultStr = strSrc.substring(3);
 
-      var editor = CKEDITOR.replace( 'haha', {
-        language: 'en',
-        extraPlugins: 'notification',
-        height:540
-      });
+  resultStr = resultStr.replace(/<p>/gi, " ");
 
-      editor.on( 'change', function( evt ) {
-        var div = document.createElement("div");
-        div.innerHTML = evt.editor.getData();
-        var lala = div.innerText.toLowerCase().substr(div.innerText.toLowerCase().length - 1);
-        if (lala == " ") {
-          var text = div.innerText.toLowerCase().slice(0, -1);
-        }else {
+  resultStr = resultStr.replace(/<br \/>/gi, " ");
+  resultStr = resultStr.replace(/<br>/gi, " ");
 
-          var text = div.innerText.toLowerCase();
-        }
-        var map = haha.reduce(function(prev, cur) {
-          prev[cur] = (prev[cur] || 0) + 1;
-          return prev;
-        }, {});
-        x = sum(map);
-        const sortable = Object.fromEntries(
-          Object.entries(map).sort(([,a],[,b]) => a-b)
-          );
-        ob = reverseObject(sortable);
-        asd = [];
-        var res = text.split(" ");
-        Object.keys(ob).forEach(function(key) {
+  return resultStr.replace(/<[^<|>]+?>/gi, '');
+}
+
+var i = 0;
+var upel = 0;
+var haha=[];
+var jml=[];
+var asd=[];
+var arr=[];
+var sayangkuh = "";
+var high = "";
+var mid = "";
+var low = "";
+zonx  = 0;
+zinx  = 0;
+var lol=[];
+
+var editor = CKEDITOR.replace( 'haha', {
+  language: 'en',
+  extraPlugins: 'notification',
+  height:540
+});
+
+editor.on( 'change', function( evt ) {
+  var div = document.createElement("div");
+
+  var str = evt.editor.getData();
+  str = getPlainText(str);
+  div.innerHTML = str;
+  var lala = div.innerText.toLowerCase().substr(div.innerText.toLowerCase().length - 1);
+  if (str === "") {
+    zonx = 0
+  }
+  if (lala == " ") {
+    var text = div.innerText.toLowerCase().slice(0, -1);
+  }else {
+
+    var text = div.innerText.toLowerCase();
+  }
+  console.log(div.innerHTML)
+  var map = haha.reduce(function(prev, cur) {
+    prev[cur] = (prev[cur] || 0) + 1;
+    return prev;
+  }, {});
+  x = sum(map);
+  const sortable = Object.fromEntries(
+    Object.entries(map).sort(([,a],[,b]) => a-b)
+    );
+  ob = reverseObject(sortable);
+  asd = [];
+  var res = text.split(" ");
+  Object.keys(ob).forEach(function(key) {
 
 
-          var a =  res.indexOf(key);
-          if (a > -1) {
+    var a =  res.indexOf(key);
+    if (a > -1) {
             // b = ob[key]/x * 100;
             // b = b.toFixed(0);
 
@@ -468,91 +492,90 @@
               }
               // zonx = b + zonx;  
             }
-            
-
-
             $("#"+key).css('background-color', 'green')
           } else {
-              $("#"+key).css('background-color', 'red')
-
-
-
+            $("#"+key).css('background-color', 'red')
           }
         });
-        console.log(res)
-        console.log(zonx)
+  console.log(res)
+  console.log(zonx)
+  console.log(haha)
+  console.log(asd)
+  if (zonx != zinx) {
+    var elem = document.getElementById("myBar");
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (zinx == zonx) {
+        clearInterval(id);
+      } else {
+        if (zonx > zinx) {
+          zinx++;
+          elem.style.width = zinx + "%";
+          elem.innerHTML = zinx  + "%";
+        }else {
+          if (zinx <= 0) {
+            zinx = 0;
+          }else {
 
-        console.log(asd)
-        if (zonx != zinx) {
-          var elem = document.getElementById("myBar");
-          var id = setInterval(frame, 10);
-          function frame() {
-            if (zinx == zonx) {
-              clearInterval(id);
-            } else {
-              if (zonx > zinx) {
-
-                zinx++;
-                elem.style.width = zinx + "%";
-                elem.innerHTML = zinx  + "%";
-              }else {
-                zinx--;
-                elem.style.width = zinx + "%";
-                elem.innerHTML = zinx  + "%";
-              }
-            }
+            zinx--;
           }
+
+          elem.style.width = zinx + "%";
+          elem.innerHTML = zinx  + "%";
         }
-      });
-      $('.progress-bar').css('width', zonx+'%').attr('aria-valuenow', zonx);
+      }
+    }
+  }
+});
 
-      editor.on( 'required', function( evt ) {
-        editor.showNotification( 'This field is required.', 'warning' );
-        evt.cancel();
-      } );
-    </script>
+editor.on( 'required', function( evt ) {
+  editor.showNotification( 'This field is required.', 'warning' );
+  evt.cancel();
+} );
+</script>
 
-    <script>
-      $('textarea[id="input"]').keyup(function (event) {
-        if (event.keyCode === 13) {
-         event.preventDefault();
-         document.getElementById("startjob").click();
-       }
-     });
-   </script>
+<script>
+  $('textarea[id="input"]').keyup(function (event) {
+    if (event.keyCode === 13) {
+     event.preventDefault();
+     document.getElementById("startjob").click();
+     $("#input").prop('disabled', true);
+   }
+ });
+</script>
 
-   <script>
-    $(document).ready(function() {
-      $('.waterTankHere2').waterTank({
-        width: 80,
-        height: 410,
-        color: '#556B2F',
-        level: 80
-      }).on('click', function(event) {
-        $(this).waterTank(Math.floor(Math.random() * 100) + 0 );
-      });
+<script>
+  $(document).ready(function() {
+    $('.waterTankHere2').waterTank({
+      width: 80,
+      height: 410,
+      color: '#556B2F',
+      level: 80
+    }).on('click', function(event) {
+      $(this).waterTank(Math.floor(Math.random() * 100) + 0 );
     });
-  </script>
-  <script type="text/javascript">
-    var suggestions = function(){
-      return {
-        defaultOptions:{
-          deferTableUpdatesAtRows: 5000,
-          keepRunning: false,
-          maxQueueDisplay: 5000,
-          country: "",
-          filterNegative: "",
-          filterPositive: "",
-          lang: "",
-          prefixes: [],
-          rateLimit: 750,
-          service: "google",
-          suffixes: []
-        },
+  });
+</script>
+<script type="text/javascript">
+  var suggestions = function(){
+    return {
+      defaultOptions:{
+        deferTableUpdatesAtRows: 5000,
+        keepRunning: false,
+        maxQueueDisplay: 5000,
+        country: "",
+        filterNegative: "",
+        filterPositive: "",
+        lang: "",
+        prefixes: [],
+        rateLimit: 750,
+        service: "google",
+        suffixes: []
+      },
 
-        services:{
-          "google":
-          "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&gl=${country}&callback=?&q=",
+      services:{
+        "google":
+        "//suggestqueries.google.com/complete/search?client=chrome&hl=${lang}&gl=${country}&callback=?&q=",
             // "kickasstorrents": "//kat.cr/get_queries.php?query=", // not jsonp
           },
         /**
@@ -647,11 +670,11 @@
 
 
         var KWS = function(){
-
-          return {
-            table: undefined,
-            myIp: undefined,
-            options: {},
+         var v = 0;
+         return {
+          table: undefined,
+          myIp: undefined,
+          options: {},
         // flags
         queryLock: false,
         doWork: false,
@@ -680,7 +703,17 @@
           low = "";
           if (this.doWork === false) {
                 // reset these
+                if (upel == 1) {
+                  haha = [];
+                  upel = 0;
+                }
                 this.saveSettings();
+                if (v == 0) {
+                  var lala = $("#lolo").val();
+                  $("textarea[id='input']").val(lala);
+                  v = 1;
+                }
+                $("#lolo").prop('disabled', true);
                 $('#startjob').val('Stop Job').text('Stop Generate').addClass('btn-danger');
                 this.hashMapInputs = {};
                 this.keywordsToQuery = [];
@@ -1226,6 +1259,26 @@
             this.table.clear();
             this.table.draw();
             $('#input').val('');
+            $('#lolo').val('');
+            $("#lolo").prop('disabled', false);
+            upel = 1;
+            var i = 0;
+
+            var haha=[];
+            var jml=[];
+            var asd=[];
+            var arr=[];
+            var sayangkuh = "";
+            var high = "";
+            var mid = "";
+            var low = "";
+            zonx  = 0;
+            zinx  = 0;
+            v = 0;
+            var lol=[];
+            document.getElementById("hi").innerHTML = "";
+            document.getElementById("mi").innerHTML = "";
+            document.getElementById("lo").innerHTML = "";
             this.saveSettings();
           },
 
