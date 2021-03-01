@@ -24,6 +24,7 @@
     <ul class="br-menu-sub nav flex-column">
       <li class="nav-item"><a href="<?= site_url('Tool/Tool1') ?>" class="nav-link">Tool 1</a></li>
       <li class="nav-item"><a href="<?= site_url('Tool/Tool2') ?>" class="nav-link">Tool 1 part 2</a></li>
+      <li class="nav-item"><a href="<?= site_url('Tool2/Tool_2') ?>" class="nav-link">Tool 2 part 1</a></li>
       <li class="nav-item"><a href="buttons.html" class="nav-link">Tool 3</a></li>
     </ul>
     <a href="<?= site_url('User') ?>" class="br-menu-link <?php if($this->uri->segment(1)=="User"){echo "active";}?>">
