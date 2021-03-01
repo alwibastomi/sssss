@@ -777,6 +777,7 @@ editor.on( 'required', function( evt ) {
                 const sortable = Object.fromEntries(
                   Object.entries(map).sort(([,a],[,b]) => a-b)
                   );
+                console.log(sortable)
                 ob = reverseObject(sortable);
                 var n = 0;
                 var p = 0;
@@ -942,10 +943,13 @@ editor.on( 'required', function( evt ) {
 
                 arr = cleanKw.split(" ");
                 for (var y = 0; y < arr.length; y++) {
-                  if (lol.indexOf(arr[y]) < 0) {
-                    lol.push(arr[y]);
+                  if (isNaN(arr[y])) {
+
+                    if (lol.indexOf(arr[y]) < 0) {
+                      lol.push(arr[y]);
+                    }
+                    haha.push(arr[y]);
                   }
-                  haha.push(arr[y]);
                 }
 
 

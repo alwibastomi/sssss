@@ -409,9 +409,9 @@
          event.preventDefault();
          document.getElementById("startjob").click();
        }
-    });
-  </script>
-  <script>
+     });
+   </script>
+   <script>
     $(document).ready(function() {
       $('.waterTankHere2').waterTank({
         width: 80,
@@ -431,6 +431,9 @@
     var mid = "";
     var low = "";
     var lol=[];
+    function isNumber(val) {
+      return (val >=0 || val < 0);
+    }
     var suggestions = function(){
       return {
         defaultOptions:{
@@ -821,10 +824,14 @@
 
                 arr = cleanKw.split(" ");
                 for (var y = 0; y < arr.length; y++) {
-                  if (lol.indexOf(arr[y]) < 0) {
-                    lol.push(arr[y]);
+
+                  if (!isNumber(arr[y])) {
+                    if (lol.indexOf(arr[y]) < 0) {
+                      lol.push(arr[y]);
+                    }
+
+                    haha.push(arr[y]);
                   }
-                  haha.push(arr[y]);
                 }
 
 
