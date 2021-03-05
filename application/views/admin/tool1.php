@@ -405,7 +405,7 @@
               <script type="text/javascript" src="<?= site_url('assets/FileSaver/src/FileSaver.js') ?>"></script>
               <script type="text/javascript" src="<?= site_url('assets/localForage/src/localforage.js') ?>"></script>
               <script type="text/javascript" src="<?= site_url('assets/progress.min.js') ?>"></script>
-              <script src="<?= site_url('assets/ckeditor/ckeditor.js') ?>"></script>
+              <script src="<?= site_url('assets/ckeditor1/ckeditor.js') ?>"></script>
               <script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
 
 
