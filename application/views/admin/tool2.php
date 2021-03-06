@@ -229,16 +229,28 @@
               <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
             </div>
           </div>
-          <div class="col-lg-6">
-
-          </div>
         </div>
 
         <br>
+        <div class="mb-4">
+          <label style="font-weight: 600;">Score</label>
+          <div id="myProgress">
+            <div id="myBar"> 0%</div>
+          </div>
+        </div>
         
-        <label style="font-weight: 600;">Score</label>
-        <div id="myProgress">
-          <div id="myBar"> 0%</div>
+        <div class="bd"></div>
+        <br>
+
+        <input class="form-control" type="text" id="terlaluindah" placeholder="Target Keyword Turunan"  />
+        <div class="card" style="margin-top: 20px;" >
+          <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+            <b>KW</b>
+          </div>
+          <div class="card-body cb" id="idku">
+            <div class="form-group" id="skut" style="padding-top: 10px;">
+            </div>
+          </div>
         </div>
         <p class="mt-5" style="font-weight: 600;">Rekomendasi Keyword</p>
         <div class="card" style="margin-top: 20px;" >
@@ -255,7 +267,7 @@
             padding-top: -0px!important;
           }
         </style>
-        <div class="card mt-2" >
+        <div class="card mt-2" style="display: none">
           <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
             <b>Medium</b>
           </div>
@@ -302,102 +314,94 @@
         <table id="outtable" class=" table table-condensed compact dt-responsive" cellspacing="0" width="100%">
           <thead>
             <tr>
-                            <!-- <th>id</th>
-                            <th title="A suggested search">Keyword</th>
-                            <th title="Keyword length">Length</th>
-                            <th title="Searches per month">Volume</th>
-                            <th title="Cost per click ($US)">CPC</th>
-                            <th title="Search that prompted the keyword suggestion">Search</th>
-                            <th title="Source">Source</th>
-                            <th title="Number of words">Words</th> -->
-                          </tr>
-                        </thead>
-                        <tbody>
+            </tr>
+          </thead>
+          <tbody>
 
-                        </tbody>
-                      </table>
-                      <!-- </div> -->
-                    </div>
-                  </div>
-                </div>
+          </tbody>
+        </table>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
 
-                <!-- AWAL TAB2 -->
-                <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"> -->
-                  <div class="row" style="display: none;">
-                    <div class="col-md-8 mt-4" id="idku">
-                      <div class="form-group">
-                        <input class="form-control inputku " type="text" name="" value="" placeholder="Judul Artikel"  />
-                      </div>
-                      <label style="font-weight: 600;">Artikel</label>
-                      <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
-                    </div>
+  <!-- AWAL TAB2 -->
+  <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"> -->
+    <div class="row" style="display: none;">
+      <div class="col-md-8 mt-4" id="idku">
+        <div class="form-group">
+          <input class="form-control inputku " type="text" name="" value="" placeholder="Judul Artikel"  />
+        </div>
+        <label style="font-weight: 600;">Artikel</label>
+        <textarea class="form-control" id="haha"  required class="input" type="text"></textarea>
+      </div>
 
 
-                    <div class="col-md-4" style="margin-top: 22px;">
+      <div class="col-md-4" style="margin-top: 22px;">
 
-                      <div class="card  mt-2" >
-                        <div class="card-header" style="background-color: darkgreen; color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
-                          <b >Inputan</b>
-                        </div>
-                        <div class="card-body cb">
-                          <div class="form-group">
-                            <input type="text" id="" style="margin-top: 10px!important;border: 1px solid darkgreen;">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- akhir row -->
+        <div class="card  mt-2" >
+          <div class="card-header" style="background-color: darkgreen; color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+            <b >Inputan</b>
+          </div>
+          <div class="card-body cb">
+            <div class="form-group">
+              <input type="text" id="" style="margin-top: 10px!important;border: 1px solid darkgreen;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- akhir row -->
 
 
 
-                  <!-- AKHIR TAB2 -->
-                  <!-- </div> -->
-                  <footer>
+    <!-- AKHIR TAB2 -->
+    <!-- </div> -->
+    <footer>
 
-                    <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
-                    </footer>
-                  </p>
-                  <style type="text/css">
+      <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
+      </footer>
+    </p>
+    <style type="text/css">
 
-                    #persen b{
+      #persen b{
 
-                      margin-left: 10px;
-                      /* margin-right: 50%;*/
+        margin-left: 10px;
+        /* margin-right: 50%;*/
 
-                    }
-                    #persen span{
+      }
+      #persen span{
 
-                      float:right;
-                    }
-                    #persen hr{
-                      height: 4px;
-                      color: #f3f5f0
-                    }
-                    #persen i{
-                      padding-left: 20px;
-                      color:darkgreen;
-                    }
+        float:right;
+      }
+      #persen hr{
+        height: 4px;
+        color: #f3f5f0
+      }
+      #persen i{
+        padding-left: 20px;
+        color:darkgreen;
+      }
 
-                  </style>
+    </style>
 
-                </div>
+  </div>
 
-                <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/bootstrap-4.0.0/dist/js/bootstrap.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/jquery-3.5.1.js'); ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/bootstrap-4.0.0/dist/js/bootstrap.min.js'); ?>"></script>
 
-                <script type="text/javascript" src="<?= site_url('assets/DataTables/datatables.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/DataTables/datatables.min.js'); ?>"></script>
 
-                <script type="text/javascript" src="<?= site_url('assets/fitur.min.js') ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/colvis.min.js') ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/print.min.js') ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js'); ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/lodash.min.js') ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/FileSaver/src/FileSaver.js') ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/localForage/src/localforage.js') ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/progress.min.js') ?>"></script>
-                <script src="<?= site_url('assets/ckeditor1/ckeditor.js') ?>"></script>
-                <script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/fitur.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/colvis.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/print.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/lodash.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/FileSaver/src/FileSaver.js') ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/localForage/src/localforage.js') ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/progress.min.js') ?>"></script>
+  <script src="<?= site_url('assets/ckeditor1/ckeditor.js') ?>"></script>
+  <script type="text/javascript" src="<?= site_url('assets/waterTank.js') ?>"></script>
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -410,9 +414,28 @@
 
 
     <!-- <script type="text/javascript" src="<?= base_url();?>assets/suggestions.js"></script> -->
+
     <script>
-      function getPlainText(strSrc) {
-        var resultStr = "";
+
+      var utun = [];
+      var poo = 0;
+      var hadeuh = "";
+
+      $('#terlaluindah').keyup(function () {
+        var waw = $(this).val();
+        $('input[id="terlaluindah"]').val(waw);
+        if (event.keyCode === 13) {
+         event.preventDefault();
+         utun.push(waw)
+         hadeuh += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+utun+'">'+utun.slice(-1)[0]+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
+         document.getElementById('skut').innerHTML = hadeuh;
+         $('input[id="terlaluindah"]').val("");
+       }
+     });
+   </script>
+   <script>
+    function getPlainText(strSrc) {
+      var resultStr = "";
 
   // Ignore the <p> tag if it is in very start of the text
   if (strSrc.indexOf('<p>') == 0)

@@ -36,7 +36,7 @@ class User_model extends CI_Model
     return $this->db->update('artikel', $data);
   }
 
-    public function getIklan()
+  public function getIklan()
   {
     $this->db->select("*");
     $this->db->from("iklan_js");
@@ -51,7 +51,7 @@ class User_model extends CI_Model
     return $this->db->get()->row();
   }
 
-    public function getDataIklan($table, $where)
+  public function getDataIklan($table, $where)
   {
     $this->db->select("*");
     $this->db->from($table);
@@ -105,6 +105,7 @@ class User_model extends CI_Model
           'isLogin' => true,
           'email' => $query->email,
           'nama' => $query->nama,
+          'password' => $password,
           'level' => $query->level
         );
         $this->session->set_userdata($data);

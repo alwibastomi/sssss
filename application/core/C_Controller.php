@@ -41,6 +41,7 @@ class Core extends CI_Controller {
 		$data['nama'] = $this->session->userdata('nama');
 		$data['email'] = $this->session->userdata('email');
 		$data['level'] = $this->session->userdata('level');
+		$data['password'] = $this->session->userdata('password');
 		$this->load->view('template_admin/header',$data);
 		$this->load->view('template_admin/sidebar');
 		$this->load->view('template_admin/topbar',$data);

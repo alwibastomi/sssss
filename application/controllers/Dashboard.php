@@ -13,4 +13,15 @@ class Dashboard extends Core {
 		$this->renderadm('admin/dashboard',$data);
 		
 	}
+
+	public function user(){
+		$level = $this->session->userdata('level');
+		if(!$this->isLogin || $level != 1){
+			redirect('Auth');
+			die();
+		}
+		$data['title'] = 'Halaman dashboard';
+		$this->renderadm('user/dashboard',$data);
+		
+	}
 }	
