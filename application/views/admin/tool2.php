@@ -440,6 +440,7 @@ zonx  = 0;
 zinx  = 0;
 var lol=[];
 
+var res = [];
 var editor = CKEDITOR.replace( 'haha', {
   language: 'en',
   extraPlugins: 'notification',
@@ -447,22 +448,42 @@ var editor = CKEDITOR.replace( 'haha', {
 });
 
 editor.on( 'change', function( evt ) {
+
   var div = document.createElement("div");
 
   var str = evt.editor.getData();
-  str = getPlainText(str);
   div.innerHTML = str;
-  var lala = div.innerText.toLowerCase().substr(div.innerText.toLowerCase().length - 1);
+  var lala = (div.textContent || div.innerText); 
+  lala = lala.replace(/[^a-zA-Z ]/g, ""); 
+  lala = lala.replace(/(\r\n|\n|\r|↵)/gm, " ");
+  lala = lala.replace( /\s\s+/g, ' ' )
+  lala = lala.toLowerCase();
+
+  res = lala.split(" ")
+  var x = res.length;
+  for (var q = 0; q < x ; q++) {
+    var sp = res[q].split(" ")
+
+    if (sp.length > 1) {
+      for (var c = 0; c < sp.length ; c++) {
+        res.push(sp[c]);
+      }
+      res.splice(i, 1);
+    }
+
+  }
+
+
+
   if (str === "") {
     zonx = 0
   }
   if (lala == " ") {
-    var text = div.innerText.toLowerCase().slice(0, -1);
+    var text = lala.slice(0, -1);
   }else {
 
-    var text = div.innerText.toLowerCase();
+    var text = lala.toLowerCase();
   }
-  console.log(div.innerHTML)
   var map = haha.reduce(function(prev, cur) {
     prev[cur] = (prev[cur] || 0) + 1;
     return prev;
@@ -473,7 +494,6 @@ editor.on( 'change', function( evt ) {
     );
   ob = reverseObject(sortable);
   asd = [];
-  var res = text.split(" ");
   Object.keys(ob).forEach(function(key) {
 
 
@@ -497,10 +517,6 @@ editor.on( 'change', function( evt ) {
             $("#"+key).css('background-color', 'red')
           }
         });
-  console.log(res)
-  console.log(zonx)
-  console.log(haha)
-  console.log(asd)
   if (zonx != zinx) {
     var elem = document.getElementById("myBar");
     var id = setInterval(frame, 10);
