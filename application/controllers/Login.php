@@ -14,7 +14,6 @@ class Login extends Core{
 		$userCaptcha = $this->input->post('userCaptcha');
 		
 
-
 		if($this->form_validation->run() == false){
 			$data['alert'] = '';
 			$data['title'] = "Login";

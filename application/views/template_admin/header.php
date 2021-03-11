@@ -29,16 +29,19 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
-    <title>Bracket Responsive Bootstrap 4 Admin Template</title>
+    <title>Semantic Article</title>
 
     <!-- vendor css -->
     <link href="<?= site_url('assets/template/lib/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet">
     <link href="<?= site_url('assets/template/lib/Ionicons/css/ionicons.css'); ?>" rel="stylesheet">
     <link href="<?= site_url('assets/template/lib/perfect-scrollbar/css/perfect-scrollbar.css'); ?>" rel="stylesheet">
     <link href="<?= site_url('assets/template/lib/jquery-switchbutton/jquery.switchButton.css'); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= site_url('assets/bootstrap-select/dist/css/bootstrap-select.min.css'); ?>"/>
+
     <link href="<?= site_url('assets/template/lib/datatables/jquery.dataTables.css'); ?>" rel="stylesheet">
     <link href="<?= site_url('assets/template/lib/rickshaw/rickshaw.min.css'); ?>" rel="stylesheet">
     <link href="<?= site_url('assets/template/lib/chartist/chartist.css'); ?>" rel="stylesheet">
+    <link href="<?= site_url('assets/template/lib/select2/css/select2.min.css'); ?>" rel="stylesheet">
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="<?= site_url('assets/template/css/bracket.css'); ?>">
@@ -53,6 +56,7 @@
     <script src="<?= site_url('assets/template/lib/jquery-ui/jquery-ui.js'); ?>"></script>
     <script src="<?= site_url('assets/template/lib/jquery-switchbutton/jquery.switchButton.js'); ?>"></script>
 
+    <script type="text/javascript" src="<?= site_url('assets/bootstrap-select/dist/js/bootstrap-select.min.js') ?>"></script>
     <!-- Datatable -->
     <script src="<?= site_url('assets/template/lib/datatables/jquery.dataTables.js'); ?>"></script>
     <script src="<?= site_url('assets/template/lib/datatables-responsive/dataTables.responsive.js'); ?>"></script>
@@ -64,6 +68,7 @@
     <script src="<?= site_url('assets/template/lib/jquery.sparkline.bower/jquery.sparkline.min.js'); ?>"></script>
     <script src="<?= site_url('assets/template/lib/d3/d3.js'); ?>"></script>
     <script src="<?= site_url('assets/template/lib/rickshaw/rickshaw.min.js'); ?>"></script>
+    <script src="<?= site_url('assets/template/lib/select2/js/select2.min.js'); ?>"></script>
 
 
     <script src="<?= site_url('assets/template/js/bracket.js'); ?>"></script>

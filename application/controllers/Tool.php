@@ -21,7 +21,7 @@ class Tool extends Core {
 			die();
 		}
 		$data['title'] = 'Halaman dashboard';
-		$this->renderadm('admin/tool2',$data);
+		$this->rendertool('admin/tool2',$data);
 		
 	}
 }	

@@ -5,8 +5,8 @@ class Dashboard extends Core {
 
 	public function index(){
 		$level = $this->session->userdata('level');
-		if(!$this->isLogin || $level != 1){
-			redirect('Auth');
+		if(!$this->isLogin){
+			redirect('Login');
 			die();
 		}
 		$data['title'] = 'Halaman dashboard';
@@ -16,8 +16,8 @@ class Dashboard extends Core {
 
 	public function user(){
 		$level = $this->session->userdata('level');
-		if(!$this->isLogin || $level != 1){
-			redirect('Auth');
+		if(!$this->isLogin){
+			redirect('Login');
 			die();
 		}
 		$data['title'] = 'Halaman dashboard';

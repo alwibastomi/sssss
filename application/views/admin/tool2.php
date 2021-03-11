@@ -78,44 +78,45 @@
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
     .scrollable-menu {
-      height: auto;
-      max-height: 200px;
+      padding: 10px;
+      height: 735px;
+      max-height: 735px;
       overflow-x: hidden;
     }
-    #collapseUtilities::-webkit-scrollbar {
 
+    .del{
+      cursor: pointer;
+    }
+    #collapseUtilities::-webkit-scrollbar {
       width: 8px;
     }
 
 
     #collapseUtilities::-webkit-scrollbar-track {
-
-
     }
 
 
     #collapseUtilities::-webkit-scrollbar-thumb {
       background: #888; 
-      /* border-radius: 10px;*/
     }
-
 
     #collapseUtilities::-webkit-scrollbar-thumb:hover {
       background: #555; 
     }
-    .tex::-webkit-scrollbar {
 
+    .tex::-webkit-scrollbar {
       width: 8px;
     }
 
-
     .tex::-webkit-scrollbar-track {
-
-
     }
     #myProgress {
-      width: 100%;
+      /* width: 100%; */
       background-color: #ddd;
+    }
+
+    hr {
+      margin: 10px;
     }
 
     #myBar {
@@ -131,7 +132,6 @@
       background: #888; 
       /* border-radius: 10px;*/
     }
-
 
     .tex::-webkit-scrollbar-thumb:hover {
       background: #555; 
@@ -159,44 +159,29 @@
   </style>
 </head>
 
-<body style="padding-top: 70px;">
-
-
+<body style="padding-top: 20px; padding-right: 0;">
 
   <!-- <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"> -->
 
-  <center><h1><b>Related Keyword Generator</b></h1></center>
-  <center><p>Google, Youtube, Bing, Playstore, etc.</p></center>
+  <div class="container">
 
-  <div class="container" style="margin-top: 5%;">
-<!--     <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active tab" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Scrapping</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link tab" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Optimasi</a>
-    </li>
-</ul>
-
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> -->
     <div class="row">
 
-      <div class="col-lg-8">
+      <div class="col-lg-12">
         <!-- <div id="numofkeywords"></div> -->
         <div class="row">
 
-          <div class="col-lg-8">
-            <label for="" style="margin-top: 15px;"></label>
-            <input class="form-control" type="text" id="lolo" placeholder="Isi Keyword Utama"  />
-            <textarea id="input" autocomplete="off" autocorrect="off" style="overflow:hidden; resize: none; height: 1000px; font-size: 17px; display: none;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword Utama" class="input"></textarea>
-            <a class="btn btn-danger primary btn-sm" id="reset" title="Empty all input and results" type="button" style="color: white; margin-top: 10px;" value="Reset">Reset Keyword</a>
-            <div id="persen" style="display: none;">
-            </div>
-          </div>
           <div class="col-lg-4">
             <div class="form-group">
-              <label for="country">Country</label>
+              <input class="form-control" type="text" id="lolo" placeholder="Isi Keyword Utama"  />
+              <textarea id="input" autocomplete="off" autocorrect="off" style="overflow:hidden; resize: none; height: 1000px; font-size: 17px; display: none;" autocapitalize="off" spellcheck="false" rows="8" title="queue" class="form-control tex"  placeholder="Isi Keyword Utama" class="input"></textarea>
+              <a class="btn btn-danger primary btn-sm" id="reset" title="Empty all input and results" type="button" style="color: white; margin-top: 10px;" value="Reset">Reset Keyword</a>
+              <div id="persen" style="display: none;">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
               <!-- ISO-3366-1: Alpha-2 Codes -->
               <select value="id" class="form-control" name="country" id="country" title="Country code. Two letters. Only works for google for now" disabled="">
               </select>
@@ -207,120 +192,136 @@
             
             <div class="checkbox">
               <label for="keep-running">
-                <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever"></input> Continuous running:
+                <input type="checkbox" id="keep-running" name="keep-running" title="Keep running forever" style="font-weight: 100px;"></input> Continuous running:
               </label>
             </div>
           </div>
-        </div>
-
-        <br>
-        <div class="form-group" id="idku">
-          <input class="form-control inputku" type="text" name="" value="" placeholder="Judul Artikel"  />
-          <br>
-          <label style="font-weight: 600;">Artikel</label>
-          <textarea class="form-control anuku" id="haha" class="input" type="text"></textarea>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="row" style="margin-top: 32px;">
-          <div class="col-lg-6">
+          <div class="col-lg-3">
             <div class="form-group">
               <a class="btn btn-info primary btn-md" id="startjob" type="button" value="Shit Keywords!" style="color: white;">Generate Keyword</a>
             </div>
           </div>
         </div>
-
         <br>
-        <div class="mb-4">
-          <label style="font-weight: 600;">Score</label>
-          <div id="myProgress">
-            <div id="myBar"> 0%</div>
-          </div>
-        </div>
-        
-        <div class="bd"></div>
-        <br>
-
-        <input class="form-control" type="text" id="terlaluindah" placeholder="Target Keyword Turunan"  />
-        <div class="card" style="margin-top: 20px;" >
-          <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
-            <b>KW</b>
-          </div>
-          <div class="card-body cb" id="idku">
-            <div class="form-group" id="skut" style="padding-top: 10px;">
-            </div>
-          </div>
-        </div>
-        <p class="mt-5" style="font-weight: 600;">Rekomendasi Keyword</p>
-        <div class="card" style="margin-top: 20px;" >
-          <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
-            <b>High</b>
-          </div>
-          <div class="card-body cb" id="idku">
-            <div class="form-group" id="hi" style="padding-top: 10px;">
-            </div>
-          </div>
-        </div>
-        <style type="text/css">
-          .cb{
-            padding-top: -0px!important;
-          }
-        </style>
-        <div class="card mt-2" style="display: none">
-          <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
-            <b>Medium</b>
-          </div>
-          <div class="card-body cb">
-            <div class="form-group" id="mi" style="padding-top: 10px;">
-            </div>
-          </div>
-        </div>
-        <div class="card  mt-2" >
-          <div class="card-header bg-danger" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
-            <b >Low</b>
-          </div>
-          <div class="card-body cb" id="idku">
-            <div class="form-group" id="lo" style="padding-top: 10px;">
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-
-
-    </div> <!-- tutup row -->
-
-
-    <div class="row">
-      <div class="col-sm-12">
-        <hr id="progress1">
-        <br id="progress2">
       </div>
     </div>
-    <div class="row" style="display:none;">
-      <div class="col-sm-12">
-       <div id="txt"></div>
+    <!-- tutup row -->
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        <!-- <div id="numofkeywords"></div> -->
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="form-group" id="idku">
+              <input class="form-control inputku" type="text" name="" value="" id="tittle" placeholder="Judul Artikel"  />
+              <br>
+              <label style="font-weight: 600;">Artikel</label>
+              <textarea class="form-control anuku" id="haha" class="input" type="text"></textarea>
+              <hr id="progress1">
+              <br id="progress2">
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+
+            <div class="bd bd-2 scrollable-menu">
+              <div class="card cardku">
+                <div class="card-header bg-info" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+                  <b class="text-uppercase" id="lol"></b>
+                </div>
+                <div class="card">
+                  <div style="padding-top: 16px; padding-left: 16px;margin-bottom: -20px;" id="mustahil" >
+                  </div>
+                </div>
+              </div>
+              <br>
+              <input class="form-control" type="text" id="terlaluindah" placeholder="Target Keyword Turunan"  />
+              <div class="card" style="margin-top: 20px;" >
+                <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+                  <b>KW</b>
+                </div>
+                <div class="card-body cb" id="idku" style="padding-bottom: 0px;">
+                  <div class="form-group" id="skut" style="padding-top: 5px; padding-bottom: 1px;">
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3" style="font-weight: 600;">Rekomendasi Keyword (Hapus yang tidak relevan)</p>
+              <div class="card" style="margin-top: 20px;" >
+                <div class="card-header bg-primary" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+                  <b>High</b>
+                </div>
+                <div class="card-body cb" id="idku">
+                  <div class="form-group" id="hi" style="padding-top: 10px;">
+                  </div>
+                </div>
+              </div>
+              <style type="text/css">
+                .cb{
+                  padding-top: -0px!important;
+                }
+              </style>
+              <div class="card mt-2" style="display: none">
+                <div class="card-header bg-warning" style="color: white;padding-top: 0px!important;padding-bottom: 0px!important">
+                  <b>Medium</b>
+                </div>
+                <div class="card-body cb">
+                  <div class="form-group" id="mi" style="padding-top: 10px;">
+                  </div>
+                </div>
+              </div>
+              <div class="card  mt-2" >
+                <div class="card-header bg-danger" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+                  <b >Low</b>
+                </div>
+                <div class="card-body cb" id="idku">
+                  <div class="form-group" id="lo" style="padding-top: 10px;">
+                  </div>
+                </div>
+              </div>
+              <div class="card  mt-2" >
+                <div class="card-header bg-success" style=" color: white;padding-top: 0px!important;padding-bottom: 0px!important; ">
+                  <b >Rekomendasi Panjang kata</b>
+                </div>
+                <div class="card-body cb" id="low_word_len">
+                  <br><p>Persaingan rendah Min : 800 Kata</p>
+
+                  <h2><center>0/800</center></h2>
+                </div>
+                <div class="card-body cb" id="high_word_len">
+
+                  <p>Persaingan Tinggi Min : 1300 Kata</p>
+
+                  <h2><center>0/1300</center></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- tutup row -->
+
+      <div class="row" style="display:none;">
+        <div class="col-sm-12">
+         <div id="txt"></div>
+       </div>
      </div>
-   </div>
 
 
-   <div class="row" style="display: none;">
-    <div id="results" class="col-sm-12">
-      <h2>Results</h2>
-      <!-- <div class="table-responsive"> -->
-        <table id="outtable" class=" table table-condensed compact dt-responsive" cellspacing="0" width="100%">
-          <thead>
-            <tr>
-            </tr>
-          </thead>
-          <tbody>
+     <div class="row" style="display: none;">
+      <div id="results" class="col-sm-12">
+        <h2>Results</h2>
+        <!-- <div class="table-responsive"> -->
+          <table id="outtable" class=" table table-condensed compact dt-responsive" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+              </tr>
+            </thead>
+            <tbody>
 
-          </tbody>
-        </table>
-        <!-- </div> -->
+            </tbody>
+          </table>
+          <!-- </div> -->
+        </div>
       </div>
     </div>
   </div>
@@ -353,15 +354,8 @@
     </div>
     <!-- akhir row -->
 
-
-
     <!-- AKHIR TAB2 -->
     <!-- </div> -->
-    <footer>
-
-      <p style="padding: 20px; text-decoration: bold;"><b>Tool By :</b> Aqil Da Fortress
-      </footer>
-    </p>
     <style type="text/css">
 
       #persen b{
@@ -417,38 +411,99 @@
 
     <script>
 
-      var utun = [];
-      var poo = 0;
-      var hadeuh = "";
 
+      var awokwok = [];
+
+      var utun = [];
+      var sok = 0;
+      var poo = 0;
+      var jdl = 0;
+      var kat = 0;
+      var kwt = 0;
+      var hadeuh = "";
+      var semvak = "";
+      var res = [];
+      var lala = "";
+      $('#lolo').keyup(function () {
+
+        var waw = $(this).val();
+        if(waw.length > 0){
+
+          $('#lol').css('display', 'block') 
+        }else {
+          $('#lol').css('display', 'none')
+        }
+        $('#lol').text(waw)
+        semvak = waw;
+        if ($('#tittle').val().toLowerCase().indexOf(waw.toLowerCase()) > -1) {
+          jdl = 1;
+          $('#jdl').css('background-color', 'green'); 
+        }else {
+          jdl = 0;
+          $('#jdl').css('background-color', 'red'); 
+        }
+        if (lala.indexOf(semvak.toLowerCase()) > -1) {
+          kat = 1;
+
+          $('#kat').css('background-color', 'green'); 
+        }else {
+          kat = 0;
+
+          $('#kat').css('background-color', 'red'); 
+        }
+
+      });
+      $('#tittle').keyup(function () {
+        var jomblo = $(this).val();
+        if (jomblo.toLowerCase().indexOf(semvak.toLowerCase()) > -1) {
+          jdl = 1;
+
+          $('#jdl').css('background-color', 'green'); 
+        }else {
+          jdl = 0;
+
+          $('#jdl').css('background-color', 'red');
+        }
+
+      });
       $('#terlaluindah').keyup(function () {
         var waw = $(this).val();
         $('input[id="terlaluindah"]').val(waw);
         if (event.keyCode === 13) {
          event.preventDefault();
          utun.push(waw)
-         hadeuh += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+utun+'">'+utun.slice(-1)[0]+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
+         hadeuh += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="kwt'+kwt+'">'+waw+' 0/2 <i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
          document.getElementById('skut').innerHTML = hadeuh;
-         $('input[id="terlaluindah"]').val("");
-       }
-     });
-   </script>
-   <script>
-    function getPlainText(strSrc) {
-      var resultStr = "";
+
+         var close = document.getElementsByClassName('del');
+
+         for (i = 0; i < close.length; i++) {
+          close[i].addEventListener("click", function() {
+            this.parentElement.style.display = 'none';
+          });
+        }
+
+        kwt = kwt + 1;
+        $('input[id="terlaluindah"]').val("");
+      }
+    });
+      function getPlainText(strSrc) {
+        var resultStr = "";
 
   // Ignore the <p> tag if it is in very start of the text
   if (strSrc.indexOf('<p>') == 0)
-    resultStr = strSrc.substring(3);
+resultStr = strSrc.substring(3);
 
-  resultStr = resultStr.replace(/<p>/gi, " ");
+resultStr = resultStr.replace(/<p>/gi, " ");
 
-  resultStr = resultStr.replace(/<br \/>/gi, " ");
-  resultStr = resultStr.replace(/<br>/gi, " ");
+resultStr = resultStr.replace(/<br \/>/gi, " ");
+resultStr = resultStr.replace(/<br>/gi, " ");
 
-  return resultStr.replace(/<[^<|>]+?>/gi, '');
+return resultStr.replace(/<[^<|>]+?>/gi, '');
 }
-
+function escapeRegExp(stringToGoIntoTheRegex) {
+  return stringToGoIntoTheRegex.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
 var i = 0;
 var upel = 0;
 var haha=[];
@@ -463,7 +518,6 @@ zonx  = 0;
 zinx  = 0;
 var lol=[];
 
-var res = [];
 var editor = CKEDITOR.replace( 'haha', {
   language: 'en',
   extraPlugins: 'notification',
@@ -475,28 +529,72 @@ editor.on( 'change', function( evt ) {
   var div = document.createElement("div");
 
   var str = evt.editor.getData();
+  str = str.replaceAll("</td>", " ");
+
+  str = str.replaceAll("&nbsp;", " ");
+
+  console.log(str)
   div.innerHTML = str;
-  var lala = (div.textContent || div.innerText); 
-  lala = lala.replace(/[^a-zA-Z ]/g, ""); 
-  lala = lala.replace(/(\r\n|\n|\r|↵)/gm, " ");
-  lala = lala.replace( /\s\s+/g, ' ' )
+  lala = (div.textContent || div.innerText); 
+
+  lala = lala.replaceAll("'", "");
+  lala = lala.replaceAll(/[^a-zA-Z ]/g, " "); 
+  lala = lala.replaceAll(/(\r\n|\n|\r|↵)/gm, " ");
+  lala = lala.replaceAll( /\s\s+/g, ' ')
   lala = lala.toLowerCase();
+  var stringToGoIntoTheRegex = escapeRegExp(semvak); 
+  var regex = new RegExp(stringToGoIntoTheRegex, "g");
+  var pap = (lala.match(regex) || []).length;
 
+  console.log(lala)
   res = lala.split(" ")
-  var x = res.length;
-  for (var q = 0; q < x ; q++) {
-    var sp = res[q].split(" ")
+  var oke = res.length - 1;
+  console.log(res)
+  if (semvak != "") {
 
-    if (sp.length > 1) {
-      for (var c = 0; c < sp.length ; c++) {
-        res.push(sp[c]);
-      }
-      res.splice(i, 1);
+    kat = lala.split(semvak.toLowerCase()).length - 1; 
+    if (jdl == 1) {
+      var csj = "green";
+    }else {
+      var csj = "red";
     }
 
+    if (kat > 1) {
+
+      var csk = "green";
+      $('#kat').css('background-color', 'green'); 
+    }else {
+
+      var csk = "red";
+      $('#kat').css('background-color', 'red'); 
+    }
+
+    document.getElementById("mustahil").innerHTML = '<b><span style="background-color:'+csj+'; padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="jdl">Keyword '+semvak.toUpperCase()+' Di Judul</span></b><hr><b><span style="background-color:'+csk+'; padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="kat">Keyword '+semvak.toUpperCase()+' Di Artikel '+kat+'/2</span></b><hr><b><span class="text-danger" style="font-size: 13px;">Keyword Utama mohon di Heading (Masukin waktu di Wordpress/Anda)</span></b><br><hr>';
+  }
+
+  for (var q = 0; q < utun.length; q++) {
+    var juml = lala.split(utun[q].toLowerCase()).length - 1;
+    $('#kwt'+q).html(utun[q]+' '+ juml+'/2 <i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i>');
+    if (juml > 1) {
+      $('#kwt'+q).css("background-color", "green");
+    }else {
+      $('#kwt'+q).css("background-color", "red");
+    }
   }
 
 
+  if(oke >= 800){
+
+    document.getElementById('low_word_len').innerHTML = "<br><p>Persaingan rendah Min : 800 Kata</p><h2 style='color:green;'><center>"+oke+"/800 <i class='fa fa-check'></i></center></h2>";
+    if (oke >= 1300) {
+      document.getElementById('high_word_len').innerHTML = "<br><p>Persaingan rendah Min : 800 Kata</p><h2 style='color:green;'><center>"+oke+"/1300 <i class='fa fa-check'></i></center></h2>";
+    }
+
+  }else {
+
+    document.getElementById('low_word_len').innerHTML = "<br><p>Persaingan rendah Min : 800 Kata</p><h2><center>"+oke+"/800</center></h2>";
+    document.getElementById('high_word_len').innerHTML = "<br><p>Persaingan rendah Min : 800 Kata</p><h2><center>"+oke+"/1300</center></h2>";
+  }
 
   if (str === "") {
     zonx = 0
@@ -514,25 +612,25 @@ editor.on( 'change', function( evt ) {
   x = sum(map);
   const sortable = Object.fromEntries(
     Object.entries(map).sort(([,a],[,b]) => a-b)
-    );
-  ob = reverseObject(sortable);
-  asd = [];
-  Object.keys(ob).forEach(function(key) {
+      );
+    ob = reverseObject(sortable);
+    asd = [];
+    Object.keys(ob).forEach(function(key) {
 
 
-    var a =  res.indexOf(key);
-    if (a > -1) {
+      var a =  res.indexOf(key);
+      if (a > -1) {
             // b = ob[key]/x * 100;
             // b = b.toFixed(0);
 
             if (asd.indexOf(a) == -1) {
               asd.push(a);
-              zonx = 0;
-              for (var o = 0, l = asd.length; o < l; ++o) {
-                var p = Object.values(ob)[asd[o]]/x * 100;
-                p = p.toFixed(0);
-                zonx = parseInt(zonx) + parseInt(p);
-              }
+    zonx = 0;
+    for (var o = 0, l = asd.length; o < l; ++o) {
+      var p = Object.values(ob)[asd[o]]/x * 100;
+      p = p.toFixed(0);
+      zonx = parseInt(zonx) + parseInt(p);
+    }
               // zonx = b + zonx;  
             }
             $("#"+key).css('background-color', 'green')
@@ -696,24 +794,24 @@ editor.on( 'required', function( evt ) {
         }
         function roundNumber(num, scale) {
           if(!("" + num).includes("e")) {
-            return +(Math.round(num + "e+" + scale)  + "e-" + scale);
-          } else {
-            var arr = ("" + num).split("e");
-            var sig = ""
-            if(+arr[1] + scale > 0) {
-              sig = "+";
-            }
-            return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
-          }
-        }
+  return +(Math.round(num + "e+" + scale)  + "e-" + scale);
+} else {
+  var arr = ("" + num).split("e");
+  var sig = ""
+  if(+arr[1] + scale > 0) {
+    sig = "+";
+  }
+  return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale);
+}
+}
 
 
-        var KWS = function(){
-         var v = 0;
-         return {
-          table: undefined,
-          myIp: undefined,
-          options: {},
+var KWS = function(){
+ var v = 0;
+ return {
+  table: undefined,
+  myIp: undefined,
+  options: {},
         // flags
         queryLock: false,
         doWork: false,
@@ -806,7 +904,18 @@ editor.on( 'required', function( evt ) {
                 this.saveSettings();
                 this.FilterAndDisplay();
                 this.progress1.end();
+                if (jdl == 1) {
+                  var csj = "green";
+                }else {
+                  var csj = "red";
+                }
 
+                if (kat > 1) {
+                  var csk = "green";
+                }else {
+                  var csk = "red";
+                }
+                document.getElementById("mustahil").innerHTML = '<b><span style="background-color:'+csj+'; padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="jdl">Keyword '+semvak.toUpperCase()+' Di Judul</span></b><hr><b><span style="background-color:'+csk+'; padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="kat">Keyword '+semvak.toUpperCase()+' Di Artikel '+kat+'/2</span></b><hr><b><span class="text-danger" style="font-size: 13px;">Keyword Utama mohon di Heading (Masukin waktu di Wordpress/Anda)</span></b><br><hr>';
                 document.getElementById("txt").innerHTML = "<textarea style='height:200px; width:100%;'>"+lol+"</textarea>";
                 var map = haha.reduce(function(prev, cur) {
                   prev[cur] = (prev[cur] || 0) + 1;
@@ -831,30 +940,21 @@ editor.on( 'required', function( evt ) {
                     // var a+="<p>"+b+"%, </p>"
                     // var a+="</div>"
                     n = n + 1;
-                    if (n<=5) {
+                    if (n<=8) {
                       if (p<=15) {
                         p = p + key.length;
-                        high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
+                        high += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
                       }else {
-                        high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;" ></i></span> ';
+                        high += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;" ></i></span> ';
 
                         p = 0;
-                      }
-                    }else if (n>=6 && n<=10) {
-                      if (q<=15) {
-                        q = q + key.length;
-                        mid += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle mt-2 del" style="margin-left: 1%;" ></i></span> ';
-                      }else {
-                        mid += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle mt-2 del" style="margin-left: 1%;"></i></span> ';
-
-                        q = 0;
                       }
                     }else {
                       if (r<=15) {
                         r = r + key.length;
-                        low += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
+                        low += '<span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
                       }else {
-                        low += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
+                        low += '<br><span style="background-color:red;padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;" id="'+key+'">'+key+'<i class="fas fa-times-circle del mt-2" style="margin-left: 1%;"></i></span> ';
 
                         r = 0;
                       }
@@ -862,9 +962,9 @@ editor.on( 'required', function( evt ) {
                     sayangkuh += "<i class='fas fa-circle del'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>"
                     
                     // $('#persen').append("<i class='fas fa-circle'></i><b>"+key+"</b> "+"<span>"+b+"% , </span><br><hr>");
-                    // $('#idkuu').append("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
+                    // $('#idkuu').append("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
 
-                    // $('#persen').html("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 15px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
+                    // $('#persen').html("<span style='background-color:#00415a;padding:2px 4px;color: white;border-radius: 12px; font-size: 13px;'>"+key+'<i class="fas fa-times-circle delete mt-2" style="margin-left: 1%;"></i>'+"</span>");
                     
 
                   });

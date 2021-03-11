@@ -5,16 +5,6 @@
   </div><!-- d-flex -->
 
   <div class="br-pagebody mg-t-5 pd-x-30">
-    <?php
-    $aa = 0;
-    if ($aa == 0){ ?>
-
-    <?php } ?>
-    <div class="row row-lg justify-content-lg-center">
-      <div class="col-sm-6 text-center justify-content-lg-center">
-        <p class="text-white bg-danger">Akun Anda Banned dikarenakan 2 akun aktif bersamaan</p>
-      </div>
-    </div><!-- row -->
 
     <div class="row row-sm mg-t-20">
       <div class="col-sm-6 col-lg-6">
@@ -33,24 +23,27 @@
               </div><!-- col-9 -->
             </div><!-- row -->
             <div class="row align-items-center">
-              <div class="col-3 tx-12">Pertanyaan</div><!-- col-3 -->
-              <div class="col-9">
-                <div class="rounded-0 mg-b-0">
-                  <div class="wd-50p lh-3">: Lala iku koncone lolo</div>
-                </div><!-- progress -->
-              </div><!-- col-9 -->
-            </div><!-- row -->
-            <div class="row align-items-center mt-4">
-              <div class="col-3 tx-12"><a href="#profile" class="btn btn-oblong btn-info bd-2 pt-0 pb-0"> Ubah </a></div><!-- col-3 -->
-            </div><!-- row -->
-            <div class="row align-items-center">
               <div class="col-3 tx-12">Password</div><!-- col-3 -->
               <div class="col-9">
                 <div class="rounded-0 mg-b-0">
-                  <div class="wd-50p lh-3">: <?= $password ?></div>
+                  <div class="wd-50p lh-3">: <?= $password ?> <a href="#profile" class="btn btn-oblong btn-info bd-2 pt-0 pb-0"> Ubah </a></div>
                 </div><!-- progress -->
               </div><!-- col-9 -->
             </div><!-- row -->
+            <br>
+            <div class="bd-t mt-3">
+              <div class="row align-items-center mt-2">
+                <div class="col-12 tx-12 text-danger">Pertanyaan</div><!-- col-3 -->
+              </div><!-- row -->
+              <div class="row align-items-center">
+                <div class="col-3 tx-12">Sopo Lala?</div><!-- col-3 -->
+                <div class="col-9">
+                  <div class="rounded-0 mg-b-0">
+                    <div class="wd-50p lh-3">: Lala iku koncone lolo</div>
+                  </div><!-- progress -->
+                </div><!-- col-9 -->
+              </div><!-- row -->
+            </div>
           </div><!-- card-body -->
         </div><!-- card -->
       </div><!-- col-4 -->
